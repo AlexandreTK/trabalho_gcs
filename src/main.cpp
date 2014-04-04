@@ -1,4 +1,5 @@
 #include <iostream>
+#include "window.h"
 
 using std::cout;
 using std::endl;
@@ -37,7 +38,9 @@ void draw() { }
 int main()
 {
   int level = init();
+  Window window;
 
+  window.OpenWindow();
   while(level > 0)
   {
     while(true)
@@ -52,7 +55,6 @@ int main()
         break;
 
     }
-
     level = nextLevel();
   }
 

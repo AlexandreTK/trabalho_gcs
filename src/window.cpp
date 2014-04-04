@@ -1,15 +1,17 @@
 #include <iostream>
-#include <SDL.h>
+#include "window.h"
+#include <SDL2/SDL.h>
 
 using std::cout;
 using std::endl;
 
-int main( int args, char ** argv )
+
+int Window::OpenWindow()
 {
   /*
    * Creating the window and renderer
    * to be used in the game.
-   */
+  */
   SDL_Window * window;
   SDL_Renderer * renderer;
 
@@ -18,21 +20,21 @@ int main( int args, char ** argv )
    * the mode the window
    * and renderer will be
    * created
-   */
+  */
   Uint32 flags;
 
   /*
    * Initializing the variables
    * there are going to be used
-   */
+  */
   window = NULL;
   renderer = NULL;
   flags = SDL_WINDOW_FULLSCREEN_DESKTOP;
 
   /*
    * Creating the window and renderer
-   */
-  if( SDL_CreateWindowAndRenderer(300, 300, flags, &window, &renderer) < 0 )
+  */
+  if( SDL_CreateWindowAndRenderer(0, 0, flags, &window, &renderer) < 0 )
   {
     cout << "Erro: " << SDL_GetError() << endl;
   }
