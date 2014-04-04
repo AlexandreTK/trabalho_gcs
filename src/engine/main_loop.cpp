@@ -5,20 +5,20 @@ using std::endl;
 
 int init()
 {
-  cout << "Inicialização" << endl;
+  cout << "Initialization" << endl;
 
   return 1; 
 }
 
 bool levelFinished()
 {
-  cout << "Terminou o nível?" << endl;
+  cout << "Is the level over?" << endl;
   return true;
 }
 
 int nextLevel()
 {
-  cout << "Próximo nível" << endl;
+  cout << "Next level" << endl;
   return 0;
 }
 
