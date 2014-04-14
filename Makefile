@@ -1,5 +1,5 @@
 CC = clang++
-CFLAGS = -lSDL2 -Wall -W -ansi -pedantic -Wno-unused-parameter -I/usr/include/SDL2/
+CFLAGS = -Wall -W -ansi -pedantic -Wno-unused-parameter -g -I. `sdl2-config --cflags --libs`
 
 SOURCE = src/main.cpp src/window.cpp
 
