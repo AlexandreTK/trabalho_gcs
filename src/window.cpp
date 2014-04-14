@@ -1,6 +1,6 @@
 #include <iostream>
 #include "window.h"
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 using std::cout;
 using std::endl;
