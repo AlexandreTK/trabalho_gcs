@@ -5,7 +5,6 @@
 using std::cout;
 using std::endl;
 
-
 int Window::OpenWindow()
 {
   /*
