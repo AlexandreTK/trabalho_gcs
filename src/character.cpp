@@ -18,4 +18,40 @@ Character::Character()
   cHeight = 0;
 }
 
+void Character::render(int camX, int camY)
+{
+  /*
+   * Show the character's sprite relative to the camera
+   */
+  
+}
 
+int Character::getPosX()
+{
+  return cPosX;
+}
+
+int Character::getPosY()
+{
+  return cPosY;
+}
+
+int Character::getWidth()
+{
+  return cWidth();
+}
+
+int Character::getHeight()
+{
+  return cHeight;
+}
+
+int Character::setWidth(int width)
+{
+  cWidth = width;
+}
+
+int Character::setHeight(int height)
+{
+  cHeight = height;
+}

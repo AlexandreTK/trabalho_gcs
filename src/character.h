@@ -30,6 +30,12 @@ class Character
     void setWidth(int width);
     void setHeight(int height);
 
+    /*
+     * Access the dimensions of the sprite
+     */
+    void getWidth();
+    void getHeight();
+
   private:
     /*
      * The X and Y position of the character's sprite
