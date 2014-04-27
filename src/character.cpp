@@ -23,7 +23,7 @@ void Character::render(int camX, int camY)
   /*
    * Show the character's sprite relative to the camera
    */
-  
+    
 }
 
 int Character::getPosX()

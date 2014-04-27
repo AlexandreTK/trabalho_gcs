@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SDL.h>
+#include <SDL_image.h>
 
 #include "window.h"
 #include "texture.h"
@@ -21,7 +22,7 @@ bool loadMedia()
   /*
    * Try to load character sprite file
    */
-  if(!charTexture.loadFromFile())
+  if(!charTexture.loadFromFile("data/images/mage.png", renderer))
   {
     cout << "Failed to load character sprite!" << endl;
     return false;
@@ -30,7 +31,7 @@ bool loadMedia()
   /*
    * Try to load background file
    */
-  if(!bgTexture.loadFromFile())
+  if(!bgTexture.loadFromFile("data/images/bg.png", renderer))
   {
     cout << "Failed to load background" << endl;
     return false;
@@ -58,7 +59,7 @@ bool init()
   /*
    * Initializing SDL
    */
-  if(SDL_INIT(SDL_INIT_VIDEO) < 0)
+  if(SDL_Init(SDL_INIT_VIDEO) < 0)
   {
     cout << "SDL could not initialize video: " << SDL_GetError() << endl;
     return false;
@@ -83,7 +84,7 @@ bool init()
   /*
    * Create vsynced renderer for window
    */
-  renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENT_VSYNC);
+  renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
   if(!renderer)
   {
     cout << "Failed to create renderer: " << SDL_GetError() << endl;
@@ -147,9 +148,9 @@ bool Window::openWindow()
    */
   SDL_DisplayMode currentMode;
 
-  if(SDL_GetCurrentDisplayMode(0, &current) != 0)
+  if(SDL_GetCurrentDisplayMode(0, &currentMode) != 0)
   {
-    cout << "Failed to get current display mode: " << SLD_GetError() << endl;
+    cout << "Failed to get current display mode: " << SDL_GetError() << endl;
     return false;
   }
 
@@ -193,13 +194,13 @@ bool Window::openWindow()
     /*
      * Render background
      */
-    bgTexture.render(0, 0, &camera);
+    bgTexture.render(0, 0, &camera, renderer);
 
     /*
      * Render character
      */
 
-    char.render(camera.x, camera.y);
+    charTexture.render(char.getPosX() - camera.x, char.getPosY() - camera.y, renderer)
 
     /*
      * Update screen

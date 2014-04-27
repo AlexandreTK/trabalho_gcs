@@ -40,7 +40,7 @@ int main()
   int level = init();
   Window window;
 
-  window.OpenWindow();
+  window.openWindow();
   while(level > 0)
   {
     while(true)
