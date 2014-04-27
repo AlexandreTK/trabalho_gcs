@@ -5,6 +5,35 @@
 using std::cout;
 using std::endl;
 
+bool loadMedia();
+void close();
+
+Texture charTexture;
+Texture bgTexture;
+
+bool loadMedia()
+{
+  /*
+   * Try to load character sprite file
+   */
+  if(!charTexture.loadFromFile())
+  {
+    cout << "Failed to load character sprite!" << endl;
+    return false;
+  }
+
+  /*
+   * Try to load background file
+   */
+  if(!bgTexture.loadFromFile())
+  {
+    cout << "Failed to load background" << endl;
+    return false;
+  }
+
+  return true;
+}
+
 int Window::OpenWindow()
 {
   /*
