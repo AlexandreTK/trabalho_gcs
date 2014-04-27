@@ -1,6 +1,9 @@
 #include <iostream>
-#include "window.h"
 #include <SDL.h>
+
+#include "window.h"
+#include "texture.h"
+#include "character.h"
 
 using std::cout;
 using std::endl;
@@ -105,35 +108,102 @@ bool init()
   return true;
 }
 
-int Window::OpenWindow()
+bool Window::openWindow()
 {
-
   /*
-   * The flag that tells
-   * the mode the window
-   * and renderer will be
-   * created
-  */
-  Uint32 flags;
-
-  /*
-   * Initializing the variables
-   * there are going to be used
-  */
-  window = NULL;
-  renderer = NULL;
-  flags = SDL_WINDOW_FULLSCREEN_DESKTOP;
-
-  /*
-   * Creating the window and renderer
-  */
-  if( SDL_CreateWindowAndRenderer(0, 0, flags, &window, &renderer) < 0 )
+   * Start up SDL and create window and render
+   */
+  if(!init())
   {
-    cout << "Failed to create window: " << SDL_GetError() << endl;
+    cout << "Failed to initialize" << endl;
+    return false;
+  }
+  /*
+   * Try to load media
+   */
+  if(!loadMedia())
+  {
+    cout << "Failed to load media" << endl;
+    return false;
   }
 
-  atexit( SDL_Quit );
-  SDL_Delay( 5000 );
-  
-  return 0;
+  /*
+   * Loop flag
+   */
+  bool quit = false;
+
+  /*
+   * Event handler
+   */
+  SDL_Event e;
+
+  /*
+   * Character sprite
+   */
+  Character char;
+
+  /*
+   * Current display mode
+   */
+  SDL_DisplayMode currentMode;
+
+  if(SDL_GetCurrentDisplayMode(0, &current) != 0)
+  {
+    cout << "Failed to get current display mode: " << SLD_GetError() << endl;
+    return false;
+  }
+
+  /*
+   * Camera area
+   */
+  SDL_Rect camera = {0, 0, current.w, current.h};
+
+  /*
+   * While application is running
+   */
+  while(!quit)
+  {
+    /*
+     * Handle events on queue
+     */
+    while(SDL_PollEvent(&e) != 0)
+    {
+      /*
+       * User wants to quit
+       */
+      if(e.type == SDL_Quit)
+      {
+        quit = true;
+      }
+
+    }
+
+    /*
+     * Centers the camera at the character
+     */
+    camera.x = (char.getPosX() + char.getWidth/2) - currentMode.w/2;
+    camera.y = (char.getPosY() + char.getHeight/2) - currentMode.h/2;
+    
+    /*
+     * Clear screen
+     */
+    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    SDL_RenderClear(renderer);
+
+    /*
+     * Render background
+     */
+    bgTexture.render(0, 0, &camera);
+
+    /*
+     * Render character
+     */
+
+    char.render(camera.x, camera.y);
+
+    /*
+     * Update screen
+     */
+    SDL_RenderPresent(renderer)
+  }
 }
