@@ -25,7 +25,7 @@ class Texture
     /*
      * Loads an image from specified path
      */
-    bool loadFromFile(string path);
+    bool loadFromFile(string path, SDL_Renderer * wRenderer);
 
     /*
      * Deallocates texture
@@ -35,7 +35,7 @@ class Texture
     /*
      * Renders texture
      */
-    void render(int x, int y, SDL_Rect * clip = NULL, double angle = 0.0, SDL_Point * center = NULL,  SDL_RendererFlip flip = SDL_FLIP_NONE);
+    void render(int x, int y, SDL_Rect * clip = NULL, double angle = 0.0, SDL_Point * center = NULL,  SDL_RendererFlip flip = SDL_FLIP_NONE, SDL_Renderer * wRenderer);
 
     /*
      * Gets image dimensions
