@@ -12,7 +12,7 @@ using std::endl;
 bool loadMedia();
 void close();
 
-Texture charTexture;
+Texture characterTexture;
 Texture bgTexture;
 SDL_Window * window;
 SDL_Renderer * renderer;
@@ -20,11 +20,11 @@ SDL_Renderer * renderer;
 bool loadMedia()
 {
   /*
-   * Try to load character sprite file
+   * Try to load characteracter sprite file
    */
-  if(!charTexture.loadFromFile("data/images/mage.png", renderer))
+  if(!characterTexture.loadFromFile("data/images/mage.png", renderer))
   {
-    cout << "Failed to load character sprite!" << endl;
+    cout << "Failed to load characteracter sprite!" << endl;
     return false;
   }
 
@@ -42,7 +42,7 @@ bool loadMedia()
 
 void close()
 {
-  charTexture.free();
+  characterTexture.free();
   bgTexture.free();
 
   SDL_DestroyRenderer(renderer);
@@ -141,7 +141,7 @@ bool Window::openWindow()
   /*
    * Character sprite
    */
-  Character char;
+  Character character;
 
   /*
    * Current display mode
@@ -157,7 +157,7 @@ bool Window::openWindow()
   /*
    * Camera area
    */
-  SDL_Rect camera = {0, 0, current.w, current.h};
+  SDL_Rect camera = {0, 0, currentMode.w, currentMode.h};
 
   /*
    * While application is running
@@ -172,7 +172,7 @@ bool Window::openWindow()
       /*
        * User wants to quit
        */
-      if(e.type == SDL_Quit)
+      if(e.type == SDL_QUIT)
       {
         quit = true;
       }
@@ -180,10 +180,10 @@ bool Window::openWindow()
     }
 
     /*
-     * Centers the camera at the character
+     * Centers the camera at the characteracter
      */
-    camera.x = (char.getPosX() + char.getWidth/2) - currentMode.w/2;
-    camera.y = (char.getPosY() + char.getHeight/2) - currentMode.h/2;
+    camera.x = (character.getPosX() + character.getWidth()/2) - currentMode.w/2;
+    camera.y = (character.getPosY() + character.getHeight()/2) - currentMode.h/2;
     
     /*
      * Clear screen
@@ -197,14 +197,16 @@ bool Window::openWindow()
     bgTexture.render(0, 0, &camera, renderer);
 
     /*
-     * Render character
+     * Render characteracter
      */
 
-    charTexture.render(char.getPosX() - camera.x, char.getPosY() - camera.y, renderer)
+    characterTexture.render(character.getPosX() - camera.x, character.getPosY() - camera.y, NULL, renderer);
 
     /*
      * Update screen
      */
-    SDL_RenderPresent(renderer)
+    SDL_RenderPresent(renderer);
   }
+  
+  return true;
 }

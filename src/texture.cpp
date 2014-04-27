@@ -57,7 +57,7 @@ bool Texture::loadFromFile(string path, SDL_Renderer * wRenderer)
   return texture != NULL;
 }
 
-Texture::free()
+void Texture::free()
 {
   if(texture != NULL)
   {
@@ -68,7 +68,7 @@ Texture::free()
   }
 }
 
-Texture::render(int x, int y, SDL_Rect * clip = NULL, SDL_Renderer * wRenderer = NULL, double angle = 0.0, SDL_Point * center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE)
+void Texture::render(int x, int y, SDL_Rect * clip = NULL, SDL_Renderer * wRenderer = NULL, double angle = 0.0, SDL_Point * center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE)
 {
   SDL_Rect renderQuad = {x, y, tWidth, tHeight};
 
@@ -81,12 +81,12 @@ Texture::render(int x, int y, SDL_Rect * clip = NULL, SDL_Renderer * wRenderer =
   SDL_RenderCopyEx(wRenderer, texture, clip, &renderQuad, angle, center, flip);
 }
 
-Texture::getWidth()
+int Texture::getWidth()
 {
   return tWidth;
 }
 
-Texture::getHeight()
+int Texture::getHeight()
 {
   return tHeight;
 }

@@ -38,7 +38,7 @@ int Character::getPosY()
 
 int Character::getWidth()
 {
-  return cWidth();
+  return cWidth;
 }
 
 int Character::getHeight()
@@ -46,12 +46,12 @@ int Character::getHeight()
   return cHeight;
 }
 
-int Character::setWidth(int width)
+void Character::setWidth(int width)
 {
   cWidth = width;
 }
 
-int Character::setHeight(int height)
+void Character::setHeight(int height)
 {
   cHeight = height;
 }

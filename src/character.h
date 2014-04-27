@@ -33,8 +33,8 @@ class Character
     /*
      * Access the dimensions of the sprite
      */
-    void getWidth();
-    void getHeight();
+    int getWidth();
+    int getHeight();
 
   private:
     /*
