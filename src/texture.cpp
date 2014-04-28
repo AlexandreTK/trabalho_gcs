@@ -68,7 +68,7 @@ void Texture::free()
   }
 }
 
-void Texture::render(int x, int y, SDL_Rect * clip = NULL, SDL_Renderer * wRenderer = NULL, double angle = 0.0, SDL_Point * center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE)
+void Texture::render(int x, int y, SDL_Rect * clip, SDL_Renderer * wRenderer, double angle, SDL_Point * center, SDL_RendererFlip flip)
 {
   SDL_Rect renderQuad = {x, y, tWidth, tHeight};
 
@@ -89,4 +89,14 @@ int Texture::getWidth()
 int Texture::getHeight()
 {
   return tHeight;
+}
+
+void Texture::setWidth(int width)
+{
+  tWidth = width;
+}
+
+void Texture::setHeight(int height)
+{
+  tHeight = height;
 }

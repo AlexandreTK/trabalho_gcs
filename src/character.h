@@ -22,6 +22,8 @@ class Character
      */
     int getPosX();
     int getPosY();
+    void setPosX(int x);
+    void setPosY(int y);
 
 
     /*

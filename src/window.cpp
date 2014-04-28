@@ -28,6 +28,9 @@ bool loadMedia()
     return false;
   }
 
+  characterTexture.setWidth(64);
+  characterTexture.setHeight(64);
+
   /*
    * Try to load background file
    */
@@ -37,6 +40,8 @@ bool loadMedia()
     return false;
   }
 
+  bgTexture.setWidth(3468);
+  bgTexture.setHeight(769);
   return true;
 }
 
@@ -54,7 +59,7 @@ void close()
   SDL_Quit();
 }
 
-bool init()
+bool initialize()
 {
   /*
    * Initializing SDL
@@ -114,7 +119,7 @@ bool Window::openWindow()
   /*
    * Start up SDL and create window and render
    */
-  if(!init())
+  if(!initialize())
   {
     cout << "Failed to initialize" << endl;
     return false;
@@ -159,6 +164,39 @@ bool Window::openWindow()
    */
   SDL_Rect camera = {0, 0, currentMode.w, currentMode.h};
 
+  character.setWidth(64);
+  character.setHeight(64);
+
+  /*
+   * Centers the camera at the characteracter
+   */
+  camera.x = (character.getPosX() + character.getWidth()/2) - currentMode.w/8;
+  camera.y = (character.getPosY() + character.getHeight()/2) - currentMode.h/8;
+   
+  /*
+   * Clear screen
+   */
+  SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+  SDL_RenderClear(renderer);
+
+  /*
+   * Render background
+   */
+  bgTexture.render(0, 0, &camera, renderer);
+
+  /*
+   * Render character
+   */
+
+  character.setPosX(200);
+  character.setPosY(600);
+  characterTexture.render(character.getPosX() - camera.x, character.getPosY() - camera.y, NULL, renderer);
+
+  /*
+   * Update screen
+   */
+  SDL_RenderPresent(renderer);
+
   /*
    * While application is running
    */
@@ -172,40 +210,16 @@ bool Window::openWindow()
       /*
        * User wants to quit
        */
-      if(e.type == SDL_QUIT)
+      switch(e.type)
       {
-        quit = true;
+        case SDL_QUIT:
+          quit = true;
+          break;
+        case SDLK_ESCAPE:
+          quit = true;
+          break;
       }
-
     }
-
-    /*
-     * Centers the camera at the characteracter
-     */
-    camera.x = (character.getPosX() + character.getWidth()/2) - currentMode.w/2;
-    camera.y = (character.getPosY() + character.getHeight()/2) - currentMode.h/2;
-    
-    /*
-     * Clear screen
-     */
-    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-    SDL_RenderClear(renderer);
-
-    /*
-     * Render background
-     */
-    bgTexture.render(0, 0, &camera, renderer);
-
-    /*
-     * Render characteracter
-     */
-
-    characterTexture.render(character.getPosX() - camera.x, character.getPosY() - camera.y, NULL, renderer);
-
-    /*
-     * Update screen
-     */
-    SDL_RenderPresent(renderer);
   }
   
   return true;

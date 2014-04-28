@@ -43,7 +43,8 @@ class Texture
 
     int getWidth();
     int getHeight();
-
+    void setWidth(int width);
+    void setHeight(int height);
   private:
     /*
      * Actual hardware texture

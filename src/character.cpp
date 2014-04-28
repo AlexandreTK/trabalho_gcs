@@ -36,6 +36,16 @@ int Character::getPosY()
   return cPosY;
 }
 
+void Character::setPosX(int x)
+{
+  cPosX = x;
+}
+
+void Character::setPosY(int y)
+{
+  cPosY = y;
+}
+
 int Character::getWidth()
 {
   return cWidth;
