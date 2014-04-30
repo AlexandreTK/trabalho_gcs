@@ -1,5 +1,5 @@
 CC = clang++
-CFLAGS = -Wall -W -ansi -pedantic -Wno-unused-parameter -g -I. `sdl2-config --cflags --libs` -lSDL2_image
+CFLAGS = -Wall -W -ansi -pedantic -Wno-unused-parameter -g -I./include/ `sdl2-config --cflags --libs` -lSDL2_image
 
 SOURCE = src/main.cpp src/window.cpp src/character.cpp src/texture.cpp
 
