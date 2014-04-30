@@ -4,7 +4,7 @@
 class Window
 {
   public:
-    int OpenWindow();
+    bool openWindow();
 };
 
 #endif
