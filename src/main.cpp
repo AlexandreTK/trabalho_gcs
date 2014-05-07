@@ -1,63 +1,33 @@
-#include <iostream>
-#include "window.h"
-
-using std::cout;
-using std::endl;
-
-int init()
-{
-  cout << "Initialization" << endl;
-
-  return 1; 
-}
-
-bool levelFinished()
-{
-  cout << "Is the level over?" << endl;
-  return true;
-}
-
-int nextLevel()
-{
-  cout << "Next level" << endl;
-  return 0;
-}
-
-void shutdown()
-{
-  cout << "Shutdown" << endl;
-}
-
-void updateTimeStep() { }
-void input() { }
-void ia() { }
-void physics() { }
-void update() { }
-void draw() { }
+#include <cstdlib>
+#include "game.h"
 
 int main()
 {
-  int level = init();
-  Window window;
+  Game * game;
 
-  window.openWindow();
-  while(level > 0)
+  game = new Game();
+
+  game->init("Kays against the world", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
+
+  while(game->getLevel() > 0)
   {
     while(true)
     {
-      updateTimeStep();
-      input();
-      ia();
-      physics();
-      update();
-      draw();
-      if(levelFinished())
-        break;
+      game->updateTimeStep();
+      game->input();
+      game->ia();
+      game->physics();
+      game->update();
+      game->draw();
+      if(game->levelFinished())
+      {
+       break;
+      }
 
     }
-    level = nextLevel();
+    game->setLevel(game->nextLevel());
   }
 
-  shutdown();
+  game->shutdown();
   return 0;
 }
