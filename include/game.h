@@ -1,13 +1,15 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <SDL.h>
+
 class Game
 {
   public:
     Game();
     ~Game();
 
-    int init();
+    bool init(const char * title, int x, int y, int w, int h, int flags);
     bool levelFinished();
     int nextLevel();
     void shutdown();
@@ -22,6 +24,8 @@ class Game
 
   private:
     int level;
+    SDL_Window * window;
+    SDL_Renderer * renderer;
 };
 
 #endif

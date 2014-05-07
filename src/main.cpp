@@ -5,11 +5,9 @@ int main()
 {
   Game * game;
 
-  game = NULL;
+  game = new Game();
 
-  game = (Game *) malloc(sizeof(Game));
- 
-  game->setLevel(game->init());
+  game->init("Kays against the world", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
 
   while(game->getLevel() > 0)
   {
@@ -22,7 +20,9 @@ int main()
       game->update();
       game->draw();
       if(game->levelFinished())
-        break;
+      {
+       break;
+      }
 
     }
     game->setLevel(game->nextLevel());

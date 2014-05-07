@@ -1,4 +1,5 @@
 #include "game.h"
+#include <SDL.h>
 #include <iostream>
 
 using std::cout;
@@ -9,7 +10,8 @@ using std::endl;
  */
 Game::Game()
 {
-  this->level = 0;
+  this->level = 1;
+  atexit(SDL_Quit);
 }
 
 /*
@@ -22,11 +24,56 @@ Game::~Game()
 /*
  * Initialize game
  */
-int Game::init()
+bool Game::init(const char * title, int x, int y, int w, int h, int flags)
 {
   cout << "Initialization" << endl;
 
-  return 1;
+  /*
+   * Initialize SDL video module
+   */
+  if(SDL_Init(SDL_INIT_VIDEO) != 0)
+  {
+    cout << "SDL initialization failed: " <<  SDL_GetError() << endl;
+    return false;
+  }
+
+  cout << "SDL initialization successful." << endl;
+
+  /*
+   * Create SDL window
+   */
+  this->window = SDL_CreateWindow(title, x, y, w, h, flags);
+
+  /*
+   * Check if window was successfully created
+   * If it returns 0, then it failed
+   */
+  if(window == 0)
+  {
+    cout << "Window creation failed: " << SDL_GetError() << endl;
+    return false;
+  }
+
+  cout << "Window creation successful." << endl;
+
+  /*
+   * Create SDL renderer from window
+   */
+  this->renderer = SDL_CreateRenderer(window, -1, 0);
+
+  /*
+   * Check if renderer was successfully created
+   * If it returns 0, then it failed
+   */
+  if(renderer == 0)
+  {
+    cout << "Renderer creation failed: " << SDL_GetError() << endl;
+    return false;
+  }
+
+  cout << "Renderer creation successful." << endl;
+
+  return true;
 }
 
 /*
@@ -45,6 +92,8 @@ bool Game::levelFinished()
 int Game::nextLevel()
 {
   cout << "Next level?" << endl;
+
+  SDL_Delay(3000);
 
   return 0;
 }
@@ -97,6 +146,10 @@ void Game::update()
  */
 void Game::draw()
 {
+  /*
+   * Draw black background in renderer
+   */
+  SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
 }
 
 /*
