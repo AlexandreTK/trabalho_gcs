@@ -2,6 +2,7 @@
 #define TEXTUREMANAGER_H
 
 #include <string>
+#include <map>
 #include <SDL.h>
 
 using std::string;
