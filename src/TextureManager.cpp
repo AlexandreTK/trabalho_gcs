@@ -13,6 +13,10 @@ TextureManager::TextureManager()
  */
 TextureManager::~TextureManager()
 {
+  /*
+   * Clear textureMap content
+   */
+  this->textureMap.clear();
 }
 
 /*

@@ -9,6 +9,8 @@ int main()
 
   game->init("Kays Against The World", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
 
+  game->drawLogos();
+
   while(game->getRunning())
   {
     while(true)

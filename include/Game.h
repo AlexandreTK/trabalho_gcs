@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <SDL.h>
+#include "TextureManager.h"
 
 class Game
 {
@@ -19,6 +20,7 @@ class Game
     void physics();
     void event();
     void update();
+    void drawLogos();
     void draw();
     void setLevel(int inputLevel);
     int getLevel();
@@ -29,6 +31,8 @@ class Game
     SDL_Window * window;
     SDL_Renderer * renderer;
     bool running;
+    int currentFrame;
+    TextureManager textureManager;
 };
 
 #endif
