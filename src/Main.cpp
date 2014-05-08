@@ -1,5 +1,5 @@
 #include <cstdlib>
-#include "game.h"
+#include "Game.h"
 
 int main()
 {
@@ -7,9 +7,9 @@ int main()
 
   game = new Game();
 
-  game->init("Kays against the world", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
+  game->init("Kays Against The World", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
 
-  while(game->getLevel() > 0)
+  while(game->getRunning())
   {
     while(true)
     {
@@ -26,8 +26,10 @@ int main()
 
     }
     game->setLevel(game->nextLevel());
+
+    game->event();
   }
 
-  game->shutdown();
+  delete game;
   return 0;
 }

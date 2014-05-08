@@ -1,4 +1,4 @@
-#include "game.h"
+#include "Game.h"
 #include <SDL.h>
 #include <iostream>
 
@@ -11,6 +11,7 @@ using std::endl;
 Game::Game()
 {
   this->level = 1;
+  this->running = true;
   atexit(SDL_Quit);
 }
 
@@ -19,6 +20,21 @@ Game::Game()
  */
 Game::~Game()
 {
+  this->level = 0;
+  this->running = false;
+
+  cout << "Cleaning game..." << endl;
+
+  /*
+   * Deallocate window and renderer
+   */
+  SDL_DestroyWindow(this->window);
+  SDL_DestroyRenderer(this->renderer);
+
+  this->window = NULL;
+  this->renderer = NULL;
+
+  this->shutdown();
 }
 
 /*
@@ -93,8 +109,6 @@ int Game::nextLevel()
 {
   cout << "Next level?" << endl;
 
-  SDL_Delay(3000);
-
   return 0;
 }
 
@@ -138,7 +152,13 @@ void Game::physics()
  * Update the screen of the game
  */
 void Game::update()
-{
+{ 
+ /*
+  * Clear renderer to draw
+  * the rest of the animation
+  * spritesheets
+  */
+  SDL_RenderClear(renderer);
 }
 
 /*
@@ -146,10 +166,11 @@ void Game::update()
  */
 void Game::draw()
 {
+ 
   /*
-   * Draw black background in renderer
+   * Draw to the screen
    */
-  SDL_SetRenderDrawColor(this->renderer, 255, 255, 255, 255);
+  SDL_RenderPresent(renderer);
 }
 
 /*
@@ -166,4 +187,38 @@ void Game::setLevel(int inputLevel)
 int Game::getLevel()
 {
   return this->level;
+}
+
+/*
+ * Get game status
+ * Check if it's running or not
+ */
+bool Game::getRunning()
+{
+  return this->running;
+}
+
+/*
+ * Handle events
+ */
+void Game::event()
+{
+  SDL_Event event;
+
+  /*
+   * Check if any event happened
+   */
+  if(SDL_PollEvent(&event))
+  {
+    switch(event.type)
+    {
+      case SDL_QUIT:
+        cout << "Stoping running." << endl;
+        this->running = false;
+        break;
+
+      default:
+        break;
+    }
+  }
 }

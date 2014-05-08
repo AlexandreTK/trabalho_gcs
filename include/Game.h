@@ -17,15 +17,18 @@ class Game
     void input();
     void ia();
     void physics();
+    void event();
     void update();
     void draw();
     void setLevel(int inputLevel);
     int getLevel();
+    bool getRunning();
 
   private:
     int level;
     SDL_Window * window;
     SDL_Renderer * renderer;
+    bool running;
 };
 
 #endif
