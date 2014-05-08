@@ -95,6 +95,7 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
   textureManager.load("data/images/katw_logo-cloud.png", "logo-cloud", this->renderer);
   textureManager.load("data/images/katw_logo-library.png", "logo-library", this->renderer);
   textureManager.load("data/images/katw_logo-tools.png", "logo-tools", this->renderer);
+  textureManager.load("data/images/katw_logo-game.png", "logo-game", this->renderer);
 
   textureManager.load("data/images/katw_rock-ground.png", "floor", this->renderer);
   textureManager.load("data/images/katw_kays.png", "kays", this->renderer);
@@ -194,6 +195,10 @@ void Game::drawLogos()
   textureManager.draw("logo-tools", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
+  this->update();
+  textureManager.draw("logo-game", 0, 0, 800, 600, this->renderer);
+  SDL_RenderPresent(this->renderer);
+  SDL_Delay(3000);
 }
 
 /*
