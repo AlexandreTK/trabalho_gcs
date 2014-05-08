@@ -1,4 +1,5 @@
 #include "TextureManager.h"
+#include <SDL_image.h>
 
 /*
  * Constructor
@@ -96,9 +97,26 @@ void TextureManager::draw(string id, int x, int y, int w, int h, SDL_Renderer * 
    * Rendering src based on textureMap id
    * and whether or not it flips
    */
-  SDL_RenderCopyEx(renderer, this->textureMap[id], *srcRect, &destRect, 0, 0, flip);
+  SDL_RenderCopyEx(renderer, this->textureMap[id], &srcRect, &destRect, 0, 0, flip);
 }
 
 void TextureManager::drawFrame(string id, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer * renderer , SDL_RendererFlip flip)
 {
+  SDL_Rect srcRect;
+  SDL_Rect destRect;
+
+  /*
+   * Setting up source rect to
+   * move in the spritesheet
+   */
+  srcRect.x = w * currentFrame;
+  srcRect.y = h * (currentRow - 1);
+
+  srcRect.w = destRect.w = w;
+  srcRect.h = destRect.h = h;
+
+  destRect.x = x;
+  destRect.y = y;
+
+  SDL_RenderCopyEx(renderer, this->textureMap[id], &srcRect, &destRect, 0, 0, flip);
 }
