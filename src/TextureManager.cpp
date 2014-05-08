@@ -65,6 +65,38 @@ bool TextureManager::load(string fileName, string id, SDL_Renderer * renderer)
 
 void TextureManager::draw(string id, int x, int y, int w, int h, SDL_Renderer * renderer, SDL_RendererFlip flip)
 {
+  /*
+   * The Rects there are gonna be used
+   * to set up src and dest
+   */
+  SDL_Rect srcRect;
+  SDL_Rect destRect;
+
+  /*
+   * Initializing x and y
+   */
+  srcRect.x = 0;
+  srcRect.y = 0;
+
+  /*
+   * Setting width and height of rects
+   * with input values
+   */
+  srcRect.w = destRect.w = w;
+  srcRect.h = destRect.h = h;
+
+  /*
+   * Setting destination x and y
+   * from input values
+   */
+  destRect.x = x;
+  destRect.y = y;
+
+  /*
+   * Rendering src based on textureMap id
+   * and whether or not it flips
+   */
+  SDL_RenderCopyEx(renderer, this->textureMap[id], *srcRect, &destRect, 0, 0, flip);
 }
 
 void TextureManager::drawFrame(string id, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer * renderer , SDL_RendererFlip flip)
