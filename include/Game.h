@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include "TextureManager.h"
+#include "InputHandler.h"
 
 class Game
 {
@@ -33,6 +34,7 @@ class Game
     bool running;
     int currentFrame;
     TextureManager textureManager;
+    InputHandler * inputHandler;
 };
 
 #endif
