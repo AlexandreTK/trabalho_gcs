@@ -12,6 +12,7 @@ class TextureManager
 {
   public:
     ~TextureManager();
+
     static TextureManager * Instance()
     {
       if(!instance)
@@ -19,6 +20,7 @@ class TextureManager
     
       return instance;
     }   
+
     bool load(string fileName, string id, SDL_Renderer * renderer);
 
     void draw(string id, int x, int y, int w, int h, SDL_Renderer * renderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
