@@ -32,8 +32,6 @@ class Game
     SDL_Window * window;
     SDL_Renderer * renderer;
     bool running;
-    int currentFrame;
-    TextureManager textureManager;
     InputHandler * inputHandler;
 };
 

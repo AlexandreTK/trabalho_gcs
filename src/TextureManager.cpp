@@ -1,13 +1,7 @@
 #include "TextureManager.h"
 #include <SDL_image.h>
 
-/*
- * Constructor
- */
-TextureManager::TextureManager()
-{
-}
-
+TextureManager * TextureManager::instance = NULL;
 /*
  * Destructor
  */

@@ -1,5 +1,6 @@
 CC = clang++
-CFLAGS = -Wall -W -Wno-unused-parameter -ansi -pedantic -g -I./include/ -O2
+CFLAGS = -Wall -W -ansi -pedantic -g -I./include/ -O2 `sdl2-config --cflags`
+LIBS = `sdl2-config --libs`
 
 SDL_FLAGS = `sdl2-config --cflags --libs` -lSDL2_image
 
