@@ -1,4 +1,5 @@
 #include "GameObject.h"
+#include "TextureManager.h"
 
 /*
  * Load the object into the game
@@ -46,6 +47,7 @@ void GameObject::draw(SDL_Renderer * renderer)
  */
 void update()
 {
+  this->x += 1;
 }
 
 /*
