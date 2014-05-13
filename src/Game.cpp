@@ -92,18 +92,14 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
   /*
    * Load sprites used in the game
    */
-  textureManager.load("data/images/katw_logo-cloud.png", "logo-cloud", this->renderer);
-  textureManager.load("data/images/katw_logo-library.png", "logo-library", this->renderer);
-  textureManager.load("data/images/katw_logo-tools.png", "logo-tools", this->renderer);
-  textureManager.load("data/images/katw_logo-game.png", "logo-game", this->renderer);
 
-  textureManager.load("data/images/katw_rock-ground.png", "floor", this->renderer);
-  textureManager.load("data/images/katw_kays.png", "kays", this->renderer);
-  textureManager.load("data/images/katw_red-mage.png", "red-mage", this->renderer);
-  textureManager.load("data/images/katw_blue-mage.png", "blue-mage", this->renderer);
-  textureManager.load("data/images/katw_skeleton.png", "skeleton", this->renderer);
-  textureManager.load("data/images/katw_necromancer.png", "necromancer", this->renderer);
-  textureManager.load("data/images/katw_bg.png", "background", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_rock-ground.png", "floor", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_kays.png", "kays", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_red-mage.png", "red-mage", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_blue-mage.png", "blue-mage", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_skeleton.png", "skeleton", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_necromancer.png", "necromancer", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_bg.png", "background", this->renderer);
 
  
   return true;
@@ -180,23 +176,28 @@ void Game::update()
 
 void Game::drawLogos()
 {
- /*
-   * Display logo screen
+  TextureManager::Instance()->load("data/images/katw_logo-cloud.png", "logo-cloud", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_logo-library.png", "logo-library", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_logo-tools.png", "logo-tools", this->renderer);
+  TextureManager::Instance()->load("data/images/katw_logo-game.png", "logo-game", this->renderer);
+
+  /*
+   *  Display logo screen
    */
   this->update();
-  textureManager.draw("logo-cloud", 0, 0, 800, 600, this->renderer);
+  TextureManager::Instance()->draw("logo-cloud", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
   this->update();
-  textureManager.draw("logo-library", 0, 0, 800, 600, this->renderer);
+  TextureManager::Instance()->draw("logo-library", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
   this->update();
-  textureManager.draw("logo-tools", 0, 0, 800, 600, this->renderer);
+  TextureManager::Instance()->draw("logo-tools", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
   this->update();
-  textureManager.draw("logo-game", 0, 0, 800, 600, this->renderer);
+  TextureManager::Instance()->draw("logo-game", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(3000);
 }
@@ -209,19 +210,19 @@ void Game::draw()
   /*
    * Draw images to renderer
    */
-  this->textureManager.draw("background", 0, 0, 800, 600, this->renderer);
+  TextureManager::Instance()->draw("background", 0, 0, 800, 600, this->renderer);
 
-  this->textureManager.draw("floor", 0, 600-119, 800, 119, this->renderer);
+  TextureManager::Instance()->draw("floor", 0, 600-119, 800, 119, this->renderer);
 
-  this->textureManager.draw("kays", 10, 600-119-64, 64, 64, this->renderer);
+  TextureManager::Instance()->draw("kays", 10, 600-119-64, 64, 64, this->renderer);
   
-  this->textureManager.draw("blue-mage", 100, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
+  TextureManager::Instance()->draw("blue-mage", 100, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
 
-  this->textureManager.draw("red-mage", 650, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
+  TextureManager::Instance()->draw("red-mage", 650, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
 
-  this->textureManager.draw("skeleton", 500, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
+  TextureManager::Instance()->draw("skeleton", 500, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
 
-  this->textureManager.draw("necromancer", 700, 600-119-75, 64, 75, this->renderer, SDL_FLIP_HORIZONTAL);
+  TextureManager::Instance()->draw("necromancer", 700, 600-119-75, 64, 75, this->renderer, SDL_FLIP_HORIZONTAL);
 
   /*
    * Draw to the screen
