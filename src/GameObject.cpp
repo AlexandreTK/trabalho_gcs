@@ -34,6 +34,11 @@ void GameObject::load(int x, int y, int w, int h, string textureID)
  */
 void GameObject::draw(SDL_Renderer * renderer)
 {
+  /*
+   * Draw the frame using a TextureManager instance
+   */
+  TextureManager::Instance()->drawFrame(this->textureID, this->x, this->y, this->w, this->h,
+                          this->currentRow, this->currentFrame, renderer);
 }
 
 /*
