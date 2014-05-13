@@ -1,21 +1,32 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#include <iostream>
+#include <SDL.h>
+#include <string>
 
-using std::cout;
+using std::string;
 
 class GameObject
 {
   public:
 
-    void draw() { cout << "draw game object"; }
-    void update() { cout << "update game object"; }
-    void clean() { cout << "clean game object"; }
+    void load(int x, int y, int w, int h, string textureID);
+    void draw(SDL_Renderer * renderer);
+    void update();
+    void clean();
 
   protected:
+
+    string textureID;
+
+    int currentFrame;
+    int currentRow;
+
     int x;
     int y;
+
+    int w;
+    int h;
 };
 
 #endif
