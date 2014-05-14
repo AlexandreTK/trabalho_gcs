@@ -5,6 +5,8 @@ using std::cout;
 using std::endl;
 using std::vector;
 
+Game * Game::instance == NULL;
+
 /*
  * Constructor
  */
@@ -97,10 +99,10 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
    * Load sprites used in the game
    */
 
-  TextureManager::Instance()->load("data/images/katw_rock-ground.png", "floor", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_kays.png", "kays", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_blue-mage.png", "blue-mage", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_bg.png", "background", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_rock-ground.png", "floor", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_kays.png", "kays", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_blue-mage.png", "blue-mage", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_bg.png", "background", this->renderer);
 
 
   player = new Player();
@@ -184,31 +186,31 @@ void Game::update()
 
 void Game::drawLogos()
 {
-  TextureManager::Instance()->load("data/images/katw_logo-cloud.png", "logo-cloud", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_logo-library.png", "logo-library", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_logo-tools.png", "logo-tools", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_logo-game.png", "logo-game", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_logo-cloud.png", "logo-cloud", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_logo-library.png", "logo-library", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_logo-tools.png", "logo-tools", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_logo-game.png", "logo-game", this->renderer);
 
   /*
    *  Display logo screen
    */
   SDL_RenderClear(this->renderer);
-  TextureManager::Instance()->draw("logo-cloud", 0, 0, 800, 600, this->renderer);
+  TheTextureManager::Instance()->draw("logo-cloud", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
 
   SDL_RenderClear(this->renderer);
-  TextureManager::Instance()->draw("logo-library", 0, 0, 800, 600, this->renderer);
+  TheTextureManager::Instance()->draw("logo-library", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
 
   SDL_RenderClear(this->renderer);
-  TextureManager::Instance()->draw("logo-tools", 0, 0, 800, 600, this->renderer);
+  TheTextureManager::Instance()->draw("logo-tools", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
 
   SDL_RenderClear(this->renderer);
-  TextureManager::Instance()->draw("logo-game", 0, 0, 800, 600, this->renderer);
+  TheTextureManager::Instance()->draw("logo-game", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(3000);
 }
@@ -227,9 +229,9 @@ void Game::draw()
     gameObjects[i]->draw(this->renderer);
   }
 
-  TextureManager::Instance()->draw("background", 0, 0, 800, 600, this->renderer);
+  TheTextureManager::Instance()->draw("background", 0, 0, 800, 600, this->renderer);
 
-  TextureManager::Instance()->draw("floor", 0, 600-119, 800, 119, this->renderer);
+  TheTextureManager::Instance()->draw("floor", 0, 600-119, 800, 119, this->renderer);
   /*
    * Draw to the screen
    */

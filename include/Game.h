@@ -13,8 +13,15 @@
 class Game
 {
   public:
-    Game();
     ~Game();
+
+    static Game * Instance()
+    {
+      if(!instance)
+        instance == new Game();
+
+      return instance;
+    }
 
     bool init(const char * title, int x, int y, int w, int h, int flags);
     bool levelFinished();
@@ -31,8 +38,11 @@ class Game
     void setLevel(int inputLevel);
     int getLevel();
     bool getRunning();
+    SDL_Renderer * getRenderer() const { return renderer; }
 
   private:
+    Game() { }
+    static Game * instance;
     int level;
     SDL_Window * window;
     SDL_Renderer * renderer;

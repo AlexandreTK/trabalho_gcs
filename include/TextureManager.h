@@ -31,5 +31,6 @@ class TextureManager
     map<string, SDL_Texture *> textureMap;
     static TextureManager * instance;
 };
+typedef TextureManager TheTextureManager;
 
 #endif

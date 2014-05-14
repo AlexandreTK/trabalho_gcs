@@ -3,35 +3,30 @@
 
 int main()
 {
-  Game * game;
+  TheGame::Instance()->init("Kays Against The World", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
 
-  game = new Game();
+  TheGame::Instance()->drawLogos();
 
-  game->init("Kays Against The World", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
-
-  game->drawLogos();
-
-  while(game->getRunning())
+  while(TheGame::Instance()->getRunning())
   {
     while(true)
     {
-      game->updateTimeStep();
-      game->input();
-      game->ia();
-      game->physics();
-      game->update();
-      game->draw();
-      if(game->levelFinished())
+      TheGame::Instance()->updateTimeStep();
+      TheGame::Instance()->input();
+      TheGame::Instance()->ia();
+      TheGame::Instance()->physics();
+      TheGame::Instance()->update();
+      TheGame::Instance()->draw();
+      if(TheGame::Instance()->levelFinished())
       {
        break;
       }
 
     }
-    game->setLevel(game->nextLevel());
+    TheGame::Instance()->setLevel(game->nextLevel());
 
-    game->event();
+    TheGame::Instance()->event();
   }
 
-  delete game;
   return 0;
 }

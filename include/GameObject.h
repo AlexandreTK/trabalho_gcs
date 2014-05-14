@@ -1,8 +1,7 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#include <SDL.h>
-#include <string>
+#include "LoaderParams.h"
 
 using std::string;
 
