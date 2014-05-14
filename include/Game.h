@@ -3,9 +3,6 @@
 
 #include "TextureManager.h"
 #include "InputHandler.h"
-#include "GameObject.h"
-#include "Player.h"
-#include "Enemy.h"
 
 #include <SDL.h>
 #include <vector>
@@ -18,7 +15,7 @@ class Game
     static Game * Instance()
     {
       if(!instance)
-        instance == new Game();
+        instance = new Game();
 
       return instance;
     }
@@ -41,16 +38,19 @@ class Game
     SDL_Renderer * getRenderer() const { return renderer; }
 
   private:
-    Game() { }
+    Game()
+    { 
+      level = 1;
+      running = true;
+      atexit(SDL_Quit);
+    }
     static Game * instance;
     int level;
     SDL_Window * window;
     SDL_Renderer * renderer;
     bool running;
     InputHandler * inputHandler;
-    vector<GameObject *> gameObjects;
-    GameObject * player;
-    GameObject * enemy;
 };
+typedef Game TheGame;
 
 #endif

@@ -3,17 +3,17 @@
 /*
  * Implementation by inheritance of GameObject
  */
-void Player::load(int x, int y, int w, int h, string textureID)
+Player::Player(const LoaderParams * params):SDLGameObject(params)
 {
-  GameObject::load(x, y, w, h, textureID);
+
 }
 
 /*
  * Implementation by inheritance of GameObject
  */
-void Player::draw(SDL_Renderer * renderer)
+void Player::draw()
 {
-  GameObject::draw(renderer);
+  SDLGameObject::draw();
 }
 
 /*
@@ -22,9 +22,9 @@ void Player::draw(SDL_Renderer * renderer)
 void Player::update()
 {
   this->x -= 1;
+  this->currentFrame = int(((SDL_GetTicks() / 100) % 6));
 }
 
 void Player::clean()
 {
-  GameObject::clean();
 }

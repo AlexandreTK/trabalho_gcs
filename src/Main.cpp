@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include "Game.h"
 
 int main()
@@ -23,7 +22,7 @@ int main()
       }
 
     }
-    TheGame::Instance()->setLevel(game->nextLevel());
+    TheGame::Instance()->setLevel(TheGame::Instance()->nextLevel());
 
     TheGame::Instance()->event();
   }

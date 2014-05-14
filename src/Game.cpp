@@ -5,17 +5,7 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-Game * Game::instance == NULL;
-
-/*
- * Constructor
- */
-Game::Game()
-{
-  this->level = 1;
-  this->running = true;
-  atexit(SDL_Quit);
-}
+Game * Game::instance = NULL;
 
 /*
  * Destructor
@@ -98,22 +88,14 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
   /*
    * Load sprites used in the game
    */
-
   TheTextureManager::Instance()->load("data/images/katw_rock-ground.png", "floor", this->renderer);
   TheTextureManager::Instance()->load("data/images/katw_kays.png", "kays", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_red-mage.png", "red-mage", this->renderer);
   TheTextureManager::Instance()->load("data/images/katw_blue-mage.png", "blue-mage", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_skeleton.png", "skeleton", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_necromancer.png", "necromancer", this->renderer);
   TheTextureManager::Instance()->load("data/images/katw_bg.png", "background", this->renderer);
 
-
-  player = new Player();
-  enemy = new Enemy();
-
-  player->load(10, 600-119-64, 64, 64, "kays");
-  enemy->load(600, 600-119-64, 64, 64, "blue-mage");
-
-  gameObjects.push_back(player);
-  gameObjects.push_back(enemy);
- 
   return true;
 }
 
@@ -178,10 +160,6 @@ void Game::physics()
  */
 void Game::update()
 { 
-  for(vector<GameObject *>::size_type i = 0; i != gameObjects.size(); i++)
-  {
-    gameObjects[i]->update();
-  }
 }
 
 void Game::drawLogos()
@@ -221,17 +199,24 @@ void Game::drawLogos()
 void Game::draw()
 {
   SDL_RenderClear(this->renderer);
+
   /*
    * Draw images to renderer
    */
-  for(vector<GameObject *>::size_type i = 0; i != gameObjects.size(); i++)
-  {
-    gameObjects[i]->draw(this->renderer);
-  }
-
   TheTextureManager::Instance()->draw("background", 0, 0, 800, 600, this->renderer);
 
   TheTextureManager::Instance()->draw("floor", 0, 600-119, 800, 119, this->renderer);
+
+  TheTextureManager::Instance()->draw("kays", 10, 600-119-64, 64, 64, this->renderer);
+  
+  TheTextureManager::Instance()->draw("blue-mage", 100, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
+
+  TheTextureManager::Instance()->draw("red-mage", 650, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
+
+  TheTextureManager::Instance()->draw("skeleton", 500, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
+
+  TheTextureManager::Instance()->draw("necromancer", 700, 600-119-75, 64, 75, this->renderer, SDL_FLIP_HORIZONTAL);
+
   /*
    * Draw to the screen
    */
