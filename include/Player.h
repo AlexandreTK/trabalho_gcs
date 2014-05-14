@@ -3,6 +3,7 @@
 
 #include <string>
 #include <SDL.h>
+#include "GameObject.h"
 
 using std::string;
 

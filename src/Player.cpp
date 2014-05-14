@@ -13,7 +13,7 @@ void Player::load(int x, int y, int w, int h, string textureID)
  */
 void Player::draw(SDL_Renderer * renderer)
 {
-  GameObject::load(renderer);
+  GameObject::draw(renderer);
 }
 
 /*
