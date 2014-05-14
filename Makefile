@@ -9,9 +9,9 @@ MOD_DIR = mod
 
 .PHONY: clean Main.o Game.o TextureManager.o InputHandler.o mkdir_mod GameObject.o Player.o Enemy.o
 
-FULL_MODS = $(MOD_DIR)/Main.o $(MOD_DIR)/Game.o $(MOD_DIR)/TextureManager.o
+FULL_MODS = $(MOD_DIR)/Main.o $(MOD_DIR)/Game.o $(MOD_DIR)/TextureManager.o $(MOD_DIR)/InputHandler.o
 
-KATW:  Game.o Main.o TextureManager.o
+KATW:  Game.o Main.o TextureManager.o InputHandler.o
 	$(CC) -o $@ $(FULL_MODS) $(CFLAGS) $(SDL_FLAGS)
 
 Main.o: mkdir_mod $(SRC_DIR)/Main.cpp
