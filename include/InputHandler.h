@@ -5,10 +5,6 @@
 #include <SDL.h>
 
 using std::vector;
-
-/*
-*Creates the class to handdle the input.
-*/
 class InputHandler
 {
 public:
