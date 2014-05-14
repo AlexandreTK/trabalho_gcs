@@ -45,7 +45,7 @@ void GameObject::draw(SDL_Renderer * renderer)
 /*
  * Update the object into the game
  */
-void update()
+void GameObject::update()
 {
   this->x += 1;
 }
@@ -53,6 +53,6 @@ void update()
 /*
  * Clean object
  */
-void clean()
+void GameObject::clean()
 {
 }
