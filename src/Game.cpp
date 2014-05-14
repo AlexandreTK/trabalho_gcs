@@ -3,6 +3,7 @@
 
 using std::cout;
 using std::endl;
+using std::vector;
 
 /*
  * Constructor
@@ -29,7 +30,6 @@ Game::~Game()
    */
   SDL_DestroyWindow(this->window);
   SDL_DestroyRenderer(this->renderer);
-  InputHandler::Instance()->clean();
   this->window = NULL;
   this->renderer = NULL;
 
@@ -91,7 +91,6 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
   /*
    *Creates the Joystick instance.
    */
-  inputHandler = TheInputHandler::Instance();
    
   cout << "Loading sprites..." << endl;
   /*
@@ -100,12 +99,18 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
 
   TextureManager::Instance()->load("data/images/katw_rock-ground.png", "floor", this->renderer);
   TextureManager::Instance()->load("data/images/katw_kays.png", "kays", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_red-mage.png", "red-mage", this->renderer);
   TextureManager::Instance()->load("data/images/katw_blue-mage.png", "blue-mage", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_skeleton.png", "skeleton", this->renderer);
-  TextureManager::Instance()->load("data/images/katw_necromancer.png", "necromancer", this->renderer);
   TextureManager::Instance()->load("data/images/katw_bg.png", "background", this->renderer);
 
+
+  player = new Player();
+  enemy = new Enemy();
+
+  player->load(10, 600-119-64, 64, 64, "kays");
+  enemy->load(600, 600-119-64, 64, 64, "blue-mage");
+
+  gameObjects.push_back(player);
+  gameObjects.push_back(enemy);
  
   return true;
 }
@@ -150,7 +155,6 @@ void Game::updateTimeStep()
  */
 void Game::input()
 {
-  TheInputHandler::Instance()->initializeJoysticks();  
 }
 
 /*
@@ -172,12 +176,10 @@ void Game::physics()
  */
 void Game::update()
 { 
- /*
-  * Clear renderer to draw
-  * the rest of the animation
-  * spritesheets
-  */
-  SDL_RenderClear(renderer);
+  for(vector<GameObject *>::size_type i = 0; i != gameObjects.size(); i++)
+  {
+    gameObjects[i]->update();
+  }
 }
 
 void Game::drawLogos()
@@ -190,19 +192,22 @@ void Game::drawLogos()
   /*
    *  Display logo screen
    */
-  this->update();
+  SDL_RenderClear(this->renderer);
   TextureManager::Instance()->draw("logo-cloud", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
-  this->update();
+
+  SDL_RenderClear(this->renderer);
   TextureManager::Instance()->draw("logo-library", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
-  this->update();
+
+  SDL_RenderClear(this->renderer);
   TextureManager::Instance()->draw("logo-tools", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
-  this->update();
+
+  SDL_RenderClear(this->renderer);
   TextureManager::Instance()->draw("logo-game", 0, 0, 800, 600, this->renderer);
   SDL_RenderPresent(this->renderer);
   SDL_Delay(3000);
@@ -213,23 +218,18 @@ void Game::drawLogos()
  */
 void Game::draw()
 {
+  SDL_RenderClear(this->renderer);
   /*
    * Draw images to renderer
    */
+  for(vector<GameObject *>::size_type i = 0; i != gameObjects.size(); i++)
+  {
+    gameObjects[i]->draw(this->renderer);
+  }
+
   TextureManager::Instance()->draw("background", 0, 0, 800, 600, this->renderer);
 
   TextureManager::Instance()->draw("floor", 0, 600-119, 800, 119, this->renderer);
-
-  TextureManager::Instance()->draw("kays", 10, 600-119-64, 64, 64, this->renderer);
-  
-  TextureManager::Instance()->draw("blue-mage", 100, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
-
-  TextureManager::Instance()->draw("red-mage", 650, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
-
-  TextureManager::Instance()->draw("skeleton", 500, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
-
-  TextureManager::Instance()->draw("necromancer", 700, 600-119-75, 64, 75, this->renderer, SDL_FLIP_HORIZONTAL);
-
   /*
    * Draw to the screen
    */
@@ -266,5 +266,23 @@ bool Game::getRunning()
  */
 void Game::event()
 {
-  InputHandler::Instance()->update();    
+  SDL_Event event;
+
+  SDL_PollEvent(&event);
+
+  switch(event.type)
+  {
+    case SDL_QUIT:
+      this->running = false;
+      break;
+
+    case SDL_KEYDOWN:
+      switch(event.key.keysym.sym)
+      {
+        case SDLK_ESCAPE:
+          this->running = false;
+          break;
+      }
+      break;
+  }
 }

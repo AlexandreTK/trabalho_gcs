@@ -23,3 +23,8 @@ void Player::update()
 {
   this->x -= 1;
 }
+
+void Player::clean()
+{
+  GameObject::clean();
+}

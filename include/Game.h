@@ -1,9 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <SDL.h>
 #include "TextureManager.h"
 #include "InputHandler.h"
+#include "GameObject.h"
+#include "Player.h"
+#include "Enemy.h"
+
+#include <SDL.h>
+#include <vector>
 
 class Game
 {
@@ -33,6 +38,9 @@ class Game
     SDL_Renderer * renderer;
     bool running;
     InputHandler * inputHandler;
+    vector<GameObject *> gameObjects;
+    GameObject * player;
+    GameObject * enemy;
 };
 
 #endif

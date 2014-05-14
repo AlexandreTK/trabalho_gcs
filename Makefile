@@ -1,6 +1,5 @@
 CC = clang++
-CFLAGS = -Wall -W -ansi -pedantic -g -I./include/ -O2 `sdl2-config --cflags`
-LIBS = `sdl2-config --libs`
+CFLAGS = -Wall -W -ansi -pedantic -g -Iinclude/ -O2
 
 SDL_FLAGS = `sdl2-config --cflags --libs` -lSDL2_image
 
@@ -8,11 +7,11 @@ SRC_DIR = src
 
 MOD_DIR = mod
 
-.PHONY: clean Main.o Game.o TextureManager.o InputHandler.o mkdir_mod GameObject.o Player.o
+.PHONY: clean Main.o Game.o TextureManager.o InputHandler.o mkdir_mod GameObject.o Player.o Enemy.o
 
-FULL_MODS = $(MOD_DIR)/Main.o $(MOD_DIR)/Game.o $(MOD_DIR)/TextureManager.o $(MOD_DIR)/InputHandler.o $(MOD_DIR)/GameObject.o $(MOD_DIR)/Player.o
+FULL_MODS = $(MOD_DIR)/Main.o $(MOD_DIR)/Game.o $(MOD_DIR)/TextureManager.o $(MOD_DIR)/GameObject.o $(MOD_DIR)/Player.o $(MOD_DIR)/Enemy.o
 
-KATW: Game.o Main.o TextureManager.o InputHandler.o GameObject.o Player.o
+KATW:  Player.o Enemy.o Game.o Main.o TextureManager.o GameObject.o	
 	$(CC) -o $@ $(FULL_MODS) $(CFLAGS) $(SDL_FLAGS)
 
 Main.o: mkdir_mod $(SRC_DIR)/Main.cpp
@@ -32,6 +31,9 @@ GameObject.o: mkdir_mod $(SRC_DIR)/GameObject.cpp
 
 Player.o: mkdir_mod $(SRC_DIR)/Player.cpp
 	$(CC) -c $(SRC_DIR)/Player.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
+
+Enemy.o: mkdir_mod $(SRC_DIR)/Enemy.cpp
+	$(CC) -c $(SRC_DIR)/Enemy.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
 
 mkdir_mod:
 	@mkdir -p $(MOD_DIR)

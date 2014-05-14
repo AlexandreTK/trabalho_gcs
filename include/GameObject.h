@@ -10,23 +10,13 @@ class GameObject
 {
   public:
 
-    void load(int x, int y, int w, int h, string textureID);
-    void draw(SDL_Renderer * renderer);
-    void update();
-    void clean();
+    virtual void draw()=0;
+    virtual void update()=0;
+    virtual void clean()=0;
 
   protected:
-
-    string textureID;
-
-    int currentFrame;
-    int currentRow;
-
-    int x;
-    int y;
-
-    int w;
-    int h;
+    GameObject(const LoaderParams* params){}
+    virtual ~GameObject(){}
 };
 
 #endif

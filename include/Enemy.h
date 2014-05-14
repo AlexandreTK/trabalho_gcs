@@ -1,12 +1,11 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef ENEMY_H
+#define ENEMY_H
 
 #include "GameObject.h"
 
-class Player:public GameObject // inherit from GameObject
+class Enemy:public GameObject
 {
   public:
-
     void load(int x, int y, int w, int h, string textureID);
     void draw(SDL_Renderer * renderer);
     void update();
