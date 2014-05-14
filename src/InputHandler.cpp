@@ -47,7 +47,7 @@ InputHandler::InputHandler()
  {
  	if (numberJoysticks)
  	{
- 		for (unsigned int i = 0; i < SDL_NumJoysticks(); i++)
+ 		for (int i = 0; i < SDL_NumJoysticks(); i++)
  		{
  			SDL_JoystickClose(joysticks[i]);
  		}
@@ -56,12 +56,12 @@ InputHandler::InputHandler()
 
 void InputHandler::update()
 {
-	SDL_Event event;
+	/*SDL_Event event;
 	while(SDL_PollEvent(&event))
 	{
 		if (event.type == SDL_QUIT)
 		{
-			Game::Instance()->quit();
+			//Game::Instance()->quit();
 		}
-	}
+	}*/
 } 

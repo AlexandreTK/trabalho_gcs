@@ -267,22 +267,21 @@ bool Game::getRunning()
 void Game::event()
 {
   SDL_Event event;
-
-  SDL_PollEvent(&event);
-
-  switch(event.type)
+  /*
+   * Check if any event happened
+   */
+  if(SDL_PollEvent(&event))
   {
-    case SDL_QUIT:
-      this->running = false;
-      break;
+    switch(event.key.keysym.sym)
+    {
+      case SDLK_ESCAPE:
+        event.type = SDL_QUIT;
+        cout << "Stopping application." << endl;
+        this->running = false;
+        break;
 
-    case SDL_KEYDOWN:
-      switch(event.key.keysym.sym)
-      {
-        case SDLK_ESCAPE:
-          this->running = false;
-          break;
-      }
-      break;
+      default:
+        break;
+    }
   }
 }
