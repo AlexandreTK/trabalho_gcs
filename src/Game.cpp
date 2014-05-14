@@ -24,6 +24,7 @@ Game::~Game()
   SDL_DestroyRenderer(this->renderer);
   this->window = NULL;
   this->renderer = NULL;
+  TheInputHandler::Instance()->clean();
 
   this->shutdown();
 }
@@ -83,7 +84,7 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
   /*
    *Creates the Joystick instance.
    */
-   
+   TheInputHandler::Instance()->initializeJoysticks();
   cout << "Loading sprites..." << endl;
   /*
    * Load sprites used in the game
@@ -253,22 +254,5 @@ bool Game::getRunning()
  */
 void Game::event()
 {
-  SDL_Event event;
-  /*
-   * Check if any event happened
-   */
-  if(SDL_PollEvent(&event))
-  {
-    switch(event.key.keysym.sym)
-    {
-      case SDLK_ESCAPE:
-        event.type = SDL_QUIT;
-        cout << "Stopping application." << endl;
-        this->running = false;
-        break;
-
-      default:
-        break;
-    }
-  }
+  TheInputHandler::Instance()->update();
 }
