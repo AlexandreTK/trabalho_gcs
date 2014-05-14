@@ -8,11 +8,11 @@ SRC_DIR = src
 
 MOD_DIR = mod
 
-.PHONY: clean Main.o Game.o TextureManager.o InputHandler.o mkdir_mod
+.PHONY: clean Main.o Game.o TextureManager.o InputHandler.o mkdir_mod GameObject.o Player.o
 
-FULL_MODS = $(MOD_DIR)/Main.o $(MOD_DIR)/Game.o $(MOD_DIR)/TextureManager.o $(MOD_DIR)/InputHandler.o
+FULL_MODS = $(MOD_DIR)/Main.o $(MOD_DIR)/Game.o $(MOD_DIR)/TextureManager.o $(MOD_DIR)/InputHandler.o $(MOD_DIR)/GameObject.o $(MOD_DIR)/Player.o
 
-KATW: Game.o Main.o TextureManager.o InputHandler.o
+KATW: Game.o Main.o TextureManager.o InputHandler.o GameObject.o Player.o
 	$(CC) -o $@ $(FULL_MODS) $(CFLAGS) $(SDL_FLAGS)
 
 Main.o: mkdir_mod $(SRC_DIR)/Main.cpp
@@ -26,6 +26,12 @@ TextureManager.o: mkdir_mod $(SRC_DIR)/TextureManager.cpp
 	
 InputHandler.o: mkdir_mod $(SRC_DIR)/InputHandler.cpp
 	$(CC) -c $(SRC_DIR)/InputHandler.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
+
+GameObject.o: mkdir_mod $(SRC_DIR)/GameObject.cpp
+	$(CC) -c $(SRC_DIR)/GameObject.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
+
+Player.o: mkdir_mod $(SRC_DIR)/Player.cpp
+	$(CC) -c $(SRC_DIR)/Player.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
 
 mkdir_mod:
 	@mkdir -p $(MOD_DIR)

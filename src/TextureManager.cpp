@@ -1,7 +1,12 @@
 #include "TextureManager.h"
 #include <SDL_image.h>
 
+/*
+ * Initializing the instance
+ * So it can work as a singleton
+ */
 TextureManager * TextureManager::instance = NULL;
+
 /*
  * Destructor
  */
