@@ -21,6 +21,7 @@ public:
 
 	void update();
 	void clean();
+	void initializeJoysticks();
 	bool joysticksInitialized () {
 		return numberJoysticks;
 	}
@@ -31,7 +32,7 @@ private:
 
 	vector<SDL_Joystick*> joysticks;
 	bool numberJoysticks;
-	void initializeJoysticks();
+	
 
 	static InputHandler* inputInstance;
 };

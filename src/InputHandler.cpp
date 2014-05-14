@@ -56,12 +56,12 @@ InputHandler::InputHandler()
 
 void InputHandler::update()
 {
-	/*SDL_Event event;
+	SDL_Event event;
 	while(SDL_PollEvent(&event))
 	{
 		if (event.type == SDL_QUIT)
 		{
-			//Game::Instance()->quit();
+			TheGame::Instance()->quit();
 		}
-	}*/
+	}
 } 
