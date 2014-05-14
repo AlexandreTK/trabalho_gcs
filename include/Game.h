@@ -32,7 +32,6 @@ class Game
     SDL_Window * window;
     SDL_Renderer * renderer;
     bool running;
-    InputHandler * inputHandler;
 };
 
 #endif
