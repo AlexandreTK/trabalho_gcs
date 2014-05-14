@@ -47,7 +47,7 @@ InputHandler::InputHandler()
  {
  	if (numberJoysticks)
  	{
- 		for (unsigned int i = 0; i < SDL_NumJoysticks(); i++)
+ 		for (int i = 0; i < SDL_NumJoysticks(); i++)
  		{
  			SDL_JoystickClose(joysticks[i]);
  		}
