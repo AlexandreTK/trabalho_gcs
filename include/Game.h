@@ -3,9 +3,12 @@
 
 #include "TextureManager.h"
 #include "InputHandler.h"
+#include "GameObject.h"
 
 #include <SDL.h>
 #include <vector>
+
+using std::vector;
 
 class Game
 {
@@ -50,6 +53,7 @@ class Game
     SDL_Renderer * renderer;
     bool running;
     InputHandler * inputHandler;
+    vector<GameObject *> gameObjects;
 };
 typedef Game TheGame;
 
