@@ -86,6 +86,19 @@ void InputHandler::update()
 			}
 
 			//left stick move up or down.
+			if (event.jaxis.value == 1)
+			{
+				if (event.jaxis.value > joystickDeadZone)
+				{
+					joystickValues[whichOne].first->setY(1);
+				}else if (event.jaxis.value < -joystickDeadZone)
+				{
+					joystickValues[whichOne].first->setY(-1);
+				}else
+				{
+					joystickValues[whichOne].first->setY(0);
+				}
+			}
 		}
 	}
 } 
