@@ -64,7 +64,7 @@ void InputHandler::update()
 	{
 		if (event.type == SDL_QUIT)
 		{
-			TheGame::Instance()->~Game();
+			//TheGame::Instance()->~Game();
 		}
 
 		if (event.type == SDL_JOYAXISMOTION)
@@ -90,7 +90,7 @@ void InputHandler::update()
 	}
 } 
 
-void InputHandler::xvalue(int joy, int stick)
+void InputHandler::xValue(int joy, int stick)
 {
 	if (joystickValues.size() > 0)
 	{
@@ -106,7 +106,7 @@ void InputHandler::xvalue(int joy, int stick)
 return 0;
 }
 
-int InputHandler::yvalue(int joy, int stick)
+int InputHandler::yValue(int joy, int stick)
 {
 	if (joystickValues.size() > 0)
 	{
