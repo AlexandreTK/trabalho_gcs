@@ -3,8 +3,11 @@
 
 #include <vector>
 #include <SDL.h>
+#include "Vector2D.h"
 
 using std::vector;
+using std::pair;
+
 class InputHandler
 {
 public:
@@ -32,7 +35,9 @@ private:
 
 	vector<SDL_Joystick*> joysticks;
 	bool numberJoysticks;
-	
+	vector<pair<Vector2D*, Vector2D*> > joystickValues;	
+	int xvalue(int joy, int stick);
+	int yvalue (int joy, int stick);
 
 	static InputHandler* inputInstance;
 };
