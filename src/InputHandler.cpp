@@ -103,7 +103,7 @@ void InputHandler::update()
 	}
 } 
 
-void InputHandler::xValue(int joy, int stick)
+int InputHandler::xValue(int joy, int stick)
 {
 	if (joystickValues.size() > 0)
 	{
