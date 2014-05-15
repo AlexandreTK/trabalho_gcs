@@ -254,5 +254,24 @@ bool Game::getRunning()
  */
 void Game::event()
 {
+  SDL_Event event;
+
+  /*
+   * Check if any event happened
+   */
+  if(SDL_PollEvent(&event))
+  {
+    switch(event.type)
+    {
+      case SDL_QUIT:
+        cout << "Stoping running." << endl;
+        this->running = false;
+        break;
+
+      default:
+        break;
+    }
+  }
+
   TheInputHandler::Instance()->update();
 }
