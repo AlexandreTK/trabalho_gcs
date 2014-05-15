@@ -29,6 +29,6 @@ class LoaderParams
 
     string m_textureID;
 
-}
+};
 
 #endif
