@@ -36,7 +36,7 @@ private:
 	vector<SDL_Joystick*> joysticks;
 	bool numberJoysticks;
 	vector<pair<Vector2D*, Vector2D*> > joystickValues;	
-	int xValue(int joy, int stick);
+	int xValue (int joy, int stick);
 	int yValue (int joy, int stick);
 
 	static InputHandler* inputInstance;
