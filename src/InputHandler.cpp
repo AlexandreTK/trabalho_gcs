@@ -1,9 +1,11 @@
 #include "InputHandler.h"
 #include <vector>
 #include <iostream>
+#include "Game.h"
 
 using std::cout;
 using std::endl;
+using std::make_pair;
 
 InputHandler::InputHandler()
 {
@@ -26,6 +28,7 @@ InputHandler::InputHandler()
  			if (joy)
  			{
  				joysticks.push_back(joy);
+ 				joystickValues.push_back(make_pair(new Vector2D(0,0), new Vector2D(0,0)));//Adds a pair
  			}
  			else
  			{
@@ -61,7 +64,61 @@ void InputHandler::update()
 	{
 		if (event.type == SDL_QUIT)
 		{
-			TheGame::Instance()->quit();
+			TheGame::Instance()->~Game();
+		}
+
+		if (event.type == SDL_JOYAXISMOTION)
+		{
+			int whichOne = event.jaxis.which;
+			//left stick move left or right
+			if (event.jaxis.value == 0)
+			{
+				if (event.jaxis.value > joystickDeadZone)
+				{
+					joystickValues[whichOne].first->setX(1);
+				}else if (event.jaxis.value < -joystickDeadZone)
+				{
+					joystickValues[whichOne].first->setX(-1);
+				}else
+				{
+					joystickValues[whichOne].first->setX(0);
+				}
+			}
+
+			//left stick move up or down.
 		}
 	}
 } 
+
+void InputHandler::xvalue(int joy, int stick)
+{
+	if (joystickValues.size() > 0)
+	{
+		if (stick == 1)
+		{
+			return joystickValues[joy].first->getX();
+		}
+		else if (stick == 2)
+		{
+			return joystickValues[joy].second->getX();
+		}
+	}
+return 0;
+}
+
+int InputHandler::yvalue(int joy, int stick)
+{
+	if (joystickValues.size() > 0)
+	{
+		if (stick == 1)
+		{
+			return joystickValues[joy].first->getY();
+		}
+		else if (stick == 2)
+		{
+			return joystickValues[joy].second->getY();
+		}
+	}
+return 0;	
+}
+
