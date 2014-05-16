@@ -11,7 +11,7 @@ MOD_DIR = mod
 
 FULL_MODS = $(MOD_DIR)/Main.o $(MOD_DIR)/Game.o $(MOD_DIR)/TextureManager.o $(MOD_DIR)/InputHandler.o
 
-KATW:  Game.o Main.o TextureManager.o InputHandler.o
+KATW:  Game.o Main.o TextureManager.o InputHandler.o Player.o Enemy.o
 	$(CC) -o $@ $(FULL_MODS) $(CFLAGS) $(SDL_FLAGS)
 
 Main.o: mkdir_mod $(SRC_DIR)/Main.cpp
