@@ -39,7 +39,7 @@ class Game
     int getLevel();
     bool getRunning();
     SDL_Renderer * getRenderer() const { return renderer; }
-
+    void finishGame();
   private:
     Game()
     { 
