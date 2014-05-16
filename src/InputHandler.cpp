@@ -64,7 +64,7 @@ void InputHandler::update()
 	{
 		if (event.type == SDL_QUIT)
 		{
-			//TheGame::Instance()->~Game();
+			//TheGame::Instance()->running = false;
 		}
 
 		if (event.type == SDL_JOYAXISMOTION)
@@ -97,6 +97,36 @@ void InputHandler::update()
 				}else
 				{
 					joystickValues[whichOne].first->setY(0);
+				}
+			}
+
+			//Right stick move left or right
+			if (event.jaxis.value == 3)
+			{
+				if (event.jaxis.value > joystickDeadZone)
+				{
+					joystickValues[whichOne].second->setX(1);
+				}else if (event.jaxis.value < -joystickDeadZone)
+				{
+					joystickValues[whichOne].second->setX(-1);
+				}else
+				{
+					joystickValues[whichOne].second->setX(0);
+				}
+			}
+
+			//Right stick move left or right
+			if (event.jaxis.value == 4)
+			{
+				if (event.jaxis.value > joystickDeadZone)
+				{
+					joystickValues[whichOne].second->setY(1);
+				}else if (event.jaxis.value < -joystickDeadZone)
+				{
+					joystickValues[whichOne].second->setY(-1);
+				}else
+				{
+					joystickValues[whichOne].second->setY(0);
 				}
 			}
 		}
