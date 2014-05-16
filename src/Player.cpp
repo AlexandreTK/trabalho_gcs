@@ -30,13 +30,15 @@ void Player::update()
 
 	m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
 
+	m_acceleration.setX(1);
+
 	SDLGameObject::update();
 }
 
 void Player::clean()
 {
 }
-
+//Sets the input of the player via the velocity.
 void Player::handleInput()
 {
 	if (TheInputHandler::Instance()->joysticksInitialized())
@@ -60,5 +62,30 @@ void Player::handleInput()
 		{
 			m_velocity.setY(1 * TheInputHandler::Instance()->yValue(0,2));
 		}
+
+		if (TheInputHandler::Instance()->getButtonState(0, 3))
+		{
+			m_velocity.setX(1);
+		}
+	}
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	{
+		m_velocity.setX(2);
+	}
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT))
+	{
+		m_velocity.setX(-2);
+	}
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP))
+	{
+		m_velocity.setY(-2);
+	}
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))
+	{
+		m_velocity.setY(2);
 	}
 }

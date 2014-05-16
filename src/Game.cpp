@@ -152,6 +152,15 @@ void Game::updateTimeStep()
  */
 void Game::input()
 {
+
+  SDL_Event event;
+  /*
+   * Check if any event happened
+   */
+  while(SDL_PollEvent(&event))
+  {
+    TheInputHandler::Instance()->handle(event);    
+  }
 }
 
 /*
@@ -271,24 +280,11 @@ bool Game::getRunning()
  */
 void Game::event()
 {
-  SDL_Event event;
 
-  /*
-   * Check if any event happened
-   */
-  if(SDL_PollEvent(&event))
-  {
-    switch(event.type)
-    {
-      case SDL_QUIT:
-        cout << "Stoping running." << endl;
-        this->running = false;
-        break;
 
-      default:
-        break;
-    }
-  }
+}
 
-  TheInputHandler::Instance()->update();
+void Game::finishGame()
+{
+  running = false;
 }
