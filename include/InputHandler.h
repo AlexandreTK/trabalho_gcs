@@ -38,6 +38,7 @@ private:
 	vector<pair<Vector2D*, Vector2D*> > joystickValues;	
 	int xValue (int joy, int stick);
 	int yValue (int joy, int stick);
+	const int joystickDeadZone = 10000;
 
 	static InputHandler* inputInstance;
 };
