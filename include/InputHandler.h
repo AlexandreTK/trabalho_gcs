@@ -10,6 +10,7 @@ using std::pair;
 
 class InputHandler
 {
+	static InputHandler* inputInstance;
 public:
 	
 	static InputHandler* Instance ()
@@ -22,25 +23,46 @@ public:
 		return inputInstance;
 	}
 
-	void update();
+	void handle(SDL_Event &event);
 	void clean();
 	void initializeJoysticks();
 	bool joysticksInitialized () {
 		return numberJoysticks;
 	}
+	bool getButtonState(int joy, int buttonNumber)
+	{
+		return buttonStates[joy] [buttonNumber];
+	}
+	bool isKeyDown(SDL_Scancode key);
 
 private:
 	InputHandler();
 	~InputHandler(){}
 
 	vector<SDL_Joystick*> joysticks;
-	bool numberJoysticks;
 	vector<pair<Vector2D*, Vector2D*> > joystickValues;	
+	vector< vector<bool> > buttonStates;
+
+	bool numberJoysticks;
+
 	int xValue (int joy, int stick);
 	int yValue (int joy, int stick);
-	const int joystickDeadZone = 10000;
+	int buttonNumber;
 
-	static InputHandler* inputInstance;
+	Uint8* keystate;
+
+	static const int joystickDeadZone = 10000;
+
+	// private functions to handle different event types
+	// handle keyboard events
+	void onKeyDown(SDL_Event &event);
+	void onKeyUp(SDL_Event &event);
+	
+	// handle joysticks events
+	void onJoystickAxisMove(SDL_Event& event);
+	void onJoystickButtonDown(SDL_Event& event);
+	void onJoystickButtonUp(SDL_Event& event);
+
 };
 typedef InputHandler TheInputHandler;
 
