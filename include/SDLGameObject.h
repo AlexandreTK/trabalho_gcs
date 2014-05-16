@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include "LoaderParams.h"
 #include <string>
+#include "Vector2D.h"
 
 using std::string;
 
@@ -27,6 +28,9 @@ class SDLGameObject : public GameObject
     int currentFrame;
 
     string textureID;
+
+    Vector2D m_velocity;
+    Vector2D m_acceleration;
 };
 
 #endif

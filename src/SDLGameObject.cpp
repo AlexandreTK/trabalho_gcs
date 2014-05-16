@@ -1,8 +1,9 @@
 #include "SDLGameObject.h"
 #include "TextureManager.h"
 #include "Game.h"
+#include "Vector2D.h"
 
-SDLGameObject::SDLGameObject(const LoaderParams * params):GameObject(params)
+SDLGameObject::SDLGameObject(const LoaderParams * params):GameObject(params) :GameObject(params), m_position(params->getX(), params->getY()), m_velocity(0,0)
 {
   this->x = params->getX();
   this->y = params->getY();
@@ -19,4 +20,11 @@ SDLGameObject::SDLGameObject(const LoaderParams * params):GameObject(params)
 void SDLGameObject::draw()
 {
   TextureManager::Instance->drawFrame(this->textureID, this->x, this->y, this->w, this->h, this->currentRow, this->currentFrame, TheGame::Instance()->getRenderer());
+}
+
+void SDLGameObject::update()
+{
+
+	m_velocity += m_acceleration;
+	m_position += m_velocity;
 }
