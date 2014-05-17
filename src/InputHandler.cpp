@@ -179,7 +179,7 @@ void InputHandler::handle(SDL_Event &event)
 	switch(event.type)
 		{
 			case SDL_QUIT:
-				//TheGame::Instance()->running = false;
+				TheGame::Instance()->finishGame();
 				break;
 
 			case SDL_JOYAXISMOTION:
