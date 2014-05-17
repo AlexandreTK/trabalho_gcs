@@ -16,21 +16,27 @@ class SDLGameObject : public GameObject
     virtual void draw();
     virtual void update();
     virtual void clean();
+  protected:
+    Vector2D m_velocity;
+    Vector2D m_acceleration;
+    int currentFrame;
+    Vector2D m_position;
 
+<<<<<<< HEAD
   protected:
     int x;
     int y;
+=======
+  private:
+>>>>>>> 1ebb34d9d33b87a0042350431ffafc54bc9068b1
 
     int w;
     int h;
 
     int currentRow;
-    int currentFrame;
 
     string textureID;
 
-    Vector2D m_velocity;
-    Vector2D m_acceleration;
 };
 
 #endif

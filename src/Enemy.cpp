@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include <SDL.h>
 
 Enemy::Enemy(const LoaderParams * params):SDLGameObject(params)
 {
@@ -12,8 +13,8 @@ void Enemy::draw()
 
 void Enemy::update()
 {
-  this->y += 1;
-  this->x += 1;
+  m_position.setX(m_position.getX() + 1);
+  m_position.setY(m_position.getY() + 1);
   this->currentFrame = int(((SDL_GetTicks() / 100) % 6));
 }
 

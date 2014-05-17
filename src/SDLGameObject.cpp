@@ -19,7 +19,7 @@ SDLGameObject::SDLGameObject(const LoaderParams * params):GameObject(params) :Ga
 
 void SDLGameObject::draw()
 {
-  TextureManager::Instance->drawFrame(this->textureID, this->x, this->y, this->w, this->h, this->currentRow, this->currentFrame, TheGame::Instance()->getRenderer());
+  TextureManager::Instance->drawFrame(this->textureID,(int) m_position.getX(), (int) m_position.getY(), this->w, this->h, this->currentRow, this->currentFrame, TheGame::Instance()->getRenderer());
 }
 
 void SDLGameObject::update()
