@@ -1,5 +1,7 @@
 #include "Player.h"
+#include <iostream>
 
+using std::cout;
 /*
  * Implementation by inheritance of GameObject
  */
@@ -82,6 +84,7 @@ void Player::handleInput()
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP))
 	{
 		m_velocity.setY(-2);
+
 	}
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))

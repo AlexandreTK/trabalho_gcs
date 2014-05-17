@@ -56,6 +56,7 @@ private:
 	static const int joystickDeadZone = 10000;
 
 	// private functions to handle different event types
+	
 	// handle keyboard events
 	void onKeyDown(SDL_Event &event);
 	void onKeyUp(SDL_Event &event);
