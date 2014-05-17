@@ -23,7 +23,7 @@ public:
 		return inputInstance;
 	}
 
-	void handle(SDL_Event &event, SDL_Scancode &key);
+	void handle(SDL_Event &event);
 	void clean();
 	void initializeJoysticks();
 	bool joysticksInitialized () {
@@ -33,7 +33,7 @@ public:
 	{
 		return buttonStates[joy] [buttonNumber];
 	}
-	bool isKeyDown(SDL_Scancode &key);
+	bool isKeyDown(SDL_Scancode key);
 
 	int xValue (int joy, int stick);
 	int yValue (int joy, int stick);

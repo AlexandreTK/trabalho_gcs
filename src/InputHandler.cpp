@@ -174,7 +174,7 @@ void InputHandler::onKeyUp(SDL_Event &)
 
 }
 
-bool InputHandler::isKeyDown(SDL_Scancode &key)
+bool InputHandler::isKeyDown(SDL_Scancode key)
 {
 	if (keystate != 0)
 	{
@@ -190,7 +190,7 @@ bool InputHandler::isKeyDown(SDL_Scancode &key)
 return false;
 }
 
-void InputHandler::handle(SDL_Event &event, SDL_Scancode &key)
+void InputHandler::handle(SDL_Event &event)
 {
 	switch(event.type)
 		{
@@ -212,7 +212,6 @@ void InputHandler::handle(SDL_Event &event, SDL_Scancode &key)
 
 			case SDL_KEYDOWN:
 				onKeyDown(event);
-				isKeyDown(key);
 				break;
 
 			case SDL_KEYUP:

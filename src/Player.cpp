@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+#include "InputHandler.h"
 
 using std::cout;
 /*
@@ -32,7 +33,7 @@ void Player::update()
 
 	currentFrame = int(((SDL_GetTicks() / 100) % 4));
 
-	m_acceleration.setX(0.3);
+	m_acceleration.setX(0);
 
 	SDLGameObject::update();
 }
@@ -52,7 +53,7 @@ void Player::handleInput()
 
 		if (TheInputHandler::Instance()->yValue(0, 1) > 0 || TheInputHandler::Instance()->yValue(0, 1) < 0)
 		{
-			m_velocity.setY(1 * TheInputHandler::Instance()->yValue(0,1));
+			m_velocity.setY(1 * TheInputHandler::Instance()->yValue(0,2));
 		}
 
 		if (TheInputHandler::Instance()->xValue(0, 2) > 0 || TheInputHandler::Instance()->xValue(0, 2) < 0)
@@ -68,6 +69,11 @@ void Player::handleInput()
 		if (TheInputHandler::Instance()->getButtonState(0, 3))
 		{
 			m_velocity.setX(1);
+		}
+
+		if (TheInputHandler::Instance()->getButtonState(0, 2))
+		{
+			m_velocity.setX(-1);
 		}
 	}
 
