@@ -174,7 +174,23 @@ void InputHandler::onKeyUp(SDL_Event &)
 
 }
 
-void InputHandler::handle(SDL_Event &event)
+bool InputHandler::isKeyDown(SDL_Scancode &key)
+{
+	if (keystate != 0)
+	{
+		if (keystate[key] == 1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+return false;
+}
+
+void InputHandler::handle(SDL_Event &event, SDL_Scancode &key)
 {
 	switch(event.type)
 		{
@@ -196,6 +212,7 @@ void InputHandler::handle(SDL_Event &event)
 
 			case SDL_KEYDOWN:
 				onKeyDown(event);
+				isKeyDown(key);
 				break;
 
 			case SDL_KEYUP:
@@ -239,18 +256,3 @@ int InputHandler::yValue(int joy, int stick)
 return 0;	
 }
 
-bool InputHandler::isKeyDown(SDL_Scancode key)
-{
-	if (keystate != 0)
-	{
-		if (keystate[key] == 1)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-return false;
-}
