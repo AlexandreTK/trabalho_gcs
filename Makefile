@@ -1,43 +1,26 @@
 CC = clang++
 CFLAGS = -Wall -W -ansi -pedantic -g -Iinclude/ -O2
-
-SDL_FLAGS = `sdl2-config --cflags --libs` -lSDL2_image
+SDL_FLAGS = `sdl2-config --cflags`
+SDL_LIBS = `sdl2-config --libs` -lSDL2_image
 
 SRC_DIR = src
+OBJ_DIR = obj
 
-MOD_DIR = mod
+SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+OBJS = $(addsuffix .o, $(addprefix $(OBJ_DIR)/, $(basename $(notdir $(SOURCES)))))
 
-.PHONY: clean Main.o Game.o TextureManager.o InputHandler.o mkdir_mod GameObject.o Player.o Enemy.o
+.PHONY: clean mkdir_mod
 
-FULL_MODS = $(MOD_DIR)/Main.o $(MOD_DIR)/Game.o $(MOD_DIR)/TextureManager.o $(MOD_DIR)/InputHandler.o
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CC) -c -o $@ $< $(CFLAGS) $(SDL_FLAGS)
 
-KATW:  Game.o Main.o TextureManager.o InputHandler.o Player.o Enemy.o
-	$(CC) -o $@ $(FULL_MODS) $(CFLAGS) $(SDL_FLAGS)
+all: 
+	@mkdir -p $(OBJ_DIR)
+	@make KATW
 
-Main.o: mkdir_mod $(SRC_DIR)/Main.cpp
-	$(CC) -c $(SRC_DIR)/Main.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
-
-Game.o: mkdir_mod $(SRC_DIR)/Game.cpp
-	$(CC) -c $(SRC_DIR)/Game.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
-
-TextureManager.o: mkdir_mod $(SRC_DIR)/TextureManager.cpp
-	$(CC) -c $(SRC_DIR)/TextureManager.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
-	
-InputHandler.o: mkdir_mod $(SRC_DIR)/InputHandler.cpp
-	$(CC) -c $(SRC_DIR)/InputHandler.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
-
-GameObject.o: mkdir_mod $(SRC_DIR)/GameObject.cpp
-	$(CC) -c $(SRC_DIR)/GameObject.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
-
-Player.o: mkdir_mod $(SRC_DIR)/Player.cpp
-	$(CC) -c $(SRC_DIR)/Player.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
-
-Enemy.o: mkdir_mod $(SRC_DIR)/Enemy.cpp
-	$(CC) -c $(SRC_DIR)/Enemy.cpp $(CFLAGS) $(SDL_FLAGS) -o $(MOD_DIR)/$@
-
-mkdir_mod:
-	@mkdir -p $(MOD_DIR)
+KATW:  $(OBJS)
+	$(CC) -o $@ $(OBJS) $(SDL_LIBS)
 
 clean:
-	@rm -f $(MOD_DIR)/*
+	@rm -f $(OBJ_DIR)/*
 	@rm -f KATW
