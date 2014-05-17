@@ -32,7 +32,7 @@ void Player::update()
 
 	currentFrame = int(((SDL_GetTicks() / 100) %4));
 
-	m_acceleration.setX(0);
+	m_acceleration.setX(0.3);
 
 	SDLGameObject::update();
 }
