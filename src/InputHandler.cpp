@@ -169,7 +169,7 @@ void InputHandler::onKeyDown(SDL_Event &event)
 	}
 }
 
-void InputHandler::onKeyUp(SDL_Event &event)
+void InputHandler::onKeyUp(SDL_Event &)
 {
 
 }

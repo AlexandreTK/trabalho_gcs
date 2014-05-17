@@ -17,7 +17,7 @@ class SDLGameObject : public GameObject
     virtual void update();
     virtual void clean();
 
-  private:
+  protected:
     int x;
     int y;
 
