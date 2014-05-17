@@ -35,6 +35,10 @@ public:
 	}
 	bool isKeyDown(SDL_Scancode key);
 
+	int xValue (int joy, int stick);
+	int yValue (int joy, int stick);
+
+
 private:
 	InputHandler();
 	~InputHandler(){}
@@ -45,8 +49,6 @@ private:
 
 	bool numberJoysticks;
 
-	int xValue (int joy, int stick);
-	int yValue (int joy, int stick);
 	int buttonNumber;
 
 	Uint8* keystate;
