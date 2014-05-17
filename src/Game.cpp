@@ -106,7 +106,7 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
 
   gameObjects.push_back(new Player(new LoaderParams(10, 600-119-64, 64, 64, "kays")));
 
-  gameObjects.push_back(new Enemy(new LoaderParams(100, 600-119-64, 64, 64, "blue-mage")));
+  gameObjects.push_back(new Enemy(new LoaderParams(700, 600-119-64, 64, 64, "blue-mage")));
 
 
   return true;

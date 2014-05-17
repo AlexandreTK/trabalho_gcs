@@ -30,7 +30,7 @@ void Player::update()
 
 	handleInput(); // add our function
 
-	currentFrame = int(((SDL_GetTicks() / 100) %4));
+	currentFrame = int(((SDL_GetTicks() / 100) % 4));
 
 	m_acceleration.setX(0.3);
 
