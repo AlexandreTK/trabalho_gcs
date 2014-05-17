@@ -91,7 +91,7 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
    * Load sprites used in the game
    */
   TheTextureManager::Instance()->load("data/images/katw_rock-ground.png", "floor", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_kays.png", "kays", this->renderer);
+  TheTextureManager::Instance()->load("data/images/katw_kays_a.png", "kays", this->renderer);
   TheTextureManager::Instance()->load("data/images/katw_red-mage.png", "red-mage", this->renderer);
   TheTextureManager::Instance()->load("data/images/katw_blue-mage.png", "blue-mage", this->renderer);
   TheTextureManager::Instance()->load("data/images/katw_skeleton.png", "skeleton", this->renderer);

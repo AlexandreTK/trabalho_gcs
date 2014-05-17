@@ -22,16 +22,12 @@ class SDLGameObject : public GameObject
     int currentFrame;
     Vector2D m_position;
 
-<<<<<<< HEAD
-  protected:
-    int x;
-    int y;
-=======
   private:
->>>>>>> 1ebb34d9d33b87a0042350431ffafc54bc9068b1
 
     int w;
     int h;
+    int x;
+    int y;
 
     int currentRow;
 
