@@ -14,9 +14,9 @@ Player::Player(const LoaderParams * params):SDLGameObject(params)
 /*
  * Implementation by inheritance of GameObject
  */
-void Player::draw()
+void Player::draw(SDL_RendererFlip flags)
 {
-  SDLGameObject::draw();
+  SDLGameObject::draw(flags);
 }
 
 /*
@@ -66,14 +66,24 @@ void Player::handleInput()
 			m_velocity.setY(1 * TheInputHandler::Instance()->yValue(0,2));
 		}
 
-		if (TheInputHandler::Instance()->getButtonState(0, 0))
+		if (TheInputHandler::Instance()->getButtonState(0, 5))
 		{
-			m_velocity.setX(1);
+			m_velocity.setX(5);
 		}
 
-		if (TheInputHandler::Instance()->getButtonState(0, 2))
+		if (TheInputHandler::Instance()->getButtonState(0, 7))
 		{
-			m_velocity.setX(-1);
+			m_velocity.setX(-5);
+		}
+
+		if (TheInputHandler::Instance()->getButtonState(0, 4))
+		{
+			m_velocity.setY(-5);
+		}
+
+		if (TheInputHandler::Instance()->getButtonState(0, 6))
+		{
+			m_velocity.setY(5);
 		}
 	}
 
