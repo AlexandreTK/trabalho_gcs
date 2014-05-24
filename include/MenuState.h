@@ -23,5 +23,6 @@ class MenuState : public GameState
   private:
 
     static const string menuID;
+};
 
 #endif
