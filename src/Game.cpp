@@ -2,6 +2,8 @@
 #include <iostream>
 #include "Player.h"
 #include "Enemy.h"
+#include "MenuState.h"
+#include "PlayState.h"
 
 using std::cout;
 using std::endl;
@@ -108,6 +110,14 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
 
   gameObjects.push_back(new Enemy(new LoaderParams(700, 600-119-64, 64, 64, "blue-mage")));
 
+  /*
+   * Initializes the game state machine
+   */
+
+  gameStateMachine = new GameStateMachine();
+
+  gameStateMachine->changeState(new MenuState());
+
 
   return true;
 }
@@ -160,6 +170,11 @@ void Game::input()
   while(SDL_PollEvent(&event))
   {
     TheInputHandler::Instance()->handle(event);    
+
+    if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+    {
+      gameStateMachine->changeState(new PlayState());
+    }
   }
 }
 

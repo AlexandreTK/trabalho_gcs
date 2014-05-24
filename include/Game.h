@@ -4,6 +4,7 @@
 #include "TextureManager.h"
 #include "InputHandler.h"
 #include "GameObject.h"
+#include "GameStateMachine.h"
 
 #include <SDL.h>
 #include <vector>
@@ -54,6 +55,8 @@ class Game
     bool running;
     InputHandler * inputHandler;
     vector<GameObject *> gameObjects;
+
+    GameStateMachine * gameStateMachine;
 };
 typedef Game TheGame;
 
