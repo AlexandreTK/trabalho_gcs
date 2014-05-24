@@ -1,5 +1,22 @@
 #include "GameStateMachine.h"
 
+void GameStateMachine::update()
+{
+  if(!gameStates.empty())
+  {
+    gameStates.back()->update();
+  }
+}
+
+void GameStateMachine::render()
+{
+  if(!gameStates.empty())
+  {
+    gameStates.back()->render();
+  }
+}
+
+
 /*
  * Push the current game state into the stack
  */

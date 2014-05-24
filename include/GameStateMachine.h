@@ -13,6 +13,9 @@ class GameStateMachine
     void pushState(GameState * state);
     void changeState(GameState * state);
 
+    void update();
+    void render();
+
     void popState();
 
   private:
