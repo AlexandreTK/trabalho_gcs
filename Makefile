@@ -1,5 +1,5 @@
 CC = clang++
-CFLAGS = -Wall -W -ansi -pedantic -g -Iinclude/ -O2
+CFLAGS = -Wall -W -Wno-unused-private-field -Wno-unused-parameter -Wno-reorder -Wno-delete-non-virtual-dtor -ansi -pedantic -g -Iinclude/ -O2
 SDL_FLAGS = `sdl2-config --cflags`
 SDL_LIBS = `sdl2-config --libs` -lSDL2_image
 
