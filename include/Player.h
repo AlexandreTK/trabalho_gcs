@@ -12,8 +12,8 @@ class Player : public SDLGameObject
     virtual void draw(SDL_RendererFlip flags=SDL_FLIP_NONE);
     virtual void update();
     virtual void clean();
-private:
-	void handleInput();
+  private:
+    void handleInput();
 };
 
 #endif
