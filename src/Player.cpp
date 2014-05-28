@@ -87,23 +87,23 @@ void Player::handleInput()
 		}
 	}
 
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RIGHT))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
 	{
 		m_velocity.setX(2);
 	}
 
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_LEFT))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A))
 	{
 		m_velocity.setX(-2);
 	}
 
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_W))
 	{
 		m_velocity.setY(-2);
 
 	}
 
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_S))
 	{
 		m_velocity.setY(2);
 	}

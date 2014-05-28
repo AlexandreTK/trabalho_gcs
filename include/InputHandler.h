@@ -51,7 +51,7 @@ private:
 
 	int buttonNumber;
 
-	Uint8* keystate;
+	const Uint8* keystate;
 
 	static const int joystickDeadZone = 10000;
 
