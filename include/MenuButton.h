@@ -8,7 +8,7 @@ class MenuButton : public SDLGameObject
   public:
     MenuButton(const LoaderParams* params);
 
-    virtual void draw();
+    virtual void draw(SDL_RendererFlip flags=SDL_FLIP_NONE);
     virtual void update();
     virtual void clean();
 
@@ -19,6 +19,7 @@ class MenuButton : public SDLGameObject
       SELECT_OVER = 1,
       SELECTED = 2
     };
+
 };
 
 #endif

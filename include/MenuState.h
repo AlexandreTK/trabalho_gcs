@@ -28,6 +28,8 @@ class MenuState : public GameState
 
     static const string menuID;
     vector<GameObject *> gameObjects;
+
+    static void menuToPlay();
 };
 
 #endif

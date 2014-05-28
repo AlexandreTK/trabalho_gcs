@@ -41,6 +41,8 @@ class Game
     bool getRunning();
     SDL_Renderer * getRenderer() const { return renderer; }
     void finishGame();
+
+    GameStateMachine * getStateMachine() { return gameStateMachine; }
   private:
     Game()
     { 

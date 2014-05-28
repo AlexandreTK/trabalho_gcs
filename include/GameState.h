@@ -21,6 +21,7 @@ class GameState
     
 
     virtual string getStateID() const = 0;
+
 };
 
 #endif

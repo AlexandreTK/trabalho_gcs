@@ -1,4 +1,5 @@
 #include "MenuState.h"
+#include "PlayState.h"
 #include "Game.h"
 #include <iostream>
 
@@ -7,9 +8,15 @@ using std::endl;
 
 const string MenuState::menuID = "MENU";
 
+void MenuState::menuToPlay()
+{
+  cout << "ENTER pressed" << endl;
+  TheGame::Instance()->getStateMachine()->changeState(new PlayState());
+}
+
 void MenuState::update()
 {
-  for(int i = 0; i < this->gameObjects.size(); i++)
+  for(unsigned int i = 0; i < this->gameObjects.size(); i++)
   {
     this->gameObjects[i]->update();
   }
@@ -17,7 +24,7 @@ void MenuState::update()
 
 void MenuState::render()
 {
-  for(int i; i < this->gameObjects.size(); i++)
+  for(unsigned int i = 0; i < this->gameObjects.size(); i++)
   {
     this->gameObjects[i]->draw();
   }

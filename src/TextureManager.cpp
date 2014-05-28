@@ -103,6 +103,11 @@ void TextureManager::draw(string id, int x, int y, int w, int h, SDL_Renderer * 
   SDL_RenderCopyEx(renderer, this->textureMap[id], &srcRect, &destRect, 0, 0, flip);
 }
 
+void TextureManager::clearFromTexture(string id)
+{
+  this->textureMap.erase(id);
+}
+
 void TextureManager::drawFrame(string id, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer * renderer , SDL_RendererFlip flip)
 {
   SDL_Rect srcRect;
