@@ -1,4 +1,5 @@
 #include "MenuState.h"
+#include "Game.h"
 #include <iostream>
 
 using std::cout;
@@ -8,22 +9,29 @@ const string MenuState::menuID = "MENU";
 
 void MenuState::update()
 {
-  /*
-   * Nothing to do for now
-   */
+  for(int i = 0; i < this->gameObjects.size(); i++)
+  {
+    this->gameObjects[i]->update();
+  }
 }
 
 void MenuState::render()
 {
-  /*
-   * Nothing to do for now
-   */
+  for(int i; i < this->gameObjects.size(); i++)
+  {
+    this->gameObjects[i]->draw();
+  }
 }
 
 bool MenuState::onEnter()
 {
   cout << "Entering Menu State..." << endl;
   
+  if(!TheTextureManager::Instance()->load("data/images/katw_logo-game.png", "gamemenu", TheGame::Instance()->getRenderer()))
+  {
+    return false;
+  }
+
   return true;
 }
 

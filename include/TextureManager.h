@@ -26,6 +26,7 @@ class TextureManager
     void draw(string id, int x, int y, int w, int h, SDL_Renderer * renderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
     void drawFrame(string id, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer * renderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
+    void clearFromTexture(string id);
   private:
     TextureManager() { }
     map<string, SDL_Texture *> textureMap;

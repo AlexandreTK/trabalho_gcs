@@ -192,19 +192,15 @@ void Game::physics()
 {
 }
 
-/*
- * Update the screen of the game
- */
+/* * Update the screen of the game */
 void Game::update()
 {
 
   gameStateMachine->update();
-  /*
   for(vector<GameObject *>::size_type i = 0; i != gameObjects.size(); i++)
   {
     gameObjects[i]->update();
   }
-  */
  
 }
 
@@ -250,6 +246,7 @@ void Game::draw()
 
   /*
    * Draw images to renderer
+   */
   TheTextureManager::Instance()->draw("background", 0, 0, 800, 600, this->renderer);
 
   TheTextureManager::Instance()->draw("floor", 0, 600-119, 800, 119, this->renderer);
@@ -264,7 +261,6 @@ void Game::draw()
   {
     gameObjects[i]->draw();
   }
-  */
   /*
    * Draw to the screen
    */
