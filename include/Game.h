@@ -39,6 +39,7 @@ class Game
     void setLevel(int inputLevel);
     int getLevel();
     void drawMenu();
+    void drawCredits();
     bool getRunning();
     SDL_Renderer * getRenderer() const { return renderer; }
     void finishGame();

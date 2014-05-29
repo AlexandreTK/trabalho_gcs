@@ -233,6 +233,16 @@ void Game::drawLogos()
 
 }
 
+void Game::drawCredits()
+{
+  TheTextureManager::Instance()->load("data/images/katw_credits.png", "credits", this->renderer);
+
+  SDL_RenderClear(this->renderer);
+  TheTextureManager::Instance()->draw("credits", 0, 0, 800, 600, this->renderer);
+  SDL_RenderPresent(this->renderer);
+  SDL_Delay(5000);
+}
+
 void Game::drawMenu()
 {
   SDL_Event event;

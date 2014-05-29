@@ -28,5 +28,6 @@ int main()
     TheGame::Instance()->event();
   }
 
+  TheGame::Instance()->drawCredits();
   return 0;
 }
