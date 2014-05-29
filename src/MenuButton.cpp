@@ -5,9 +5,9 @@ MenuButton::MenuButton(const LoaderParams * params) : SDLGameObject(params)
   currentFrame = SELECT_OUT;
 }
 
-void MenuButton::draw(SDL_RendererFlip flags)
+void MenuButton::draw()
 {
-  SDLGameObject::draw(flags);
+  SDLGameObject::draw();
 }
 
 void MenuButton::update()

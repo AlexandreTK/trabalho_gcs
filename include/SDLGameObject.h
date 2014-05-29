@@ -13,14 +13,16 @@ class SDLGameObject : public GameObject
   public:
     SDLGameObject(const LoaderParams * params);
 
-    virtual void draw(SDL_RendererFlip flags=SDL_FLIP_NONE);
+    virtual void draw();
     virtual void update();
     virtual void clean();
   protected:
     Vector2D m_velocity;
     Vector2D m_acceleration;
     int currentFrame;
+    int currentRow;
     Vector2D m_position;
+    SDL_RendererFlip flip;
 
   private:
 
@@ -29,7 +31,6 @@ class SDLGameObject : public GameObject
     int x;
     int y;
 
-    int currentRow;
 
     string textureID;
 

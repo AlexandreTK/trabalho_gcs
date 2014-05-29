@@ -8,15 +8,17 @@ using std::cout;
  */
 Player::Player(const LoaderParams * params):SDLGameObject(params)
 {
-
+  currentRow = 1;
+  flip = SDL_FLIP_NONE;
 }
 
 /*
  * Implementation by inheritance of GameObject
  */
-void Player::draw(SDL_RendererFlip flags)
+void Player::draw()
 {
-  SDLGameObject::draw(flags);
+  SDLGameObject::draw();
+  currentRow = 2;
 }
 
 /*
@@ -36,6 +38,7 @@ void Player::update()
 	m_acceleration.setX(0);
 
 	SDLGameObject::update();
+
 }
 
 void Player::clean()
@@ -69,42 +72,62 @@ void Player::handleInput()
 		if (TheInputHandler::Instance()->getButtonState(0, 5))
 		{
 			m_velocity.setX(5);
+                        flip = SDL_FLIP_NONE;
+                        currentRow = 1;
 		}
 
 		if (TheInputHandler::Instance()->getButtonState(0, 7))
 		{
 			m_velocity.setX(-5);
+                        flip = SDL_FLIP_HORIZONTAL;
+                        currentRow = 1;
 		}
 
 		if (TheInputHandler::Instance()->getButtonState(0, 4))
 		{
 			m_velocity.setY(-5);
+                        currentRow = 1;
 		}
 
 		if (TheInputHandler::Instance()->getButtonState(0, 6))
 		{
 			m_velocity.setY(5);
+                        currentRow = 1;
 		}
 	}
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
 	{
-		m_velocity.setX(2);
+		m_velocity.setX(0.7);
+                flip = SDL_FLIP_NONE;
+                currentRow = 1;
 	}
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A))
 	{
-		m_velocity.setX(-2);
+		m_velocity.setX(-0.7);
+                flip = SDL_FLIP_HORIZONTAL;
+                currentRow = 1;
 	}
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_W))
 	{
-		m_velocity.setY(-2);
-
+		m_velocity.setY(-0.7);
+                currentRow = 1;
 	}
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_S))
 	{
-		m_velocity.setY(2);
+		m_velocity.setY(0.7);
+                currentRow = 1;
 	}
+
+        if(m_position.getX() <= 0)
+        {
+          m_position.setX(0);
+        }
+        if(m_position.getY() >= 600-119-64)
+        {
+          m_position.setY(600-119-64);
+        }
 }

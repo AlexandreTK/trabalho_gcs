@@ -10,7 +10,7 @@ class GameObject
 {
   public:
 
-    virtual void draw(SDL_RendererFlip flag=SDL_FLIP_NONE)=0;
+    virtual void draw()=0;
     virtual void update()=0;
     virtual void clean()=0;
 
