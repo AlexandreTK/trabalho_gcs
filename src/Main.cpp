@@ -6,6 +6,7 @@ int main()
 
   TheGame::Instance()->drawLogos();
 
+  TheGame::Instance()->drawMenu();
   while(TheGame::Instance()->getRunning())
   {
     while(true)

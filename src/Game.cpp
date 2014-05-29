@@ -104,17 +104,21 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
   
   TheTextureManager::Instance()->draw("blue-mage", 100, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
   */
+  if(!TheTextureManager::Instance()->load("data/images/katw_kays_a.png", "kays", TheGame::Instance()->getRenderer()))
+  {
+    return false;
+  }
 
+  GameObject * player = new Player(new LoaderParams(10, 600-119-64, 64, 64, "kays"));
+
+  gameObjects.push_back(player);
+ 
 
   gameObjects.push_back(new Enemy(new LoaderParams(700, 600-119-64, 64, 64, "blue-mage")));
 
   /*
    * Initializes the game state machine
    */
-
-  gameStateMachine = new GameStateMachine();
-
-  gameStateMachine->changeState(new MenuState());
 
 
   return true;
@@ -171,7 +175,7 @@ void Game::input()
 
     if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
     {
-      gameStateMachine->changeState(new PlayState());
+      /*gameStateMachine->changeState(new PlayState()); */
     }
   }
 }
@@ -194,7 +198,7 @@ void Game::physics()
 void Game::update()
 {
 
-  gameStateMachine->update();
+  /*gameStateMachine->update();*/
   for(vector<GameObject *>::size_type i = 0; i != gameObjects.size(); i++)
   {
     gameObjects[i]->update();
@@ -227,10 +231,32 @@ void Game::drawLogos()
   SDL_RenderPresent(this->renderer);
   SDL_Delay(2000);
 
-  SDL_RenderClear(this->renderer);
-  TheTextureManager::Instance()->draw("logo-game", 0, 0, 800, 600, this->renderer);
-  SDL_RenderPresent(this->renderer);
-  SDL_Delay(3000);
+}
+
+void Game::drawMenu()
+{
+  SDL_Event event;
+  bool menuOn = true;
+  /*
+   * Check if any event happened
+   */
+  while(menuOn)
+  {
+    while(SDL_PollEvent(&event))
+    {
+      SDL_RenderClear(this->renderer);
+      TheTextureManager::Instance()->draw("logo-game", 0, 0, 800, 600, this->renderer);
+      SDL_RenderPresent(this->renderer);
+
+
+      TheInputHandler::Instance()->handle(event);    
+
+      if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+      {
+        menuOn = false;
+      }
+    }
+  }
 }
 
 /*
@@ -240,7 +266,7 @@ void Game::draw()
 {
   SDL_RenderClear(this->renderer);
 
-  gameStateMachine->render();
+  /*gameStateMachine->render();*/
 
   /*
    * Draw images to renderer

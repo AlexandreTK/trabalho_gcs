@@ -38,11 +38,11 @@ class Game
     void draw();
     void setLevel(int inputLevel);
     int getLevel();
+    void drawMenu();
     bool getRunning();
     SDL_Renderer * getRenderer() const { return renderer; }
     void finishGame();
 
-    GameStateMachine * getStateMachine() { return gameStateMachine; }
   private:
     Game()
     { 
@@ -58,7 +58,6 @@ class Game
     InputHandler * inputHandler;
     vector<GameObject *> gameObjects;
 
-    GameStateMachine * gameStateMachine;
 };
 typedef Game TheGame;
 

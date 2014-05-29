@@ -11,7 +11,7 @@ const string MenuState::menuID = "MENU";
 void MenuState::menuToPlay()
 {
   cout << "ENTER pressed" << endl;
-  TheGame::Instance()->getStateMachine()->changeState(new PlayState());
+/*  TheGame::Instance()->getStateMachine()->changeState(new PlayState()); */
 }
 
 void MenuState::update()
