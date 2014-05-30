@@ -6,10 +6,16 @@ using std::cout;
 /*
  * Implementation by inheritance of GameObject
  */
-Player::Player(const LoaderParams * params):SDLGameObject(params)
+Player::Player():SDLGameObject()
 {
   currentRow = 1;
   flip = SDL_FLIP_NONE;
+}
+
+
+void Player::load(const LoaderParams *pParams)
+{
+	SDLGameObject::load(pParams);
 }
 
 /*

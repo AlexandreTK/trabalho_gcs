@@ -4,6 +4,7 @@
 #include "LoaderParams.h"
 #include <SDL.h>
 
+
 using std::string;
 
 class GameObject
@@ -14,8 +15,11 @@ class GameObject
     virtual void update()=0;
     virtual void clean()=0;
 
+    //new load function
+    virtual void load(const LoaderParams* pParams) =0;
+
   protected:
-    GameObject(const LoaderParams* ){}
+    GameObject(){}
     virtual ~GameObject(){}
 };
 

@@ -19,7 +19,13 @@ class LoaderParams
 
 
   public:
-    LoaderParams(int x, int y, int w, int h, string textureID) : m_x(x), m_y(y), m_w(w), m_h(h), m_textureID(textureID)
+    LoaderParams(int x, int y, int w, int h, string textureID, 
+        int numFrames, int callbackID = 0, int animSpeed = 0) : 
+    m_x(x), 
+    m_y(y), 
+    m_w(w), 
+    m_h(h), 
+    m_textureID(textureID)
     {
 
     }

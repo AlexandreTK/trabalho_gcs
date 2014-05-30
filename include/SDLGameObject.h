@@ -5,14 +5,16 @@
 #include "LoaderParams.h"
 #include <string>
 #include "Vector2D.h"
+#include "GameObjectFactory.h"
 
 using std::string;
 
 class SDLGameObject : public GameObject
 {
   public:
-    SDLGameObject(const LoaderParams * params);
+    SDLGameObject();
 
+    virtual void load(const LoaderParams *pParams);
     virtual void draw();
     virtual void update();
     virtual void clean();
