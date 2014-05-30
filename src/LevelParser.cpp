@@ -3,6 +3,7 @@
 #include "base64.h"
 #include <string>
 #include "tinyxml.h"
+#include "GameObjectFactory.h"
 
 using std::string;
 using std::vector;
@@ -157,6 +158,54 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, vector<Layer*> 
 		if (e->Value() == string("object"))
 		{
 			int x, y, width, height, numFrames, callbackID, animSpeed;
+			string textureID;
+
+			//get the initial node values type, x and y
+			e->Attribute("x", &x);
+			e->Attribute("y", &y);
+			GameObject *pGameObject = TheGameObjectFactory::Instance()->create(e->Attribute("type"));
+
+			//get the property values
+			for (TiXmlElement* properties = e->FirstChildElement(); properties != NULL; properties = properties->NextSiblingElement())
+			{
+				if (properties->Value() == string("properties"))
+				{
+					for (TiXmlElement* property = properties->FirstChildElement(); property != NULL; property = property->NextSiblingElement())
+					{
+						if (property->Value() == string("property"))
+						{
+							if (property->Attribute("name") == string("numFrames"))
+							{
+								property->Attribute("value", &numFrames);
+							}
+							else if (property->Attribute("name") == string("textureHeight"))
+							{
+								property->Attribute("value", &height);
+							}
+							else if (property->Attribute("name") == string("textureID"))
+							{
+								textureID = property->Attribute("value");
+							}
+							else if (property->Attribute("name") == string("textureWidth"))
+							{
+								property->Attribute("value", &width);
+							}
+							else if (property->Attribute("name") == string("callbackID"))
+							{
+								property->Attribute("value", &callbackID);
+							}
+							else if (property->Attribute("name") == string("animSpeed"))
+							{
+								property->Attribute("value", &animSpeed);
+							}
+						}
+					}
+				}
+			}
+			pGameObject->load(new LoaderParams(x, y, width, height, textureID, numFrames, callbackID, animSpeed));
+			pObjectLayer->getGameObjects()->push_back(pGameObject);
 		}
 	}	
+
+	pLayers->push_back(pObjectLayer);
 }
