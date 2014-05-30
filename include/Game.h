@@ -4,6 +4,7 @@
 #include "TextureManager.h"
 #include "InputHandler.h"
 #include "GameObject.h"
+#include "SDLGameObject.h"
 #include "GameStateMachine.h"
 
 #include <SDL.h>
@@ -43,6 +44,7 @@ class Game
     bool getRunning();
     SDL_Renderer * getRenderer() const { return renderer; }
     void finishGame();
+    bool checkCollision(SDLGameObject * p1, SDLGameObject * p2);
 
   private:
     Game()

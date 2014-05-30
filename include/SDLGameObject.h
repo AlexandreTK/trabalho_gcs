@@ -18,6 +18,9 @@ class SDLGameObject : public GameObject
     virtual void draw();
     virtual void update();
     virtual void clean();
+    Vector2D& getPosition() { return m_position; }
+    int getWidth() { return w; }
+    int getHeight() { return h; }
   protected:
     Vector2D m_velocity;
     Vector2D m_acceleration;
