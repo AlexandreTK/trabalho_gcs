@@ -43,7 +43,7 @@ void TileLayer::render()
 
 			id--;
 
-			TheTextureManager::Instance()->drawTile(tileset.name, 2, 2, (j * m_tileSize) -x2, (i * m_tileSize) -y2, m_tileSize, m_tileSize, (id - (tileset.firstGridID - 1)) / tileset.m_numColumns, (id - (tileset.firstGridID - 1)) % tileset.m_numColumns, TheGame::Instance()->getRenderer());
+			TheTextureManager::Instance()->drawTile(tileset.name, 2, 2, (j * m_tileSize) -x2, (i * m_tileSize) -y2, m_tileSize, m_tileSize, (id - (tileset.firstGridID - 1)) / tileset.numColumns, (id - (tileset.firstGridID - 1)) % tileset.numColumns, TheGame::Instance()->getRenderer());
 		}
 	}
 }

@@ -22,7 +22,7 @@ private:
 
 	int m_tileSize;
 	int m_width;
-	int m_heigth;
+	int m_height;
 };
 
 #endif

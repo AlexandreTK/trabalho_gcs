@@ -25,20 +25,6 @@ typedef	struct _Tileset
 class Level
 {
 public:
-typedef	struct _Tileset
-	{
-	int firstGridID;
-	int tileWidth;
-	int tileHeight;
-	int spacing;
-	int margin;
-	int width;
-	int height;
-	int numColumns;
-	string name;
-	}Tileset;
-
-
 		~Level() {}
 
 		void update();

@@ -3,20 +3,20 @@
 #include "Game.h"
 #include "Vector2D.h"
 
-SDLGameObject::SDLGameObject():GameObject()
+SDLGameObject::SDLGameObject():GameObject(), m_position(0, 0), m_acceleration(0,0), m_velocity(0,0)
 {
 }
 
-void SDLGameObject:load(const LoaderParams *pParams)
+void SDLGameObject::load(const LoaderParams *pParams)
 {
   m_position = Vector2D(pParams->getX(),pParams->getY());
   m_velocity = Vector2D(0,0);
   m_acceleration = Vector2D(0,0);
-  m_width = pParams->getWidth();
-  m_height = pParams->getHeight();
-  m_textureID = pParams->getTextureID();
-  m_currentRow = 1;
-  m_currentFrame = 1;
+  w = pParams->getWidth();
+  h = pParams->getHeight();
+  textureID = pParams->getTextureID();
+  currentRow = 1;
+  currentFrame = 1;
   m_numFrames = pParams->getNumFrames();
 }
 

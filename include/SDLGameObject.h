@@ -28,6 +28,7 @@ class SDLGameObject : public GameObject
     int currentRow;
     Vector2D m_position;
     SDL_RendererFlip flip;
+    int m_numFrames;
 
   private:
 

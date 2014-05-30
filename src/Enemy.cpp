@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-Enemy::Enemy(const LoaderParams * params):SDLGameObject()
+Enemy::Enemy():SDLGameObject()
 {
   flip = SDL_FLIP_HORIZONTAL;
 }

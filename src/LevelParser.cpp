@@ -1,9 +1,12 @@
 #include "LevelParser.h"
 #include "TextureManager.h"
+#include "Game.h"
 #include "base64.h"
 #include <string>
 #include "tinyxml.h"
 #include "GameObjectFactory.h"
+#include <zconf.h>
+#include <zlib.h>
 
 using std::string;
 using std::vector;
@@ -13,7 +16,7 @@ using std::endl;
 Level* LevelParser::parseLevel(const char *levelFile)
 {
 	//Create a TinyXML document and load the map XML
-	TiXMLDocument levelDocument;
+	TiXmlDocument levelDocument;
 	levelDocument.LoadFile(levelFile);
 
 	//Create the level object
@@ -40,11 +43,11 @@ Level* LevelParser::parseLevel(const char *levelFile)
 	{
 		if (e->Value() == string("layer"))
 		{
-			parseTileLayers(e, pLevel->getLayers(), pLevel-> getTilesets());
+			parseTileLayer(e, pLevel->getLayers(), pLevel->getTilesets());
 		}
 	}
 	//parse the tectures needed for this level, which have been added to properties.
-	for (TiXmlElement* e = pProperties->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+	for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
 		if (e->Value() == string("property"))
 		{
@@ -74,7 +77,7 @@ return pLevel;
 void LevelParser::parseTilesets(TiXmlElement* pTilesetRoot, vector<Tileset>* pTilesets)
 {
 	//first add the tileset to the texture manager
-	TheTextureManager::Instance()->load(pTilesetRoot->FirstChildElement()->Attribute("source"), pTilesetRoot->Attribute("name"), TheGame::Instance()-getRenderer());
+	TheTextureManager::Instance()->load(pTilesetRoot->FirstChildElement()->Attribute("source"), pTilesetRoot->Attribute("name"), TheGame::Instance()->getRenderer());
 	
 	//create a tileset object
 	Tileset tileset;
@@ -88,7 +91,7 @@ void LevelParser::parseTilesets(TiXmlElement* pTilesetRoot, vector<Tileset>* pTi
 	pTilesetRoot->FirstChildElement()->Attribute("margin", &tileset.margin);
 
 	tileset.name = pTilesetRoot->Attribute("name");
-	tileset.numColumns = tileset.width / (tileset.tilewidth + tileset.spacing);
+	tileset.numColumns = tileset.width / (tileset.tileWidth + tileset.spacing);
 
 	pTilesets->push_back(tileset);
 }
@@ -97,7 +100,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, vector<Layer*> *pLa
 {
 	TileLayer* pTileLayer = new TileLayer(m_tileSize, *pTilesets);
 	//tile data
-	vector< vector<int>> data;
+	vector< vector<int> > data;
 
 	string decodedIDs;
 	TiXmlElement* pDataNode;
@@ -106,10 +109,10 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, vector<Layer*> *pLa
 	{
 		if (e->Value() == string("data"))
 		{
-			pDataNode == e;
+			pDataNode = e;
 		}
 	}
-	for (TiXmlElement* e = pDataNode->FirstChild(); e != NULL; e = e->NextSibling())
+	for (TiXmlElement* e = pDataNode->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
 	{
 		TiXmlText * text = e->ToText();
 		string t = text -> Value();

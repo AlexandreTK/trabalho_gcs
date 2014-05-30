@@ -109,12 +109,16 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
     return false;
   }
 
-  GameObject * player = new Player(new LoaderParams(10, 600-119-64, 64, 64, "kays"));
+  GameObject * player = new Player();
+  player->load(new LoaderParams(10, 600-119-64, 64, 64, "kays", 4));
 
   gameObjects.push_back(player);
  
+  GameObject * enemy = new Enemy();
+  
+  enemy->load(new LoaderParams(700, 600-119-64, 64, 64, "blue-mage", 1));
 
-  gameObjects.push_back(new Enemy(new LoaderParams(700, 600-119-64, 64, 64, "blue-mage")));
+  gameObjects.push_back(enemy);
 
   /*
    * Initializes the game state machine

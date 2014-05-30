@@ -120,7 +120,7 @@ void TextureManager::drawTile(string id, int margin, int spacing, int x, int y, 
   destRect.x = x;
   destRect.y = y;
 
-  SDL_RenderCopyEx(pRenderer, m_textureMap[id], &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
+  SDL_RenderCopyEx(pRenderer, textureMap[id], &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
 }
 
 void TextureManager::drawFrame(string id, int x, int y, int w, int h, int currentRow, int currentFrame, SDL_Renderer * renderer , SDL_RendererFlip flip)

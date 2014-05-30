@@ -1,6 +1,7 @@
 #include "PauseState.h"
 #include "StateParser.h"
 #include "MenuState.h"
+#include "MenuButton.h"
 #include "Game.h"
 
 const string PauseState::pauseID = "PAUSE";
@@ -38,11 +39,11 @@ bool PauseState::onEnter()
   stateParser.parseState("test.xml", pauseID, &gameObjects, &m_textureIDList);
 
 
-  callbacks.push_back(0);
-  callbacks.push_back(pauseToMain);
-  callbacks.push_back(resumePlay);
+  m_callbacks.push_back(0);
+  m_callbacks.push_back(pauseToMain);
+  m_callbacks.push_back(resumePlay);
 
-  setCallbacks(callbacks);
+  setCallbacks(m_callbacks);
 
   return true;
 }
@@ -64,5 +65,6 @@ void PauseState::setCallbacks(const vector<Callback>& callbacks)
     {
       MenuButton * button = dynamic_cast<MenuButton *>(gameObjects[i]);
       button->setCallback(callbacks[button->getCallbackID()]);
+    }
   }
 }

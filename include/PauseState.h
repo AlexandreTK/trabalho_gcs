@@ -3,6 +3,7 @@
 
 #include "GameState.h"
 #include "GameObject.h"
+#include "MenuState.h"
 #include <vector>
 
 using std::vector;

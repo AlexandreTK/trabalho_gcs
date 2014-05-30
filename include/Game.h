@@ -42,6 +42,8 @@ class Game
     void drawMenu();
     void drawCredits();
     bool getRunning();
+    int getGameWidth() const { return m_gameWidth; }
+    int getGameHeight() const { return m_gameHeight; }
     SDL_Renderer * getRenderer() const { return renderer; }
     void finishGame();
     bool checkCollision(SDLGameObject * p1, SDLGameObject * p2);
@@ -60,6 +62,8 @@ class Game
     bool running;
     InputHandler * inputHandler;
     vector<GameObject *> gameObjects;
+    int m_gameWidth;
+    int m_gameHeight;
 
 };
 typedef Game TheGame;
