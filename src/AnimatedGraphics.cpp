@@ -4,6 +4,12 @@ AnimatedGraphic::AnimatedGraphic(const LoaderParams * params, int animSpeed) : S
 {
 }
 
+void AnimatedGraphic::load(const LoaderParams * params)
+{
+  SDLGameObject::load(params);
+  m_animSpeed = params->getAnimSpeed();
+}
+
 void AnimatedGraphic::update()
 {
   currentFrame = int(((SDL_GetTicks() / (1000 / m_animSpeed)) % m_numFrames));
