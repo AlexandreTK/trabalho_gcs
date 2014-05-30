@@ -1,6 +1,6 @@
 #include "MenuButton.h"
 
-MenuButton::MenuButton(const LoaderParams * params) : SDLGameObject()
+MenuButton::MenuButton(const LoaderParams * params, void(*callback)()) : SDLGameObject(), m_callback(callback)
 {
   currentFrame = SELECT_OUT;
 }

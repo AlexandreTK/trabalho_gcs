@@ -16,6 +16,9 @@ class LoaderParams
     int m_h;
 
     string m_textureID;
+    int m_callbackID;
+    int m_animSpeed;
+    int m_numFrames;
 
 
   public:
@@ -25,7 +28,10 @@ class LoaderParams
     m_y(y), 
     m_w(w), 
     m_h(h), 
-    m_textureID(textureID)
+    m_textureID(textureID),
+    m_numFrames(numFrames),
+    m_callbackID(callbackID),
+    m_animSpeed(animSpeed)
     {
 
     }

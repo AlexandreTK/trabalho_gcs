@@ -17,8 +17,8 @@ public:
 	bool parseState(const char* stateFile, string stateID, vector<GameObject*> *pObjects);
 
 private:
-	void parseObjects (TiXmlElements* pStateRoot, vector<GameObject*> * pObjects);
-	void parseTextures(TiXmlElements* pStateRoot, vector<string> *pTextureIDs);
+	void parseObjects (TiXmlElement* pStateRoot, vector<GameObject*> * pObjects);
+	void parseTextures(TiXmlElement* pStateRoot, vector<string> *pTextureIDs);
 
 };
 

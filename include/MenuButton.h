@@ -6,7 +6,7 @@
 class MenuButton : public SDLGameObject
 {
   public:
-    MenuButton(const LoaderParams* params);
+    MenuButton(const LoaderParams* params, void (*callback)());
 
     virtual void draw();
     virtual void update();
@@ -15,6 +15,7 @@ class MenuButton : public SDLGameObject
     int getCallbackID() { return m_callbackID; }
 
   private:
+    int m_callbackID;
     enum button_state
     {
       SELECT_OUT = 0,
