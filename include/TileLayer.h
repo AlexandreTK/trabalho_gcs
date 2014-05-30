@@ -5,7 +5,7 @@
 #include "Vector2D.h"
 #include <vector>
 
-using std::vector
+using std::vector;
 
 class TileLayer : public Layer
 {

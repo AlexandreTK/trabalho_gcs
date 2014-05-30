@@ -2,6 +2,7 @@
 #define LEVEL_H
 
 #include <vector>
+#include <string>
 #include "Layer.h"
 #include "LevelParser.h"
 
