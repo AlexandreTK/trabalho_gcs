@@ -23,7 +23,7 @@ class PlayState : public GameState
   private:
     
     static const string playID;
-    Level * pLevel = new Level();
+    Level * pLevel;
 
     vector<GameObject *> gameObjects;
 };
