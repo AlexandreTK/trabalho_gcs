@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="500" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="floor" tilewidth="32" tileheight="32">
+  <image source="../../../../../../Dropbox/Kays Against the World/Arte/low-fi/SandStorm_Chao.png" trans="ff00ff" width="1024" height="152"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="500" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztztUSFQQARVFEGkRBGkSRkkbptOiSbhUFJZVGQOrT2TN8wn2492Gtmf18zpgxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB98VGPr4xpX42tCTaxJNbmm1NSaVp/U9Pq0PqsZNbM+r1k1u+bU3JpX82tBLaxF9UUtri/rqwH2h/0bAEbJkvq6ltayWl4ramV9U6tqda2ptbWu1teG2ljf1ne1qTbXltpa22p77aidtat2157aW9/XDwPsD/s3AIySH+un+rn21f46UAfrUB2uI3W0jtXxOlG/1Mk6VafrTJ2tc3W+LtTFulSX60pdrV/rt/q9rg2wP+zfADBK/qg/63rdqL/q77pZt+p23am7da/+qX/rfj2oh/WoHteTelrP6r96Xi/qZf1fr+p1vam39W6A/WH/BoBR8h5kI0yl
+  </data>
+ </layer>
+</map>
