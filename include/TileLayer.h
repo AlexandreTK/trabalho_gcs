@@ -1,7 +1,7 @@
 #ifndef TILELAYER_H
 #define TILELAYER_H
 
-#include "Layer.h"
+#include "Level.h"
 #include "Vector2D.h"
 #include <vector>
 
@@ -15,7 +15,7 @@ public:
 	virtual void update();
 	virtual void render();
 
-	void setTileIDs(const vector< vector<int>>& data)
+	void setTileIDs(const vector<int>& data)
 	{
 		m_tileIDs = data;
 	}
@@ -36,7 +36,7 @@ private:
 	Vector2D m_velocity;
 
 	const vector<Tileset> &m_tilesets;
-	vector<vector<int>> m_tileIDs;
+	vector<int> m_tileIDs;
 };
 
 #endif

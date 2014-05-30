@@ -15,7 +15,7 @@ bool MainMenuState::onEnter()
   }
 
   StateParser stateParser;
-  stateParser.parseState("test.xml", menuID, &gameObjects/*, &m_textureIDList*/);
+  stateParser.parseState("test.xml", menuID, &gameObjects, &m_textureIDList);
 
   m_callbacks.push_back(0);
   m_callbacks.push_back(menuToPlay);

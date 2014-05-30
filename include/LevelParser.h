@@ -1,7 +1,6 @@
 #ifndef LEVELPARSER_H
 #define LEVELPARSER_H
 
-#include "Level.h"
 #include "TileLayer.h"
 #include "ObjectLayer.h"
 #include "Layer.h"

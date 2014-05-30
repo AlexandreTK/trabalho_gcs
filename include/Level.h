@@ -4,14 +4,10 @@
 #include <vector>
 #include <string>
 #include "Layer.h"
-#include "LevelParser.h"
 
 using std::string;
 using std::vector;
-
-class Level
-{
-	struct Tileset
+typedef	struct _Tileset
 	{
 	int firstGridID;
 	int tileWidth;
@@ -22,10 +18,26 @@ class Level
 	int height;
 	int numColumns;
 	string name;
-	};
+	}Tileset;
 
 
+
+class Level
+{
 public:
+typedef	struct _Tileset
+	{
+	int firstGridID;
+	int tileWidth;
+	int tileHeight;
+	int spacing;
+	int margin;
+	int width;
+	int height;
+	int numColumns;
+	string name;
+	}Tileset;
+
 
 		~Level() {}
 
