@@ -42,3 +42,10 @@ void MenuButton::clean()
 {
   SDLGameObject::clean();
 }
+
+void MenuButton::load(const LoaderParams * params)
+{
+  SDLGameObject::load(params);
+  m_callbackID = params->getCallbackID();
+  currentFrame = SELECT_OUT;
+}

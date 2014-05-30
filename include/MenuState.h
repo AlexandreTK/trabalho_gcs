@@ -15,7 +15,6 @@ using std::vector;
 class MenuState : public GameState
 {
   public:
-
     virtual void update();
     virtual void render();
 
@@ -23,6 +22,12 @@ class MenuState : public GameState
     virtual bool onExit();
 
     virtual string getStateID() const { return menuID; }
+
+  protected:
+    typedef void(*Callback)();
+    virtual void setCallbacks(const vector<Callback>& callbacks) = 0;
+
+    vector<Callback> m_callbacks;
 
   private:
 

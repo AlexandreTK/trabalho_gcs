@@ -11,6 +11,8 @@ class MenuButton : public SDLGameObject
     virtual void draw();
     virtual void update();
     virtual void clean();
+    void setCallback(void(*callback)()) { m_callback = callback; }
+    int getCallbackID() { return m_callbackID; }
 
   private:
     enum button_state
