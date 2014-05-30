@@ -49,6 +49,10 @@ bool PauseState::onEnter()
 
 bool PauseState::onExit()
 {
+  for(unsigned int i = 0; i < m_textureIDList.size(); i++)
+  {
+    TheTextureManager::Instance()->clearFromTexture(m_textureIDList[i]);
+  }
   return true;
 }
 

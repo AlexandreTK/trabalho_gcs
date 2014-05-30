@@ -26,6 +26,17 @@
         texture="blue-mage" numFrames="4" />
     </OBJECTS>
   </PLAY>
+  <PAUSE>
+    <TEXTURES>
+      <texture filename="resume.png" ID="resumebutton"/>
+      <texture filename="main.png" ID="mainbutton"/>
+    </TEXTURES>
+    <OBJECTS>
+      <object type="MenuButton" x="200" y="300" width="200"
+        height="80" textureID="resumebutton" numFrames="0"
+        callbackID="2"/>
+    </OBJECTS>
+  </PAUSE>
   <GAMEOVER>
   </GAMEOVER>
 </STATES>
