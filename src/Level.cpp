@@ -10,7 +10,7 @@ void Level::render()
 
 void Level::update()
 {
-	for (int i = 0; i < m_layers.size; ++i)
+	for (int i = 0; i < m_layers.size(); ++i)
 	{
 		m_layers[i]->update();
 	}

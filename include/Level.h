@@ -9,8 +9,10 @@
 using std::string;
 using std::vector;
 
-struct Tileset
+class Level
 {
+	struct Tileset
+	{
 	int firstGridID;
 	int tileWidth;
 	int tileHeight;
@@ -20,10 +22,9 @@ struct Tileset
 	int height;
 	int numColumns;
 	string name;
-};
+	};
 
-class Level
-{
+
 public:
 
 		~Level() {}

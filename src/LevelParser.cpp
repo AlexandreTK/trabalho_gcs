@@ -2,9 +2,12 @@
 #include "TextureManager.h"
 #include "base64.h"
 #include <string>
+#include "tinyxml.h"
 
 using std::string;
 using std::vector;
+using std::cout;
+using std::endl;
 
 Level* LevelParser::parseLevel(const char *levelFile)
 {
@@ -37,6 +40,30 @@ Level* LevelParser::parseLevel(const char *levelFile)
 		if (e->Value() == string("layer"))
 		{
 			parseTileLayers(e, pLevel->getLayers(), pLevel-> getTilesets());
+		}
+	}
+	//parse the tectures needed for this level, which have been added to properties.
+	for (TiXmlElement* e = pProperties->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+	{
+		if (e->Value() == string("property"))
+		{
+			parseTextures(e);
+		}
+	}
+
+	//parse any object layers.
+	for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+	{
+		if (e->Value() == string("objectgroup") || e->Value() == string("layer"))
+		{
+			if (e->FirstChildElement()->Value() == string("object"))
+			{
+				parseObjectLayer(e, pLevel->getLayers());
+			}
+			else if (e->FirstChildElement()->Value() == string("data"))
+			{
+				parseTileLayer(e, pLevel->getLayers(), pLevel->getTilesets());
+			}
 		}
 	}
 
@@ -111,4 +138,25 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, vector<Layer*> *pLa
 	pTileLayer->setTileIDs(data);
 
 	pLayers->push_back(pTileLayer);
+}
+
+void LevelParser::parseTextures(TiXmlElement* pTextureRoot)
+{
+	TheTextureManager::Instance()->load(pTextureRoot->Attribute("value"), pTextureRoot->Attribute("name"), TheGame::Instance()->getRenderer());
+}
+
+void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, vector<Layer*> *pLayers)
+{
+	//create an object layer
+	ObjectLayer* pObjectLayer = new ObjectLayer();
+
+	cout << pObjectElement->FirstChildElement()->Value() << endl;
+	for (TiXmlElement* e = pObjectElement->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+	{
+		cout << e->Value() << endl;
+		if (e->Value() == string("object"))
+		{
+			int x, y, width, height, numFrames, callbackID, animSpeed;
+		}
+	}	
 }
