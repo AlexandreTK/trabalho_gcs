@@ -2,7 +2,9 @@
 #define GAMESTATE_H
 
 #include <string>
+#include <vector>
 
+using std::vector;
 using std::string;
 
 /*
@@ -21,6 +23,8 @@ class GameState
     
 
     virtual string getStateID() const = 0;
+  protected:
+    vector<string> m_textureIDList;
 
 };
 

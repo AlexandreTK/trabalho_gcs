@@ -5,6 +5,12 @@ Enemy::Enemy(const LoaderParams * params):SDLGameObject()
   flip = SDL_FLIP_HORIZONTAL;
 }
 
+void Enemy::load(const LoaderParams * params)
+{
+  SDLGameObject::load(params);
+  m_velocity.setX(2);
+}
+
 void Enemy::draw()
 {
   SDLGameObject::draw();

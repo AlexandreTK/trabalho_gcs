@@ -27,15 +27,9 @@ void PlayState::render()
 
 bool PlayState::onEnter()
 {
-  if(!TheTextureManager::Instance()->load("data/images/katw_kays_a.png", "kays", TheGame::Instance()->getRenderer()))
-  {
-    return false;
-  }
+  StateParser stateParser;
+  stateParser.parseState("test.xml", playID, &gameObjects, &m_textureIDList);
 
-  GameObject * player = new Player(new LoaderParams(10, 600-119-64, 64, 64, "kays"));
-
-  gameObjects.push_back(player);
-  
   cout << "Entering Play State..." << endl;
 
   return true;
@@ -44,15 +38,10 @@ bool PlayState::onEnter()
 
 bool PlayState::onExit()
 {
-  for(unsigned int i = 0; i < gameObjects.size(); i++)
+  for(unsigned int i = 0; i < m_textureIDList.size(); i++)
   {
-    gameObjects[i]->clean();
+    TheTextureManager::Instance()->clearFromTexture(m_textureIDList[i]);
   }
-
-  gameObjects.clear();
-
-  TheTextureManager::Instance()->clearFromTexture("kays");
-
   cout << "Leaving Play State..." << endl;
 
   return true;

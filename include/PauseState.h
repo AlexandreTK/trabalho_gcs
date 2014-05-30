@@ -7,7 +7,7 @@
 
 using std::vector;
 
-class PauseState : public GameState
+class PauseState : public MenuState
 {
   public:
 
@@ -16,6 +16,8 @@ class PauseState : public GameState
 
     virtual bool onEnter();
     virtual bool onExit();
+
+    virtual void setCallbacks(const vector<Callback>& callbacks);
 
     virtual string getStateID() const { return pauseID; }
 
