@@ -9,14 +9,19 @@ using std::endl;
 
 bool MainMenuState::onEnter()
 {
+  for(unsigned int i = 0; i < m_textureIDList.size(); i++)
+  {
+    TheTextureManager::Instance()->clearFromTexture(m_textureIDList[i]);
+  }
+
   StateParser stateParser;
-  stateParser.parseState("test.xml", menuID, &gameObjects, &m_textureIDList);
+  stateParser.parseState("test.xml", menuID, &gameObjects/*, &m_textureIDList*/);
 
-  callbacks.push_back(0);
-  callbacks.push_back(menuToPlay);
-  callbacks.push_back(exitFromMenu);
+  m_callbacks.push_back(0);
+  m_callbacks.push_back(menuToPlay);
+  m_callbacks.push_back(exitFromMenu);
 
-  setCallbacks(callbacks);
+  setCallbacks(m_callbacks);
 
   cout << "entering MenuState" << endl;
   return true;
@@ -34,10 +39,3 @@ void MainMenuState::setCallbacks(const vector<Callback>& callbacks)
   }
 }
 
-void MainMenuState::onEnter()
-{
-  for(unsigned int i = 0; i < m_textureIDList.size(); i++)
-  {
-    TheTextureManager::Instance()->clearFromTexture(m_textureIDList[i]);
-  }
-}

@@ -5,6 +5,7 @@
 #include "TileLayer.h"
 #include "ObjectLayer.h"
 #include "Layer.h"
+#include "tinyxml.h"
 #include <vector>
 
 using std::vector;
