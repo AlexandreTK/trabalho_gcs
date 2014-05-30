@@ -16,6 +16,8 @@ class MenuButton : public SDLGameObject
 
   private:
     int m_callbackID;
+    void (*m_callback)();
+    bool m_bReleased;
     enum button_state
     {
       SELECT_OUT = 0,

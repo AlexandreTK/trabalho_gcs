@@ -2,6 +2,7 @@
 #define LEVELPARSER_H
 
 #include "Level.h"
+#include "tinyxml.h"
 #include <vector>
 
 using std::vector;
