@@ -7,6 +7,7 @@
 #include "GameObjectFactory.h"
 #include <zconf.h>
 #include <zlib.h>
+#include "Level.h"
 
 using std::string;
 using std::vector;
@@ -122,7 +123,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, vector<Layer*> *pLa
 	//uncompress zlib compression
 	uLongf numGids = m_width * m_height * sizeof(int);
 	vector<unsigned> gids(numGids);
-	uncompress((Bytef*)&gids[0], &numGids, (const Bytef*)decodedIDs.c_str(), decodedIDs.size());
+	//uncompress((Bytef*)&gids[0], &numGids, (const Bytef*)decodedIDs.c_str(), decodedIDs.size());
 
 	vector<int> layerRow(m_width);
 

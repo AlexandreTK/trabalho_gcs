@@ -1,8 +1,11 @@
 #include "TileLayer.h"
 #include "Game.h"
 #include "TextureManager.h"
+#include <iostream>
 
 using std::vector;
+using std::cout;
+using std::endl;
 
 TileLayer::TileLayer(int tileSize, const vector<Tileset> &tilesets) : m_tileSize(tileSize), m_tilesets(tilesets), m_position(0,0), m_velocity(0,0)
 {
@@ -46,4 +49,26 @@ void TileLayer::render()
 			TheTextureManager::Instance()->drawTile(tileset.name, 2, 2, (j * m_tileSize) -x2, (i * m_tileSize) -y2, m_tileSize, m_tileSize, (id - (tileset.firstGridID - 1)) / tileset.numColumns, (id - (tileset.firstGridID - 1)) % tileset.numColumns, TheGame::Instance()->getRenderer());
 		}
 	}
+}
+
+Tileset TileLayer::getTilesetByID(int tileID)
+{
+	for (unsigned int i = 0; i < m_tilesets.size(); i++)
+	{
+		if (i+1 <= m_tilesets.size() -1)
+		{
+			if (tileID >= m_tilesets[i].firstGridID && tileID < m_tilesets[i+1].firstGridID)
+			{
+				return m_tilesets[i];
+			}
+		}
+		else
+		{
+			return m_tilesets[i];
+		}
+	}
+
+	cout << "did not find tileset, returning empty tileset" << endl;
+	Tileset t;
+	return t;
 }

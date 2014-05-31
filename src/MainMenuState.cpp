@@ -39,3 +39,12 @@ void MainMenuState::setCallbacks(const vector<Callback>& callbacks)
   }
 }
 
+void MainMenuState::menuToPlay()
+{
+
+}
+
+void MainMenuState::exitFromMenu()
+{
+
+}

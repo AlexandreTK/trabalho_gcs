@@ -6,6 +6,7 @@
 #include "Layer.h"
 #include "tinyxml.h"
 #include <vector>
+#include "Level.h"
 
 using std::vector;
 

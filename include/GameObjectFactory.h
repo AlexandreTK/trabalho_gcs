@@ -24,6 +24,7 @@ class GameObjectFactory
 {
 public:
   ~GameObjectFactory();
+  
   static GameObjectFactory * Instance()
   {
     if(!instance)
@@ -62,7 +63,8 @@ public:
 	}
 
 private:
-        static GameObjectFactory * instance;
+	GameObjectFactory() { }
+  static GameObjectFactory * instance;
 	map<string, BaseCreator*> m_creators;
 		
 };
