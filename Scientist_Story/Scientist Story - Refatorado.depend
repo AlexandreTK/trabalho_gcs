@@ -1,0 +1,1197 @@
+# depslib dependency file v1.0
+1348603304 source:c:\gust\program\svn\c++\scientist story - refatorado\menustate.cpp
+	"menuState.h"
+
+1374807858 .h"
+
+1348362771 c:\gust\program\svn\c++\scientist story - refatorado\menustate.h
+	"state.h"
+	"sprite.h"
+	"button.h"
+
+1374854996 
+
+1348191502 c:\gust\program\svn\c++\scientist story - refatorado\state.h
+
+1348603294 c:\gust\program\svn\c++\scientist story - refatorado\sprite.h
+	"sdlbase.h"
+
+1363091262 "
+
+1348200678 c:\gust\program\svn\c++\scientist story - refatorado\sdlbase.h
+	"defines.h"
+	<SDL.h>
+	<SDL_image.h>
+	"gfx.h"
+
+1349817403 .h>
+
+1348192944 c:\gust\program\svn\c++\scientist story - refatorado\defines.h
+
+1348201237 source:c:\gust\program\svn\c++\scientist story - refatorado\sdlbase.cpp
+	"sdlbase.h"
+
+1348603346 source:c:\gust\program\svn\c++\scientist story - refatorado\sprite.cpp
+	"sprite.h"
+
+1348599621 source:c:\gust\program\svn\c++\scientist story - refatorado\statemanager.cpp
+	"statemanager.h"
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+
+1348365560 c:\gust\program\svn\c++\scientist story - refatorado\statemanager.h
+	"inputmanager.h"
+	"sdlbase.h"
+	"menuState.h"
+	"gameState.h"
+	"timer.h"
+
+1348192215 c:\gust\program\svn\c++\scientist story - refatorado\inputmanager.h
+	<SDL.h>
+
+1348192224 source:c:\gust\program\svn\c++\scientist story - refatorado\inputmanager.cpp
+	"inputmanager.h"
+
+1348195824 ger.h"
+
+1348199871 source:c:\gust\program\svn\c++\scientist story - refatorado\interfaces.cpp
+	"interfaces.h"
+
+1362855717 s.h"
+
+1348199881 c:\gust\program\svn\c++\scientist story - refatorado\interfaces.h
+	"gfx.h"
+
+1348361224 c:\gust\program\svn\c++\scientist story - refatorado\gfx.h
+	<vector>
+	<SDL.h>
+	<SDL_image.h>
+	"defines.h"
+
+1348201249 source:c:\gust\program\svn\c++\scientist story - refatorado\gfx.cpp
+	"gfx.h"
+	<math.h>
+
+1348279919 source:c:\gust\program\svn\c++\scientist story - refatorado\camera.cpp
+	"camera.h"
+
+1348280120 c:\gust\program\svn\c++\scientist story - refatorado\camera.h
+	"defines.h"
+	"map.h"
+
+1348362280 c:\gust\program\svn\c++\scientist story - refatorado\map.h
+	"tile.h"
+	"sprite.h"
+	"camera.h"
+	"defines.h"
+	<vector>
+
+1348268812 c:\gust\program\svn\c++\scientist story - refatorado\tile.h
+	"tile.h"
+	"defines.h"
+	<SDL.h>
+
+1348362046 source:c:\gust\program\svn\c++\scientist story - refatorado\gameobject.cpp
+	"gameObject.h"
+
+1374807825 t.h"
+
+1348361894 c:\gust\program\svn\c++\scientist story - refatorado\gameobject.h
+	"vetor.h"
+
+1348328152 c:\gust\program\svn\c++\scientist story - refatorado\vetor.h
+	<math.h>
+
+1348603684 source:c:\gust\program\svn\c++\scientist story - refatorado\entidade.cpp
+	"entidade.h"
+
+1349744491 h"
+
+1348603704 c:\gust\program\svn\c++\scientist story - refatorado\entidade.h
+	"gameObject.h"
+	"interfaces.h"
+	"map.h"
+	"animation.h"
+
+1348603495 source:c:\gust\program\svn\c++\scientist story - refatorado\gamestate.cpp
+	"gameState.h"
+
+1348601788 c:\gust\program\svn\c++\scientist story - refatorado\gamestate.h
+	"state.h"
+	"map.h"
+	"entidade.h"
+
+1348603277 source:c:\gust\program\svn\c++\scientist story - refatorado\map.cpp
+	"map.h"
+
+1348268828 source:c:\gust\program\svn\c++\scientist story - refatorado\tile.cpp
+	"tile.h"
+
+1348362418 source:c:\gust\program\svn\c++\scientist story - refatorado\vetor.cpp
+	"vetor.h"
+
+1348603256 source:c:\gust\program\svn\c++\scientist story - refatorado\button.cpp
+	"button.h"
+
+1348362640 c:\gust\program\svn\c++\scientist story - refatorado\button.h
+	"graphics.h"
+	"inputmanager.h"
+	"sprite.h"
+	"interfaces.h"
+
+1348365534 source:c:\gust\program\svn\c++\scientist story - refatorado\timer.cpp
+	"timer.h"
+
+1348365636 c:\gust\program\svn\c++\scientist story - refatorado\timer.h
+	<SDL.h>
+
+1348603618 source:c:\gust\program\svn\c++\scientist story - refatorado\animation.cpp
+	"animation.h"
+
+1348603585 c:\gust\program\svn\c++\scientist story - refatorado\animation.h
+	"sprite.h"
+
+1363068680 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\animation.cpp
+	"animation.h"
+
+1362630010 c:\gust\program\svn\c++\scientist-story\trunk refatorado\animation.h
+	"sprite.h"
+
+1363068553 c:\gust\program\svn\c++\scientist-story\trunk refatorado\sprite.h
+	"sdlbase.h"
+
+1349661475 c:\gust\program\svn\c++\scientist-story\trunk refatorado\sdlbase.h
+	"defines.h"
+	<SDL.h>
+	<SDL_image.h>
+	"gfx.h"
+	"text.h"
+	"sound.h"
+
+1362328254 c:\gust\program\svn\c++\scientist-story\trunk refatorado\defines.h
+
+1374806751 c:\gust\program\svn\c++\scientist-story\trunk refatorado\gfx.h
+	<vector>
+	<SDL.h>
+	<SDL_image.h>
+	"defines.h"
+	<SDL_gfxPrimitives.h>
+
+1374806751 imitives.h>
+
+1348606856 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\button.cpp
+	"button.h"
+
+1374734092 c:\gust\program\svn\c++\scientist-story\trunk refatorado\button.h
+	"inputmanager.h"
+	"sprite.h"
+	"interfaces.h"
+
+1348195815 c:\gust\program\svn\c++\scientist-story\trunk refatorado\inputmanager.h
+	<SDL.h>
+
+1374776605 c:\gust\program\svn\c++\scientist-story\trunk refatorado\interfaces.h
+	"gfx.h"
+
+1348283519 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\camera.cpp
+	"camera.h"
+
+1348283720 c:\gust\program\svn\c++\scientist-story\trunk refatorado\camera.h
+	"defines.h"
+	"map.h"
+
+1362327706 c:\gust\program\svn\c++\scientist-story\trunk refatorado\map.h
+	"tile.h"
+	"sprite.h"
+	"camera.h"
+	"defines.h"
+	<vector>
+	"teleporte.h"
+	"spriteManager.h"
+	<fstream>
+	<iostream>
+	<sstream>
+
+1362868367 c:\gust\program\svn\c++\scientist-story\trunk refatorado\tile.h
+	"tile.h"
+	"defines.h"
+	<SDL.h>
+
+1363068841 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\entidade.cpp
+	"entidade.h"
+
+1362888815 c:\gust\program\svn\c++\scientist-story\trunk refatorado\entidade.h
+	"map.h"
+	"gameObject.h"
+	"interfaces.h"
+	"animation.h"
+	"timer.h"
+	<time.h>
+	"quest.h"
+
+1374805381 c:\gust\program\svn\c++\scientist-story\trunk refatorado\gameobject.h
+	"vetor.h"
+
+1349810737 c:\gust\program\svn\c++\scientist-story\trunk refatorado\vetor.h
+	<math.h>
+
+1374805408 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\gameobject.cpp
+	"gameObject.h"
+	"camera.h"
+
+1374806764 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\gfx.cpp
+	"gfx.h"
+	<math.h>
+
+1348195824 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\inputmanager.cpp
+	"inputmanager.h"
+
+1374776708 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\interfaces.cpp
+	"interfaces.h"
+
+1363071286 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\map.cpp
+	"map.h"
+	"inimigo.h"
+	"npc.h"
+	<algorithm>
+
+1374854191 >
+
+1349541968 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\sdlbase.cpp
+	"sdlbase.h"
+
+1374784265 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\sprite.cpp
+	"sprite.h"
+
+1374854266 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\statemanager.cpp
+	"statemanager.h"
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<stdio.h>
+
+1374777369 c:\gust\program\svn\c++\scientist-story\trunk refatorado\statemanager.h
+	"inputmanager.h"
+	"sdlbase.h"
+	"menuState.h"
+	"gameState.h"
+	"presentationState.h"
+	"winloseState.h"
+	"timer.h"
+
+1349993621 c:\gust\program\svn\c++\scientist-story\trunk refatorado\menustate.h
+	"state.h"
+	"sprite.h"
+	"button.h"
+
+1374734165 c:\gust\program\svn\c++\scientist-story\trunk refatorado\state.h
+
+1349839809 c:\gust\program\svn\c++\scientist-story\trunk refatorado\gamestate.h
+	"state.h"
+	"map.h"
+	"player.h"
+	"tiro.h"
+	"inimigo.h"
+	"itemobj.h"
+	"interfaceMenu.h"
+	"quest.h"
+	"npc.h"
+	"spriteManager.h"
+	"player.h"
+	"save.h"
+
+1348369236 c:\gust\program\svn\c++\scientist-story\trunk refatorado\timer.h
+	<SDL.h>
+
+1362878230 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\tile.cpp
+	"tile.h"
+
+1348369134 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\timer.cpp
+	"timer.h"
+
+1348366018 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\vetor.cpp
+	"vetor.h"
+
+1374808625 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\gamestate.cpp
+	"gameState.h"
+
+1349993621 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\menustate.cpp
+	"menuState.h"
+
+1363049975 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\personagem.cpp
+	"personagem.h"
+
+1363049975 m.h"
+
+1362604545 c:\gust\program\svn\c++\scientist-story\trunk refatorado\personagem.h
+	"entidade.h"
+	"effects.h"
+
+1350069324 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\effects.cpp
+	"effects.h"
+
+1374734035 c:\gust\program\svn\c++\scientist-story\trunk refatorado\effects.h
+	"animation.h"
+	"timer.h"
+	"interfaces.h"
+	"vetor.h"
+	"entidade.h"
+
+1363036199 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\player.cpp
+	"player.h"
+
+1349833323 c:\gust\program\svn\c++\scientist-story\trunk refatorado\player.h
+	"personagem.h"
+	"inputmanager.h"
+	"tiro.h"
+	"teleporte.h"
+
+1374854191 c:\gust\program\svn\c++\scientist-story\trunk refatorado\text.h
+	"sdlbase.h"
+	<SDL_TTF.h>
+
+1377803695 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\text.cpp
+	"text.h"
+
+1349817403 c:\gust\program\svn\c++\scientist-story\trunk refatorado\sound.h
+	"defines.h"
+	<vector>
+	<SDL_mixer.h>
+
+1349817339 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\sound.cpp
+	"sound.h"
+
+1363055275 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\tiro.cpp
+	"tiro.h"
+
+1363049365 c:\gust\program\svn\c++\scientist-story\trunk refatorado\tiro.h
+	"personagem.h"
+	<math.h>
+	"effects.h"
+
+1349742642 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\teleporte.cpp
+	"teleporte.h"
+
+1349736683 c:\gust\program\svn\c++\scientist-story\trunk refatorado\teleporte.h
+	"gameObject.h"
+	"interfaces.h"
+	"sdlbase.h"
+	<string>
+	"map.h"
+
+1363049866 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\inimigo.cpp
+	"inimigo.h"
+
+1363051152 c:\gust\program\svn\c++\scientist-story\trunk refatorado\inimigo.h
+	"personagem.h"
+	"itemobj.h"
+
+1362855676 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\itemobj.cpp
+	"itemobj.h"
+
+1362855717 c:\gust\program\svn\c++\scientist-story\trunk refatorado\itemobj.h
+	"entidade.h"
+	"player.h"
+	"interfaces.h"
+
+1349671508 c:\gust\program\svn\c++\scientist-story\trunk refatorado\interfacemenu.h
+	"map.h"
+	"player.h"
+	"sdlbase.h"
+	"quest.h"
+
+1374854691 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\interfacemenu.cpp
+	"interfaceMenu.h"
+
+1374854691 Menu.h"
+
+1349645009 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\defines.cpp
+
+1349829447 c:\gust\program\svn\c++\scientist-story\trunk refatorado\quest.h
+	"sdlbase.h"
+	<string>
+	<sstream>
+
+1374854536 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\quest.cpp
+	"quest.h"
+
+1349744491 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\dialogue.cpp
+	"dialogue.h"
+
+1349743764 c:\gust\program\svn\c++\scientist-story\trunk refatorado\dialogue.h
+	"interfaces.h"
+	"sdlbase.h"
+	<string>
+	"Vetor.h"
+
+1374858507 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\npc.cpp
+	"npc.h"
+	"save.h"
+
+1363247943 c:\gust\program\svn\c++\scientist-story\trunk refatorado\npc.h
+	"personagem.h"
+	"quest.h"
+	"dialoguewindow.h"
+	"inputmanager.h"
+	"player.h"
+
+1363054899 c:\gust\program\svn\c++\scientist-story\trunk refatorado\spritemanager.h
+	"sprite.h"
+
+1349821004 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\spritemanager.cpp
+	"spriteManager.h"
+
+1349821004 ager.h"
+
+1349736148 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\loader.cpp
+	"loader.h"
+
+1349736136 c:\gust\program\svn\c++\scientist-story\trunk refatorado\loader.h
+	"inimigo.h"
+
+1349750141 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\config.rc
+
+1349810655 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\moveimage.cpp
+	"moveimage.h"
+
+1349810377 c:\gust\program\svn\c++\scientist-story\trunk refatorado\moveimage.h
+	"vetor.h"
+	"timer.h"
+	"sprite.h"
+	<queue>
+
+1349811088 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\presentationstate.cpp
+	"presentationState.h"
+
+1349811088 ionState.h"
+
+1349810989 c:\gust\program\svn\c++\scientist-story\trunk refatorado\presentationstate.h
+	"state.h"
+	"sprite.h"
+	"timer.h"
+	"animation.h"
+	"inputmanager.h"
+	"moveimage.h"
+
+1349823178 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\winlosestate.cpp
+	"winloseState.h"
+
+1349823178 ate.h"
+
+1349822926 c:\gust\program\svn\c++\scientist-story\trunk refatorado\winlosestate.h
+	"state.h"
+	"sprite.h"
+	"sdlbase.h"
+	"inputmanager.h"
+	<string>
+
+1349830123 c:\gust\program\svn\c++\scientist-story\trunk refatorado\save.h
+
+1349993619 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\save.cpp
+	"save.h"
+	<fstream>
+	<iostream>
+	<sstream>
+	"player.h"
+
+1363091262 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\inimigoboss.cpp
+	"inimigo.h"
+
+1363068053 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\inimigolastboss.cpp
+	"inimigo.h"
+	<math.h>
+
+1374856061 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\dialoguewindow.cpp
+	"dialoguewindow.h"
+	"player.h"
+
+1374854996 c:\gust\program\svn\c++\scientist-story\trunk refatorado\dialoguewindow.h
+	"sdlbase.h"
+	"Vetor.h"
+	"interfaces.h"
+	<string>
+	"timer.h"
+
+1374807858 source:c:\gust\program\svn\c++\scientist-story\trunk refatorado\gameevent.cpp
+	"GameEvent.h"
+
+1374807825 c:\gust\program\svn\c++\scientist-story\trunk refatorado\gameevent.h
+	"gameObject.h"
+
+1374804258 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/GameEvent.cpp
+	"GameEvent.h"
+
+1374804225 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/GameEvent.h
+	"gameObject.h"
+
+1374801781 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/gameObject.h
+	"vetor.h"
+
+1349807137 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/vetor.h
+	<math.h>
+
+1363065080 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/animation.cpp
+	"animation.h"
+
+1362626410 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/animation.h
+	"sprite.h"
+
+1363064953 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/sprite.h
+	"sdlbase.h"
+
+1401920466 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/sdlbase.h
+	"defines.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"gfx.h"
+	"text.h"
+	"sound.h"
+
+1362324654 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/defines.h
+
+1401920479 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/gfx.h
+	<vector>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"defines.h"
+	<SDL/SDL_gfxPrimitives.h>
+
+1401920886 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/text.h
+	"sdlbase.h"
+	<SDL/SDL_ttf.h>
+
+1401920893 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/sound.h
+	"defines.h"
+	<vector>
+	<SDL/SDL_mixer.h>
+
+1348603256 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/button.cpp
+	"button.h"
+
+1374730492 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/button.h
+	"inputmanager.h"
+	"sprite.h"
+	"interfaces.h"
+
+1401920984 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/inputmanager.h
+	<SDL/SDL.h>
+
+1374773005 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/interfaces.h
+	"gfx.h"
+
+1348279919 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/camera.cpp
+	"camera.h"
+
+1348280120 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/camera.h
+	"defines.h"
+	"map.h"
+
+1362324106 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/map.h
+	"tile.h"
+	"sprite.h"
+	"camera.h"
+	"defines.h"
+	<vector>
+	"teleporte.h"
+	"spriteManager.h"
+	<fstream>
+	<iostream>
+	<sstream>
+
+1401920989 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/tile.h
+	"tile.h"
+	"defines.h"
+	<SDL/SDL.h>
+
+1349733083 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/teleporte.h
+	"gameObject.h"
+	"interfaces.h"
+	"sdlbase.h"
+	<string>
+	"map.h"
+
+1363051299 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/spriteManager.h
+	"sprite.h"
+
+1349746541 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/config.rc
+
+1374852461 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/dialoguewindow.cpp
+	"dialoguewindow.h"
+	"player.h"
+
+1401921002 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/dialoguewindow.h
+	"sdlbase.h"
+	"vetor.h"
+	"interfaces.h"
+	<string>
+	"timer.h"
+
+1401921006 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/timer.h
+	<SDL/SDL.h>
+
+1401921980 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/player.h
+	"personagem.h"
+	"inputmanager.h"
+	"tiro.h"
+	"teleporte.h"
+
+1362600945 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/personagem.h
+	"entidade.h"
+	"effects.h"
+
+1362885215 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/entidade.h
+	"map.h"
+	"gameObject.h"
+	"interfaces.h"
+	"animation.h"
+	"timer.h"
+	<time.h>
+	"quest.h"
+
+1349825847 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/quest.h
+	"sdlbase.h"
+	<string>
+	<sstream>
+
+1401921278 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/effects.h
+	"animation.h"
+	"timer.h"
+	"interfaces.h"
+	"vetor.h"
+	"entidade.h"
+
+1363045765 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/tiro.h
+	"personagem.h"
+	<math.h>
+	"effects.h"
+
+1401921603 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/effects.cpp
+	"effects.h"
+	<iostream>
+
+1363065241 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/entidade.cpp
+	"entidade.h"
+
+1374801808 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/gameObject.cpp
+	"gameObject.h"
+	"camera.h"
+
+1401922018 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/gameState.cpp
+	"gameState.h"
+
+1349836209 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/gameState.h
+	"state.h"
+	"map.h"
+	"player.h"
+	"tiro.h"
+	"inimigo.h"
+	"itemobj.h"
+	"interfaceMenu.h"
+	"quest.h"
+	"npc.h"
+	"spriteManager.h"
+	"player.h"
+	"save.h"
+
+1374730565 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/state.h
+
+1363047552 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/inimigo.h
+	"personagem.h"
+	"itemobj.h"
+
+1362852117 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/itemobj.h
+	"entidade.h"
+	"player.h"
+	"interfaces.h"
+
+1349667908 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/interfaceMenu.h
+	"map.h"
+	"player.h"
+	"sdlbase.h"
+	"quest.h"
+
+1363244343 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/npc.h
+	"personagem.h"
+	"quest.h"
+	"dialoguewindow.h"
+	"inputmanager.h"
+	"player.h"
+
+1349826523 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/save.h
+
+1374803164 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/gfx.cpp
+	"gfx.h"
+	<math.h>
+
+1363046266 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/inimigo.cpp
+	"inimigo.h"
+
+1363087662 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/inimigoBoss.cpp
+	"inimigo.h"
+
+1363064453 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/inimigoLastBoss.cpp
+	"inimigo.h"
+	<math.h>
+
+1348192224 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/inputmanager.cpp
+	"inputmanager.h"
+
+1374851091 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/interfaceMenu.cpp
+	"interfaceMenu.h"
+
+1401921514 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/interfaces.cpp
+	"interfaces.h"
+
+1362852076 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/itemobj.cpp
+	"itemobj.h"
+
+1363067686 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/map.cpp
+	"map.h"
+	"inimigo.h"
+	"npc.h"
+	<algorithm>
+
+1349990021 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/menuState.cpp
+	"menuState.h"
+
+1349990021 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/menuState.h
+	"state.h"
+	"sprite.h"
+	"button.h"
+
+1349807055 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/moveimage.cpp
+	"moveimage.h"
+
+1349806777 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/moveimage.h
+	"vetor.h"
+	"timer.h"
+	"sprite.h"
+	<queue>
+
+1374854907 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/npc.cpp
+	"npc.h"
+	"save.h"
+
+1401921804 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/personagem.cpp
+	"personagem.h"
+
+1363032599 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/player.cpp
+	"player.h"
+
+1349807488 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/presentationState.cpp
+	"presentationState.h"
+
+1349807389 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/presentationState.h
+	"state.h"
+	"sprite.h"
+	"timer.h"
+	"animation.h"
+	"inputmanager.h"
+	"moveimage.h"
+
+1374850936 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/quest.cpp
+	"quest.h"
+
+1349990019 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/save.cpp
+	"save.h"
+	<fstream>
+	<iostream>
+	<sstream>
+	"player.h"
+
+1349538368 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/sdlbase.cpp
+	"sdlbase.h"
+
+1349813739 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/sound.cpp
+	"sound.h"
+
+1374780665 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/sprite.cpp
+	"sprite.h"
+
+1349817404 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/spriteManager.cpp
+	"spriteManager.h"
+
+1374850666 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/statemanager.cpp
+	"statemanager.h"
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<stdio.h>
+
+1374773769 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/statemanager.h
+	"inputmanager.h"
+	"sdlbase.h"
+	"menuState.h"
+	"gameState.h"
+	"presentationState.h"
+	"winloseState.h"
+	"timer.h"
+
+1349819326 /home/gust/Documents/Program/C++/scientist-story/trunk refatorado/winloseState.h
+	"state.h"
+	"sprite.h"
+	"sdlbase.h"
+	"inputmanager.h"
+	<string>
+
+1349739042 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/teleporte.cpp
+	"teleporte.h"
+
+1377800095 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/text.cpp
+	"text.h"
+
+1362874630 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/tile.cpp
+	"tile.h"
+
+1348365534 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/timer.cpp
+	"timer.h"
+
+1363051675 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/tiro.cpp
+	"tiro.h"
+
+1348362418 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/vetor.cpp
+	"vetor.h"
+
+1349819578 source:/home/gust/Documents/Program/C++/scientist-story/trunk refatorado/winloseState.cpp
+	"winloseState.h"
+
+1363065080 source:/home/bruno/Documents/SandStormGames/Scientist_Story/animation.cpp
+	"animation.h"
+
+1362626410 /home/bruno/Documents/SandStormGames/Scientist_Story/animation.h
+	"sprite.h"
+
+1363064952 /home/bruno/Documents/SandStormGames/Scientist_Story/sprite.h
+	"sdlbase.h"
+
+1401920466 /home/bruno/Documents/SandStormGames/Scientist_Story/sdlbase.h
+	"defines.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"gfx.h"
+	"text.h"
+	"sound.h"
+
+1402081405 /home/bruno/Documents/SandStormGames/Scientist_Story/defines.h
+
+1401920478 /home/bruno/Documents/SandStormGames/Scientist_Story/gfx.h
+	<vector>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"defines.h"
+	<SDL/SDL_gfxPrimitives.h>
+
+1401920886 /home/bruno/Documents/SandStormGames/Scientist_Story/text.h
+	"sdlbase.h"
+	<SDL/SDL_ttf.h>
+
+1401920892 /home/bruno/Documents/SandStormGames/Scientist_Story/sound.h
+	"defines.h"
+	<vector>
+	<SDL/SDL_mixer.h>
+
+1348603256 source:/home/bruno/Documents/SandStormGames/Scientist_Story/button.cpp
+	"button.h"
+
+1374730492 /home/bruno/Documents/SandStormGames/Scientist_Story/button.h
+	"inputmanager.h"
+	"sprite.h"
+	"interfaces.h"
+
+1401920984 /home/bruno/Documents/SandStormGames/Scientist_Story/inputmanager.h
+	<SDL/SDL.h>
+
+1374773004 /home/bruno/Documents/SandStormGames/Scientist_Story/interfaces.h
+	"gfx.h"
+
+1348279918 source:/home/bruno/Documents/SandStormGames/Scientist_Story/camera.cpp
+	"camera.h"
+
+1348280120 /home/bruno/Documents/SandStormGames/Scientist_Story/camera.h
+	"defines.h"
+	"map.h"
+
+1362324106 /home/bruno/Documents/SandStormGames/Scientist_Story/map.h
+	"tile.h"
+	"sprite.h"
+	"camera.h"
+	"defines.h"
+	<vector>
+	"teleporte.h"
+	"spriteManager.h"
+	<fstream>
+	<iostream>
+	<sstream>
+
+1401920988 /home/bruno/Documents/SandStormGames/Scientist_Story/tile.h
+	"tile.h"
+	"defines.h"
+	<SDL/SDL.h>
+
+1349733082 /home/bruno/Documents/SandStormGames/Scientist_Story/teleporte.h
+	"gameObject.h"
+	"interfaces.h"
+	"sdlbase.h"
+	<string>
+	"map.h"
+
+1374801780 /home/bruno/Documents/SandStormGames/Scientist_Story/gameObject.h
+	"vetor.h"
+
+1349807136 /home/bruno/Documents/SandStormGames/Scientist_Story/vetor.h
+	<math.h>
+
+1363051298 /home/bruno/Documents/SandStormGames/Scientist_Story/spriteManager.h
+	"sprite.h"
+
+1374852460 source:/home/bruno/Documents/SandStormGames/Scientist_Story/dialoguewindow.cpp
+	"dialoguewindow.h"
+	"player.h"
+
+1401921002 /home/bruno/Documents/SandStormGames/Scientist_Story/dialoguewindow.h
+	"sdlbase.h"
+	"vetor.h"
+	"interfaces.h"
+	<string>
+	"timer.h"
+
+1401921006 /home/bruno/Documents/SandStormGames/Scientist_Story/timer.h
+	<SDL/SDL.h>
+
+1401921980 /home/bruno/Documents/SandStormGames/Scientist_Story/player.h
+	"personagem.h"
+	"inputmanager.h"
+	"tiro.h"
+	"teleporte.h"
+
+1362600944 /home/bruno/Documents/SandStormGames/Scientist_Story/personagem.h
+	"entidade.h"
+	"effects.h"
+
+1402188338 /home/bruno/Documents/SandStormGames/Scientist_Story/entidade.h
+	"map.h"
+	"gameObject.h"
+	"interfaces.h"
+	"animation.h"
+	"timer.h"
+	<time.h>
+	"quest.h"
+
+1349825846 /home/bruno/Documents/SandStormGames/Scientist_Story/quest.h
+	"sdlbase.h"
+	<string>
+	<sstream>
+
+1401921278 /home/bruno/Documents/SandStormGames/Scientist_Story/effects.h
+	"animation.h"
+	"timer.h"
+	"interfaces.h"
+	"vetor.h"
+	"entidade.h"
+
+1363045764 /home/bruno/Documents/SandStormGames/Scientist_Story/tiro.h
+	"personagem.h"
+	<math.h>
+	"effects.h"
+
+1401921602 source:/home/bruno/Documents/SandStormGames/Scientist_Story/effects.cpp
+	"effects.h"
+	<iostream>
+
+1363065240 source:/home/bruno/Documents/SandStormGames/Scientist_Story/entidade.cpp
+	"entidade.h"
+
+1374804258 source:/home/bruno/Documents/SandStormGames/Scientist_Story/GameEvent.cpp
+	"GameEvent.h"
+
+1374804224 /home/bruno/Documents/SandStormGames/Scientist_Story/GameEvent.h
+	"gameObject.h"
+
+1374801808 source:/home/bruno/Documents/SandStormGames/Scientist_Story/gameObject.cpp
+	"gameObject.h"
+	"camera.h"
+
+1402200508 source:/home/bruno/Documents/SandStormGames/Scientist_Story/gameState.cpp
+	"gameState.h"
+
+1349836208 /home/bruno/Documents/SandStormGames/Scientist_Story/gameState.h
+	"state.h"
+	"map.h"
+	"player.h"
+	"tiro.h"
+	"inimigo.h"
+	"itemobj.h"
+	"interfaceMenu.h"
+	"quest.h"
+	"npc.h"
+	"spriteManager.h"
+	"player.h"
+	"save.h"
+
+1374730564 /home/bruno/Documents/SandStormGames/Scientist_Story/state.h
+
+1363047552 /home/bruno/Documents/SandStormGames/Scientist_Story/inimigo.h
+	"personagem.h"
+	"itemobj.h"
+
+1362852116 /home/bruno/Documents/SandStormGames/Scientist_Story/itemobj.h
+	"entidade.h"
+	"player.h"
+	"interfaces.h"
+
+1349667908 /home/bruno/Documents/SandStormGames/Scientist_Story/interfaceMenu.h
+	"map.h"
+	"player.h"
+	"sdlbase.h"
+	"quest.h"
+
+1363244342 /home/bruno/Documents/SandStormGames/Scientist_Story/npc.h
+	"personagem.h"
+	"quest.h"
+	"dialoguewindow.h"
+	"inputmanager.h"
+	"player.h"
+
+1349826522 /home/bruno/Documents/SandStormGames/Scientist_Story/save.h
+
+1374803164 source:/home/bruno/Documents/SandStormGames/Scientist_Story/gfx.cpp
+	"gfx.h"
+	<math.h>
+
+1363046266 source:/home/bruno/Documents/SandStormGames/Scientist_Story/inimigo.cpp
+	"inimigo.h"
+
+1363087662 source:/home/bruno/Documents/SandStormGames/Scientist_Story/inimigoBoss.cpp
+	"inimigo.h"
+
+1363064452 source:/home/bruno/Documents/SandStormGames/Scientist_Story/inimigoLastBoss.cpp
+	"inimigo.h"
+	<math.h>
+
+1348192224 source:/home/bruno/Documents/SandStormGames/Scientist_Story/inputmanager.cpp
+	"inputmanager.h"
+
+1374851090 source:/home/bruno/Documents/SandStormGames/Scientist_Story/interfaceMenu.cpp
+	"interfaceMenu.h"
+
+1401921514 source:/home/bruno/Documents/SandStormGames/Scientist_Story/interfaces.cpp
+	"interfaces.h"
+
+1362852076 source:/home/bruno/Documents/SandStormGames/Scientist_Story/itemobj.cpp
+	"itemobj.h"
+
+1363067686 source:/home/bruno/Documents/SandStormGames/Scientist_Story/map.cpp
+	"map.h"
+	"inimigo.h"
+	"npc.h"
+	<algorithm>
+
+1402085884 source:/home/bruno/Documents/SandStormGames/Scientist_Story/menuState.cpp
+	"menuState.h"
+
+1349990020 /home/bruno/Documents/SandStormGames/Scientist_Story/menuState.h
+	"state.h"
+	"sprite.h"
+	"button.h"
+
+1349807054 source:/home/bruno/Documents/SandStormGames/Scientist_Story/moveimage.cpp
+	"moveimage.h"
+
+1349806776 /home/bruno/Documents/SandStormGames/Scientist_Story/moveimage.h
+	"vetor.h"
+	"timer.h"
+	"sprite.h"
+	<queue>
+
+1374854906 source:/home/bruno/Documents/SandStormGames/Scientist_Story/npc.cpp
+	"npc.h"
+	"save.h"
+
+1402243448 source:/home/bruno/Documents/SandStormGames/Scientist_Story/personagem.cpp
+	"personagem.h"
+
+1402200507 source:/home/bruno/Documents/SandStormGames/Scientist_Story/player.cpp
+	"player.h"
+
+1349807488 source:/home/bruno/Documents/SandStormGames/Scientist_Story/presentationState.cpp
+	"presentationState.h"
+
+1349807388 /home/bruno/Documents/SandStormGames/Scientist_Story/presentationState.h
+	"state.h"
+	"sprite.h"
+	"timer.h"
+	"animation.h"
+	"inputmanager.h"
+	"moveimage.h"
+
+1374850936 source:/home/bruno/Documents/SandStormGames/Scientist_Story/quest.cpp
+	"quest.h"
+
+1349990018 source:/home/bruno/Documents/SandStormGames/Scientist_Story/save.cpp
+	"save.h"
+	<fstream>
+	<iostream>
+	<sstream>
+	"player.h"
+
+1349538368 source:/home/bruno/Documents/SandStormGames/Scientist_Story/sdlbase.cpp
+	"sdlbase.h"
+
+1349813738 source:/home/bruno/Documents/SandStormGames/Scientist_Story/sound.cpp
+	"sound.h"
+
+1374780664 source:/home/bruno/Documents/SandStormGames/Scientist_Story/sprite.cpp
+	"sprite.h"
+
+1349817404 source:/home/bruno/Documents/SandStormGames/Scientist_Story/spriteManager.cpp
+	"spriteManager.h"
+
+1374850666 source:/home/bruno/Documents/SandStormGames/Scientist_Story/statemanager.cpp
+	"statemanager.h"
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<stdio.h>
+
+1374773768 /home/bruno/Documents/SandStormGames/Scientist_Story/statemanager.h
+	"inputmanager.h"
+	"sdlbase.h"
+	"menuState.h"
+	"gameState.h"
+	"presentationState.h"
+	"winloseState.h"
+	"timer.h"
+
+1349819326 /home/bruno/Documents/SandStormGames/Scientist_Story/winloseState.h
+	"state.h"
+	"sprite.h"
+	"sdlbase.h"
+	"inputmanager.h"
+	<string>
+
+1349739042 source:/home/bruno/Documents/SandStormGames/Scientist_Story/teleporte.cpp
+	"teleporte.h"
+
+1377800094 source:/home/bruno/Documents/SandStormGames/Scientist_Story/text.cpp
+	"text.h"
+
+1362874630 source:/home/bruno/Documents/SandStormGames/Scientist_Story/tile.cpp
+	"tile.h"
+
+1348365534 source:/home/bruno/Documents/SandStormGames/Scientist_Story/timer.cpp
+	"timer.h"
+
+1363051674 source:/home/bruno/Documents/SandStormGames/Scientist_Story/tiro.cpp
+	"tiro.h"
+
+1348362418 source:/home/bruno/Documents/SandStormGames/Scientist_Story/vetor.cpp
+	"vetor.h"
+
+1349819578 source:/home/bruno/Documents/SandStormGames/Scientist_Story/winloseState.cpp
+	"winloseState.h"
+

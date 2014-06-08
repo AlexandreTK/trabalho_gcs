@@ -24,7 +24,7 @@ void Player::load(const LoaderParams *pParams)
 void Player::draw()
 {
   SDLGameObject::draw();
-  currentRow = 2;
+  currentRow = 1;
 }
 
 /*
@@ -39,7 +39,7 @@ void Player::update()
 
 	handleInput(); // add our function
 
-	currentFrame = int(((SDL_GetTicks() / 100) % 4));
+	currentFrame = int(((SDL_GetTicks() / 100) % 8));
 
 	m_acceleration.setX(0);
 
@@ -104,28 +104,28 @@ void Player::handleInput()
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_D))
 	{
-		m_velocity.setX(0.7);
+		m_velocity.setX(3);
                 flip = SDL_FLIP_NONE;
-                currentRow = 1;
+                currentRow = 2;
 	}
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_A))
 	{
-		m_velocity.setX(-0.7);
+		m_velocity.setX(-3);
                 flip = SDL_FLIP_HORIZONTAL;
-                currentRow = 1;
+                currentRow = 2;
 	}
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_W))
 	{
-		m_velocity.setY(-0.7);
-                currentRow = 1;
+		m_velocity.setY(-3);
+                currentRow = 4;
 	}
 
 	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_S))
 	{
-		m_velocity.setY(0.7);
-                currentRow = 1;
+		m_velocity.setY(3);
+                currentRow = 3;
 	}
 
         if(m_position.getX() <= 0)

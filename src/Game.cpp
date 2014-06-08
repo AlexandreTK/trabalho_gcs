@@ -110,7 +110,7 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
   }
 
   GameObject * player = new Player();
-  player->load(new LoaderParams(10, 600-119-64, 64, 64, "kays", 4));
+  player->load(new LoaderParams(10, 600-119-64, 64, 64, "kays", 8));
 
   gameObjects.push_back(player);
  
@@ -286,9 +286,9 @@ void Game::draw()
   /*
    * Draw images to renderer
    */
-  TheTextureManager::Instance()->draw("background", 0, 0, 800, 600, this->renderer);
+  TheTextureManager::Instance()->draw("background", 0, 0, 800, 608, this->renderer);
 
-  TheTextureManager::Instance()->draw("floor", 0, 600-119, 800, 119, this->renderer);
+  TheTextureManager::Instance()->draw("floor", 0, 0, 800, 608, this->renderer);
 
   TheTextureManager::Instance()->draw("red-mage", 650, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
 
