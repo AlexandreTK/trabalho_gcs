@@ -1195,3 +1195,339 @@
 1349819578 source:/home/bruno/Documents/SandStormGames/Scientist_Story/winloseState.cpp
 	"winloseState.h"
 
+1363065080 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/animation.cpp
+	"animation.h"
+
+1362626410 /home/bruno/Documents/SandStormGames/KATW/new KATW/animation.h
+	"sprite.h"
+
+1363064952 /home/bruno/Documents/SandStormGames/KATW/new KATW/sprite.h
+	"sdlbase.h"
+
+1401920466 /home/bruno/Documents/SandStormGames/KATW/new KATW/sdlbase.h
+	"defines.h"
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"gfx.h"
+	"text.h"
+	"sound.h"
+
+1402081405 /home/bruno/Documents/SandStormGames/KATW/new KATW/defines.h
+
+1401920478 /home/bruno/Documents/SandStormGames/KATW/new KATW/gfx.h
+	<vector>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	"defines.h"
+	<SDL/SDL_gfxPrimitives.h>
+
+1401920886 /home/bruno/Documents/SandStormGames/KATW/new KATW/text.h
+	"sdlbase.h"
+	<SDL/SDL_ttf.h>
+
+1401920892 /home/bruno/Documents/SandStormGames/KATW/new KATW/sound.h
+	"defines.h"
+	<vector>
+	<SDL/SDL_mixer.h>
+
+1348603256 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/button.cpp
+	"button.h"
+
+1374730492 /home/bruno/Documents/SandStormGames/KATW/new KATW/button.h
+	"inputmanager.h"
+	"sprite.h"
+	"interfaces.h"
+
+1401920984 /home/bruno/Documents/SandStormGames/KATW/new KATW/inputmanager.h
+	<SDL/SDL.h>
+
+1374773004 /home/bruno/Documents/SandStormGames/KATW/new KATW/interfaces.h
+	"gfx.h"
+
+1348279918 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/camera.cpp
+	"camera.h"
+
+1348280120 /home/bruno/Documents/SandStormGames/KATW/new KATW/camera.h
+	"defines.h"
+	"map.h"
+
+1362324106 /home/bruno/Documents/SandStormGames/KATW/new KATW/map.h
+	"tile.h"
+	"sprite.h"
+	"camera.h"
+	"defines.h"
+	<vector>
+	"teleporte.h"
+	"spriteManager.h"
+	<fstream>
+	<iostream>
+	<sstream>
+
+1401920988 /home/bruno/Documents/SandStormGames/KATW/new KATW/tile.h
+	"tile.h"
+	"defines.h"
+	<SDL/SDL.h>
+
+1349733082 /home/bruno/Documents/SandStormGames/KATW/new KATW/teleporte.h
+	"gameObject.h"
+	"interfaces.h"
+	"sdlbase.h"
+	<string>
+	"map.h"
+
+1374801780 /home/bruno/Documents/SandStormGames/KATW/new KATW/gameObject.h
+	"vetor.h"
+
+1349807136 /home/bruno/Documents/SandStormGames/KATW/new KATW/vetor.h
+	<math.h>
+
+1363051298 /home/bruno/Documents/SandStormGames/KATW/new KATW/spriteManager.h
+	"sprite.h"
+
+1374852460 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/dialoguewindow.cpp
+	"dialoguewindow.h"
+	"player.h"
+
+1401921002 /home/bruno/Documents/SandStormGames/KATW/new KATW/dialoguewindow.h
+	"sdlbase.h"
+	"vetor.h"
+	"interfaces.h"
+	<string>
+	"timer.h"
+
+1401921006 /home/bruno/Documents/SandStormGames/KATW/new KATW/timer.h
+	<SDL/SDL.h>
+
+1401921980 /home/bruno/Documents/SandStormGames/KATW/new KATW/player.h
+	"personagem.h"
+	"inputmanager.h"
+	"tiro.h"
+	"teleporte.h"
+
+1362600944 /home/bruno/Documents/SandStormGames/KATW/new KATW/personagem.h
+	"entidade.h"
+	"effects.h"
+
+1402188338 /home/bruno/Documents/SandStormGames/KATW/new KATW/entidade.h
+	"map.h"
+	"gameObject.h"
+	"interfaces.h"
+	"animation.h"
+	"timer.h"
+	<time.h>
+	"quest.h"
+
+1349825846 /home/bruno/Documents/SandStormGames/KATW/new KATW/quest.h
+	"sdlbase.h"
+	<string>
+	<sstream>
+
+1401921278 /home/bruno/Documents/SandStormGames/KATW/new KATW/effects.h
+	"animation.h"
+	"timer.h"
+	"interfaces.h"
+	"vetor.h"
+	"entidade.h"
+
+1363045764 /home/bruno/Documents/SandStormGames/KATW/new KATW/tiro.h
+	"personagem.h"
+	<math.h>
+	"effects.h"
+
+1401921602 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/effects.cpp
+	"effects.h"
+	<iostream>
+
+1363065240 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/entidade.cpp
+	"entidade.h"
+
+1374804258 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/GameEvent.cpp
+	"GameEvent.h"
+
+1374804224 /home/bruno/Documents/SandStormGames/KATW/new KATW/GameEvent.h
+	"gameObject.h"
+
+1374801808 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/gameObject.cpp
+	"gameObject.h"
+	"camera.h"
+
+1402200508 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/gameState.cpp
+	"gameState.h"
+
+1349836208 /home/bruno/Documents/SandStormGames/KATW/new KATW/gameState.h
+	"state.h"
+	"map.h"
+	"player.h"
+	"tiro.h"
+	"inimigo.h"
+	"itemobj.h"
+	"interfaceMenu.h"
+	"quest.h"
+	"npc.h"
+	"spriteManager.h"
+	"player.h"
+	"save.h"
+
+1374730564 /home/bruno/Documents/SandStormGames/KATW/new KATW/state.h
+
+1363047552 /home/bruno/Documents/SandStormGames/KATW/new KATW/inimigo.h
+	"personagem.h"
+	"itemobj.h"
+
+1362852116 /home/bruno/Documents/SandStormGames/KATW/new KATW/itemobj.h
+	"entidade.h"
+	"player.h"
+	"interfaces.h"
+
+1349667908 /home/bruno/Documents/SandStormGames/KATW/new KATW/interfaceMenu.h
+	"map.h"
+	"player.h"
+	"sdlbase.h"
+	"quest.h"
+
+1363244342 /home/bruno/Documents/SandStormGames/KATW/new KATW/npc.h
+	"personagem.h"
+	"quest.h"
+	"dialoguewindow.h"
+	"inputmanager.h"
+	"player.h"
+
+1349826522 /home/bruno/Documents/SandStormGames/KATW/new KATW/save.h
+
+1374803164 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/gfx.cpp
+	"gfx.h"
+	<math.h>
+
+1363046266 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/inimigo.cpp
+	"inimigo.h"
+
+1363087662 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/inimigoBoss.cpp
+	"inimigo.h"
+
+1363064452 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/inimigoLastBoss.cpp
+	"inimigo.h"
+	<math.h>
+
+1348192224 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/inputmanager.cpp
+	"inputmanager.h"
+
+1374851090 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/interfaceMenu.cpp
+	"interfaceMenu.h"
+
+1401921514 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/interfaces.cpp
+	"interfaces.h"
+
+1362852076 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/itemobj.cpp
+	"itemobj.h"
+
+1363067686 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/map.cpp
+	"map.h"
+	"inimigo.h"
+	"npc.h"
+	<algorithm>
+
+1402085884 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/menuState.cpp
+	"menuState.h"
+
+1349990020 /home/bruno/Documents/SandStormGames/KATW/new KATW/menuState.h
+	"state.h"
+	"sprite.h"
+	"button.h"
+
+1349807054 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/moveimage.cpp
+	"moveimage.h"
+
+1349806776 /home/bruno/Documents/SandStormGames/KATW/new KATW/moveimage.h
+	"vetor.h"
+	"timer.h"
+	"sprite.h"
+	<queue>
+
+1374854906 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/npc.cpp
+	"npc.h"
+	"save.h"
+
+1402243536 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/personagem.cpp
+	"personagem.h"
+
+1402200507 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/player.cpp
+	"player.h"
+
+1349807488 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/presentationState.cpp
+	"presentationState.h"
+
+1349807388 /home/bruno/Documents/SandStormGames/KATW/new KATW/presentationState.h
+	"state.h"
+	"sprite.h"
+	"timer.h"
+	"animation.h"
+	"inputmanager.h"
+	"moveimage.h"
+
+1374850936 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/quest.cpp
+	"quest.h"
+
+1349990018 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/save.cpp
+	"save.h"
+	<fstream>
+	<iostream>
+	<sstream>
+	"player.h"
+
+1349538368 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/sdlbase.cpp
+	"sdlbase.h"
+
+1349813738 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/sound.cpp
+	"sound.h"
+
+1374780664 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/sprite.cpp
+	"sprite.h"
+
+1349817404 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/spriteManager.cpp
+	"spriteManager.h"
+
+1374850666 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/statemanager.cpp
+	"statemanager.h"
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<stdio.h>
+
+1374773768 /home/bruno/Documents/SandStormGames/KATW/new KATW/statemanager.h
+	"inputmanager.h"
+	"sdlbase.h"
+	"menuState.h"
+	"gameState.h"
+	"presentationState.h"
+	"winloseState.h"
+	"timer.h"
+
+1349819326 /home/bruno/Documents/SandStormGames/KATW/new KATW/winloseState.h
+	"state.h"
+	"sprite.h"
+	"sdlbase.h"
+	"inputmanager.h"
+	<string>
+
+1349739042 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/teleporte.cpp
+	"teleporte.h"
+
+1377800094 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/text.cpp
+	"text.h"
+
+1362874630 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/tile.cpp
+	"tile.h"
+
+1348365534 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/timer.cpp
+	"timer.h"
+
+1363051674 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/tiro.cpp
+	"tiro.h"
+
+1348362418 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/vetor.cpp
+	"vetor.h"
+
+1349819578 source:/home/bruno/Documents/SandStormGames/KATW/new KATW/winloseState.cpp
+	"winloseState.h"
+

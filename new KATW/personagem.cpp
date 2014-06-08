@@ -56,10 +56,23 @@ void Personagem::stopMoving(){
 
     // se velocidade estiver entre 50pixels/s, para
 	if(vel.x < 50.0f && vel.x > -50.0f) {
+        bool flip;
+        if(vel.x > 0){
+            flip = false;
+            an.setFrames(2,8,100,false);
+        }
+        if(vel.x < 0){
+            flip = true;
+            an.setFrames(3,8,100,false);
+        }
 		acel.x = 0;
 		vel.x = 0;
-		if(an.isLoop() && actionMovement != ACT_NONE) //Só para quando animação é loop, caso contrário irá parar sozinha.
-            an.setFrames(2,8,100,false);
+		//if(an.isLoop() && actionMovement != ACT_NONE) //Só para quando animação é loop, caso contrário irá parar sozinha.
+          //  if(flip == false)
+            //an.setFrames(2,8,100,false);
+
+            //if(flip == true)
+            //an.setFrames(3,8,100,false);
 	}
 }
 
@@ -155,6 +168,7 @@ void Personagem::jump(bool not_jumping){
         if(jumpTimer.getTime() < jump_hold && jumpTimer.is_started())
         {
             vel.y = -jump_speed;
+            an.continueAnimation(0);
         }
     }
 
