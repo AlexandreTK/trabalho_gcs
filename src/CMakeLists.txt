@@ -1,13 +1,8 @@
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
+#set(CMAKE_CXX_COMPILER "clang++")
+#set(CMAKE_CXX_FLAGS "-Wall -W -Wno-unused-private-field -Wno-unused-parameter -Wno-reorder -Wno-delete-non-virtual-dtor -ansi -pedantic -g -Iinclude/ -O2")
+
 file( GLOB SRCS *.c *.cpp *.h)
 add_executable(${PROJECT_NAME} ${SRCS})
-
-
-INCLUDE(FindPkgConfig)
-
-PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
-PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
-
-INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIRS})
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES})
