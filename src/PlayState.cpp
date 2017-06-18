@@ -34,7 +34,7 @@ void PlayState::render()
 bool PlayState::onEnter()
 {
   LevelParser levelParser;
-  pLevel = levelParser.parseLevel("data/levels/lvl1.tmx");
+  pLevel = levelParser.parseLevel("/var/lib/katw/data/levels/lvl1.tmx");
 
   StateParser stateParser;
   stateParser.parseState("test.xml", playID, &gameObjects, &m_textureIDList);

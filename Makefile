@@ -28,11 +28,13 @@ clean:
 
 
 install: KATW
+	@mkdir -p /var/lib/katw
+	@cp -r $(DATA_DIR) /var/lib/katw
 	install -D KATW \
 		$(DESTDIR)$(prefix)/bin/katw
-	@cp -r $(DATA_DIR) $(DESTDIR)$(prefix)/bin
+
 
 uninstall:
+	@rm -rf /var/lib/katw
 	-rm -f $(DESTDIR)$(prefix)/bin/katw
-	@rm -rf $(DESTDIR)$(prefix)/bin/data
 

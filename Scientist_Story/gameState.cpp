@@ -43,38 +43,38 @@ void StateGame::load(int stack)
 
 /// FIM TESTES
 
-    //SpriteManager::SpriteControl.loadSprite("data/enemy/player_32.png",SPRITE_PLAYER);
-    SpriteManager::SpriteControl.loadSprite("data/enemy/KaysTeste.png",SPRITE_PLAYER);
-    SpriteManager::SpriteControl.loadSprite("data/enemy/bommer_enemy.png",SPRITE_BOOMER);
-    //SpriteManager::SpriteControl.loadSprite("data/tileset/basic_tileset_32.png",SPRITE_TILESET);
-    SpriteManager::SpriteControl.loadSprite("data/tileset/tile_Kays.png",SPRITE_TILESET);
-    SpriteManager::SpriteControl.loadSprite("data/enemy/slime_enemy_simple.png",SPRITE_SLIME_SIMPLE);
-    SpriteManager::SpriteControl.loadSprite("data/enemy/slime_boss.png", SPRITE_SLIME_GOD);
+    //SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/player_32.png",SPRITE_PLAYER);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/KaysTeste.png",SPRITE_PLAYER);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/bommer_enemy.png",SPRITE_BOOMER);
+    //SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/tileset/basic_tileset_32.png",SPRITE_TILESET);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/tileset/tile_Kays.png",SPRITE_TILESET);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/slime_enemy_simple.png",SPRITE_SLIME_SIMPLE);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/slime_boss.png", SPRITE_SLIME_GOD);
 
-    SpriteManager::SpriteControl.loadSprite("data/enemy/npc1.png", SPRITE_NPC1);
-    SpriteManager::SpriteControl.loadSprite("data/enemy/npc2.png", SPRITE_NPC2);
-    SpriteManager::SpriteControl.loadSprite("data/enemy/npc3.png", SPRITE_NPC3);
-    SpriteManager::SpriteControl.loadSprite("data/enemy/npc4.png", SPRITE_NPC4);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/npc1.png", SPRITE_NPC1);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/npc2.png", SPRITE_NPC2);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/npc3.png", SPRITE_NPC3);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/npc4.png", SPRITE_NPC4);
 
-    SpriteManager::SpriteControl.loadSprite("data/enemy/boss_64.png", SPRITE_CYBORG_SLIME);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/enemy/boss_64.png", SPRITE_CYBORG_SLIME);
 
     if (!Map::MapControl.loadSprite(SpriteManager::SpriteControl.getSprite(SPRITE_TILESET))){
         printf("Nao carregou imagem de tileset\n");
     }
 
-    if(!Map::MapControl.loadBackground(sp_bg = new Sprite("data/bg/bg1.png"))){
+    if(!Map::MapControl.loadBackground(sp_bg = new Sprite("/var/lib/katw/data/bg/bg1.png"))){
         printf("Nao carregou background\n");
     }
 
     sp_player = SpriteManager::SpriteControl.getSprite(SPRITE_PLAYER);
-    SpriteManager::SpriteControl.loadSprite("data/tiro/shot3.png", SPRITE_TIRO);
-    SpriteManager::SpriteControl.loadSprite("data/tiro/animTerra.png", SPRITE_TERRA);
-    SpriteManager::SpriteControl.loadSprite("data/tiro/ar.png", SPRITE_AR);
-    SpriteManager::SpriteControl.loadSprite("data/tiro/fogo.png", SPRITE_FOGO);
-    SpriteManager::SpriteControl.loadSprite("data/tiro/ball_32.png", SPRITE_BALL);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/tiro/shot3.png", SPRITE_TIRO);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/tiro/animTerra.png", SPRITE_TERRA);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/tiro/ar.png", SPRITE_AR);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/tiro/fogo.png", SPRITE_FOGO);
+    SpriteManager::SpriteControl.loadSprite("/var/lib/katw/data/tiro/ball_32.png", SPRITE_BALL);
 
-    sp_item = new Sprite("data/item/itens.png");
-    sp_bar = new Sprite("data/interface/life_bar2.png");
+    sp_item = new Sprite("/var/lib/katw/data/item/itens.png");
+    sp_bar = new Sprite("/var/lib/katw/data/interface/life_bar2.png");
 
     InterfaceMenu::InterfaceControl.spriteSheet = sp_bar;
 
@@ -95,13 +95,13 @@ void StateGame::load(int stack)
 
 
     if(stack == 1) {//faz load
-        if (!Map::MapControl.loadMap("data/map/inicial.map") )
-            printf("Arquivo .map nao encontrado: data/map/Casa.map\n");
+        if (!Map::MapControl.loadMap("/var/lib/katw/data/map/inicial.map") )
+            printf("Arquivo .map nao encontrado: /var/lib/katw/data/map/Casa.map\n");
         Save::loadGame();
         Player::PlayerControl.setPos(20*TILE_SIZE, 15*TILE_SIZE);
     } else { // novo jogo
-        if (!Map::MapControl.loadMap("data/map/output_map.map") )
-            printf("Arquivo .map nao encontrado: data/map/inicial.map\n");
+        if (!Map::MapControl.loadMap("/var/lib/katw/data/map/output_map.map") )
+            printf("Arquivo .map nao encontrado: /var/lib/katw/data/map/inicial.map\n");
 
         Vetor p9(8,200);
         ItemObject* item = new ItemObject(p9,ITEM_TYPE_HP,22);

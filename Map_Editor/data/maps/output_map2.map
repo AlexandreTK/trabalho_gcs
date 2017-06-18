@@ -85,8 +85,8 @@
 
 
 
-data/map/MainMapMid.map 1568,512,10,30,20,512
-data/map/Sewer.map 0,576,10,30,256,32
+/var/lib/katw/data/map/MainMapMid.map 1568,512,10,30,20,512
+/var/lib/katw/data/map/Sewer.map 0,576,10,30,256,32
 
 Musica:
 2

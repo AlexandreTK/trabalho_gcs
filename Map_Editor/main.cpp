@@ -204,68 +204,68 @@ void ObjectsInit()
 {
     ReadSize();
 
-    //en.load_tileset((char*)"data/tileset/basic_tileset_32.png");
-    en.load_tileset((char*)"data/tileset/tile_Kays.png");
+    //en.load_tileset((char*)"/var/lib/katw/data/tileset/basic_tileset_32.png");
+    en.load_tileset((char*)"/var/lib/katw/data/tileset/tile_Kays.png");
     if(mapSizeTotalX < 0 )
-        en.setMapLoad((char*)"data/maps/output_map.map", en.MAP_SIZEX, en.MAP_SIZEY);
-        //en.setMapLoad((char*)"data/maps/mapa_Kays.map", en.MAP_SIZEX, en.MAP_SIZEY);
+        en.setMapLoad((char*)"/var/lib/katw/data/maps/output_map.map", en.MAP_SIZEX, en.MAP_SIZEY);
+        //en.setMapLoad((char*)"/var/lib/katw/data/maps/mapa_Kays.map", en.MAP_SIZEX, en.MAP_SIZEY);
     else
         en.setMapSizeXY(en.MAP_SIZEX, en.MAP_SIZEY, mapSizeTotalX,mapSizeTotalY); /// num of display e max map xy
 
     en.setMenuXY(MENU_POSX, MENU_POSY);    // Position on screen
     en.setMapXY(MAP_POSX, MAP_POSY);   // Position on screen
 
-    layers[0].Load((char*)"data/btn/layer_0.png", 2);
+    layers[0].Load((char*)"/var/lib/katw/data/btn/layer_0.png", 2);
     layers[0].ClickAction = Layer0;
     layers[0].setXY(300, 10);
 
-    layers[1].Load((char*)"data/btn/layer_1.png", 2);
+    layers[1].Load((char*)"/var/lib/katw/data/btn/layer_1.png", 2);
     layers[1].ClickAction = Layer1;
     layers[1].setXY(332, 10);
 
-    layers[2].Load((char*)"data/btn/layer_2.png", 2);
+    layers[2].Load((char*)"/var/lib/katw/data/btn/layer_2.png", 2);
     layers[2].ClickAction = Layer2;
     layers[2].setXY(364, 10);
 
-    layers[3].Load((char*)"data/btn/layer_3.png", 2);
+    layers[3].Load((char*)"/var/lib/katw/data/btn/layer_3.png", 2);
     layers[3].ClickAction = Layer3;
     layers[3].setXY(396, 10);
 
-    layers[4].Load((char*)"data/btn/layer_all.png", 2);
+    layers[4].Load((char*)"/var/lib/katw/data/btn/layer_all.png", 2);
     layers[4].ClickAction = LayerAll;
     layers[4].setXY(428, 10);
 
-    btn[0].Load((char*)"data/btn/btn_test.png", 3);
+    btn[0].Load((char*)"/var/lib/katw/data/btn/btn_test.png", 3);
     btn[0].ClickAction = SaveMap;
     btn[0].setXY(60, 20);
 
 
-    btn[1].Load((char*)"data/btn/btn_right.png", 2);
+    btn[1].Load((char*)"/var/lib/katw/data/btn/btn_right.png", 2);
     btn[1].ClickAction = AddMapX;
     btn[1].setXY(MAP_POSX + en.MAP_SIZEX*TILE_SIZE + 5,
                   MAP_POSY + (int)(en.MAP_SIZEY/2)*TILE_SIZE - TILE_SIZE);
 
-    btn[2].Load((char*)"data/btn/btn_left.png", 2);
+    btn[2].Load((char*)"/var/lib/katw/data/btn/btn_left.png", 2);
     btn[2].ClickAction = RemoveMapX;
     btn[2].setXY(MAP_POSX - TILE_SIZE - 5,
                   MAP_POSY + (int)(en.MAP_SIZEY/2)*TILE_SIZE - TILE_SIZE );
 
-    btn[3].Load((char*)"data/btn/btn_up.png", 2);
+    btn[3].Load((char*)"/var/lib/katw/data/btn/btn_up.png", 2);
     btn[3].ClickAction = RemoveMapY;
     btn[3].setXY(MAP_POSX + en.MAP_SIZEX*TILE_SIZE/2 - TILE_SIZE/2,
                   MAP_POSY - TILE_SIZE - 5);
 
-    btn[4].Load((char*)"data/btn/btn_down.png", 2);
+    btn[4].Load((char*)"/var/lib/katw/data/btn/btn_down.png", 2);
     btn[4].ClickAction = AddMapY;
     btn[4].setXY(MAP_POSX + en.MAP_SIZEX*TILE_SIZE/2 - TILE_SIZE/2,
                   MENU_POSY + en.MAP_SIZEY*TILE_SIZE + TILE_SIZE );
 
-    btn[5].Load((char*)"data/btn/btn_up.png", 2);
+    btn[5].Load((char*)"/var/lib/katw/data/btn/btn_up.png", 2);
     btn[5].ClickAction = TilesetRemoveY;
     btn[5].setXY(MENU_POSX + (MENU_SIZEX/2)*TILE_SIZE + 16,
                   MENU_POSY-40);
 
-    btn[6].Load((char*)"data/btn/btn_down.png", 2);
+    btn[6].Load((char*)"/var/lib/katw/data/btn/btn_down.png", 2);
     btn[6].ClickAction = TilesetAddY;
     btn[6].setXY(MENU_POSX + (MENU_SIZEX/2)*TILE_SIZE + 16,
                   MENU_POSY+5+20*TILE_SIZE);

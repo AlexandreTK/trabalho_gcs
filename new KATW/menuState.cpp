@@ -4,15 +4,15 @@ void StateMenu::load(int stack)
 {
     background = new Sprite();
 
-    background->load("data/img/title.png");
+    background->load("/var/lib/katw/data/img/title.png");
 //
     btn_start = new Button();
     btn_load = new Button();
     btn_exit = new Button();
 
-    btn_start->load_image((char*)"data/btn/NewGameKays.png", 2);
-    btn_load->load_image((char*)"data/btn/LoadGameKays.png", 2);
-    btn_exit->load_image((char*)"data/btn/ExitKays.png", 2);
+    btn_start->load_image((char*)"/var/lib/katw/data/btn/NewGameKays.png", 2);
+    btn_load->load_image((char*)"/var/lib/katw/data/btn/LoadGameKays.png", 2);
+    btn_exit->load_image((char*)"/var/lib/katw/data/btn/ExitKays.png", 2);
 
     btn_start->setXY(279, 303);
     btn_load->setXY(279, 376);

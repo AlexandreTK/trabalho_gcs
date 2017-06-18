@@ -16,8 +16,8 @@
   </MENU>
   <PLAY>
     <TEXTURES>
-      <texture filename="data/images/katw_kays_a.png" ID="kays"/>
-      <texture filename="data/images/katw_blue-mage.png" ID="blue-mage"/>
+      <texture filename="/var/lib/katw/data/images/katw_kays_a.png" ID="kays"/>
+      <texture filename="/var/lib/katw/data/images/katw_blue-mage.png" ID="blue-mage"/>
     </TEXTURES>
     <OBJECTS>
       <object type="Player" x="500" y="100" width="64" height="64"

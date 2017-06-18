@@ -14,18 +14,18 @@ extern Sound sfx;           --> Utilizada para reproduzir músicas e sons.
 
 ///==========================================================
 /// Musicas e sons carregados
-#define MUSIC_LOAD_PIANO (char*)"data/music/bgm/Second try.mp3"
-#define MUSIC_LOAD_ORIENTAL (char*)"data/music/bgm/Oriental Style.mp3"
-#define MUSIC_LOAD_DAY (char*)"data/music/bgm/New day_8-bit.mp3"
-#define MUSIC_LOAD_TRIBAL (char*)"data/music/bgm/Tribal_8-bit.mp3"
-#define MUSIC_LOAD_ORCHEST (char*)"data/music/bgm/First try_magix.mp3"
-#define MUSIC_LOAD_DERROTA (char*)"data/music/bgm/First Try.mp3"
-#define MUSIC_LOAD_VITORIA (char*)"data/music/bgm/Multi-Instruments First.mp3"
+#define MUSIC_LOAD_PIANO (char*)"/var/lib/katw/data/music/bgm/Second try.mp3"
+#define MUSIC_LOAD_ORIENTAL (char*)"/var/lib/katw/data/music/bgm/Oriental Style.mp3"
+#define MUSIC_LOAD_DAY (char*)"/var/lib/katw/data/music/bgm/New day_8-bit.mp3"
+#define MUSIC_LOAD_TRIBAL (char*)"/var/lib/katw/data/music/bgm/Tribal_8-bit.mp3"
+#define MUSIC_LOAD_ORCHEST (char*)"/var/lib/katw/data/music/bgm/First try_magix.mp3"
+#define MUSIC_LOAD_DERROTA (char*)"/var/lib/katw/data/music/bgm/First Try.mp3"
+#define MUSIC_LOAD_VITORIA (char*)"/var/lib/katw/data/music/bgm/Multi-Instruments First.mp3"
 
 enum MusicPlayList { PLAY_PIANO, PLAY_ORIENTAL, PLAY_DAY, PLAY_TRIBAL, PLAY_ORCHEST, PLAY_DERROTA, PLAY_VITORIA};
 
-#define EFFECT_LOAD_SHOT1 (char*)"data/music/sfx/shot1.wav"
-#define EFFECT_LOAD_JUMP (char*)"data/music/sfx/jump.wav"
+#define EFFECT_LOAD_SHOT1 (char*)"/var/lib/katw/data/music/sfx/shot1.wav"
+#define EFFECT_LOAD_JUMP (char*)"/var/lib/katw/data/music/sfx/jump.wav"
 
 enum EffectPlayList { PLAY_SFX_SHOT1, PLAY_SFX_JUMP};
 

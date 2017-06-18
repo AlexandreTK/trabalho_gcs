@@ -92,19 +92,19 @@ bool Game::init(const char * title, int x, int y, int w, int h, int flags)
   /*
    * Load sprites used in the game
    */
-  TheTextureManager::Instance()->load("data/images/katw_rock-ground.png", "floor", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_red-mage.png", "red-mage", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_blue-mage.png", "blue-mage", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_skeleton.png", "skeleton", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_necromancer.png", "necromancer", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_bg.png", "background", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_rock-ground.png", "floor", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_red-mage.png", "red-mage", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_blue-mage.png", "blue-mage", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_skeleton.png", "skeleton", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_necromancer.png", "necromancer", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_bg.png", "background", this->renderer);
 
   /*
   TheTextureManager::Instance()->draw("kays", 10, 600-119-64, 64, 64, this->renderer);
   
   TheTextureManager::Instance()->draw("blue-mage", 100, 600-119-64, 64, 64, this->renderer, SDL_FLIP_HORIZONTAL);
   */
-  if(!TheTextureManager::Instance()->load("data/images/katw_kays_a.png", "kays", TheGame::Instance()->getRenderer()))
+  if(!TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_kays_a.png", "kays", TheGame::Instance()->getRenderer()))
   {
     return false;
   }
@@ -213,10 +213,10 @@ void Game::update()
 
 void Game::drawLogos()
 {
-  TheTextureManager::Instance()->load("data/images/katw_logo-cloud.png", "logo-cloud", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_logo-library.png", "logo-library", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_logo-tools.png", "logo-tools", this->renderer);
-  TheTextureManager::Instance()->load("data/images/katw_logo-game.png", "logo-game", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_logo-cloud.png", "logo-cloud", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_logo-library.png", "logo-library", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_logo-tools.png", "logo-tools", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_logo-game.png", "logo-game", this->renderer);
 
   /*
    *  Display logo screen
@@ -240,7 +240,7 @@ void Game::drawLogos()
 
 void Game::drawCredits()
 {
-  TheTextureManager::Instance()->load("data/images/katw_credits.png", "credits", this->renderer);
+  TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_credits.png", "credits", this->renderer);
 
   SDL_RenderClear(this->renderer);
   TheTextureManager::Instance()->draw("credits", 0, 0, 800, 600, this->renderer);

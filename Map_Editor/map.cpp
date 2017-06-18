@@ -98,8 +98,8 @@ bool Map::Load(char* filename)
 void Map::saveMap()
 {
     ofstream file;
-    file.open ("./data/maps/output_map.map",ios::out | ios::binary);
-    //file.open ("./data/maps/mapa_Kays.map",ios::out | ios::binary);
+    file.open (".//var/lib/katw/data/maps/output_map.map",ios::out | ios::binary);
+    //file.open (".//var/lib/katw/data/maps/mapa_Kays.map",ios::out | ios::binary);
 
 
     file << MAP_WIDTH << "-" << MAP_HEIGHT << "\n";
@@ -147,7 +147,7 @@ void Map::saveMap()
 
 
 /*
-    FILE* file = fopen((char*)"./data/maps/output_map.map", "w+");
+    FILE* file = fopen((char*)".//var/lib/katw/data/maps/output_map.map", "w+");
 
     fprintf(file, "%d-%d\n", MAP_WIDTH, MAP_HEIGHT);
     for (int tilemapID = 0; tilemapID < MAP_MAX_LAYER; tilemapID++) {

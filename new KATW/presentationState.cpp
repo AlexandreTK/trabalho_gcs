@@ -3,9 +3,9 @@
 
 void PresentationState::load(int stack)
 {
-    background = new Sprite("data/img/Village.jpg");
-    story1 = new Sprite("data/img/Story1.jpg");
-    story2 = new Sprite("data/img/Story2.jpg");
+    background = new Sprite("/var/lib/katw/data/img/Village.jpg");
+    story1 = new Sprite("/var/lib/katw/data/img/Story1.jpg");
+    story2 = new Sprite("/var/lib/katw/data/img/Story2.jpg");
 
     anim.setSprite(background);
     anim.addWaiting(1000);

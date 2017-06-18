@@ -34,7 +34,7 @@ bool MenuState::onEnter()
 {
   cout << "Entering Menu State..." << endl;
   
-  if(!TheTextureManager::Instance()->load("data/images/katw_logo-game.png", "gamemenu", TheGame::Instance()->getRenderer()))
+  if(!TheTextureManager::Instance()->load("/var/lib/katw/data/images/katw_logo-game.png", "gamemenu", TheGame::Instance()->getRenderer()))
   {
     return false;
   }

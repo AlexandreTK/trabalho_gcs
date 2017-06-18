@@ -3,9 +3,9 @@
 void WinLoseState::load(int stack)
 {
     if(stack == -1) //DERROTA
-        background = new Sprite((char*)"data/img/Grass Field_1.jpg");
+        background = new Sprite((char*)"/var/lib/katw/data/img/Grass Field_1.jpg");
     else //VITORIA
-        background = new Sprite((char*)"data/img/Grass FieldText.jpg");
+        background = new Sprite((char*)"/var/lib/katw/data/img/Grass FieldText.jpg");
 
     if(stack == -1)    {
         texto = "DERROTA!! VOCE DROPOU NO CHÃO!!";
