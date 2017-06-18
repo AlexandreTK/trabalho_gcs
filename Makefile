@@ -5,6 +5,7 @@ SDL_LIBS = `sdl2-config --libs` -lSDL2_image
 
 SRC_DIR = src
 OBJ_DIR = obj
+DATA_DIR = data
 
 SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(addsuffix .o, $(addprefix $(OBJ_DIR)/, $(basename $(notdir $(SOURCES)))))
@@ -24,3 +25,14 @@ KATW:  $(OBJS)
 clean:
 	@rm -f $(OBJ_DIR)/*
 	@rm -f KATW
+
+
+install: KATW
+	install -D KATW \
+		$(DESTDIR)$(prefix)/bin/katw
+	@cp -r $(DATA_DIR) $(DESTDIR)$(prefix)/bin
+
+uninstall:
+	-rm -f $(DESTDIR)$(prefix)/bin/katw
+	@rm -rf $(DESTDIR)$(prefix)/bin/data
+
