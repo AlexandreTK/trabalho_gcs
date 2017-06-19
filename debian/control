@@ -3,7 +3,7 @@ Section: unknown
 Priority: optional
 Maintainer: alex <alexandretk@unknown>
 Build-Depends: debhelper (>= 8.0.0),
-               make,
+               cmake,
                clang,
                git-core,
                build-essential,
