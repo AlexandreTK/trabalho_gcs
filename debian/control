@@ -7,12 +7,11 @@ Build-Depends: debhelper (>= 8.0.0),
                clang,
                git-core,
                build-essential,
-               libsdl1.2-dev,
-               libsdl-image1.2-dev,
-               libsdl-ttf2.0-dev,
-               libsdl-net1.2-dev,
-               libsdl-mixer1.2-dev,
-               libsdl-gfx1.2-dev
+               libsdl2-dev,
+               libsdl2-image-dev,
+               libsdl2-mixer-dev,
+               libsdl2-ttf-dev,
+               zlib1g-dev
 Standards-Version: 3.9.4
 Homepage: https://github.com/fgagamedev
 
