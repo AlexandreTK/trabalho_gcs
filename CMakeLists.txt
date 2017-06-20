@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 2.8)
 project(katw)
 
 set (PROJECT_SRC_DIR     "${PROJECT_SOURCE_DIR}/src")
-set(EXECUTABLE_OUTPUT_PATH "/bin")
 
 include(FindPkgConfig)
 PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
@@ -19,7 +18,12 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES})
  
 
+INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}  DESTINATION /bin)
+
 add_custom_command(TARGET katw POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
                    ${CMAKE_CURRENT_SOURCE_DIR}/data /var/lib/katw/data)
 
+#add_custom_command(TARGET katw POST_BUILD
+#                   COMMAND ${CMAKE_COMMAND} -E copy
+#                   ${CMAKE_CURRENT_BINARY_DIR}/katw /bin)
